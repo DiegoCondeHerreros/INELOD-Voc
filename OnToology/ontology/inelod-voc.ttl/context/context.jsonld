@@ -1,0 +1,3896 @@
+{
+  "@context" : {
+    "numberOfUnemployedLivingWithReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfUnemployedLivingWithReferencePerson",
+      "@type" : "@id"
+    },
+    "premises" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/premises",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "books" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/books",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "phValue" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/phValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "salarylaborConcepts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/salarylaborConcepts",
+      "@type" : "@id"
+    },
+    "populationRegister" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/populationRegister",
+      "@type" : "@id"
+    },
+    "mainOtes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mainOtes",
+      "@type" : "@id"
+    },
+    "typeOfOperation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfOperation",
+      "@type" : "@id"
+    },
+    "percent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "numberOfEmployedInHousehold" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfEmployedInHousehold",
+      "@type" : "@id"
+    },
+    "professionalSituationOfSecondaryJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/professionalSituationOfSecondaryJob",
+      "@type" : "@id"
+    },
+    "typeOfContractOrEmploymentRelationship" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfContractOrEmploymentRelationship",
+      "@type" : "@id"
+    },
+    "numberOfSubscribersPer100Inhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfSubscribersPer100Inhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "reasonsForNotWorking" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForNotWorking",
+      "@type" : "@id"
+    },
+    "socialClassBasedOnOccupation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/socialClassBasedOnOccupation",
+      "@type" : "@id"
+    },
+    "spouse2PlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2PlaceOfBirth",
+      "@type" : "@id"
+    },
+    "expenditureQuintile" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureQuintile",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "breastfeedingDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/breastfeedingDuration",
+      "@type" : "@id"
+    },
+    "hectolitreOfPureAlcohol" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hectolitreOfPureAlcohol",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "nationalityZones" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/nationalityZones",
+      "@type" : "@id"
+    },
+    "divorcesPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorcesPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "percentage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "thousandsOfTonnesCo2Equivalent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandsOfTonnesCo2Equivalent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "destinationPlace" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/destinationPlace",
+      "@type" : "@id"
+    },
+    "fathersPlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fathersPlaceOfBirth",
+      "@type" : "@id"
+    },
+    "activePopulation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activePopulation",
+      "@type" : "@id"
+    },
+    "incomeRecipientsLivingWithReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "royalAcademies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/royalAcademies",
+      "@type" : "@id"
+    },
+    "spouseToPayCompensatoryPension" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouseToPayCompensatoryPension",
+      "@type" : "@id"
+    },
+    "businessGroup" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/businessGroup",
+      "@type" : "@id"
+    },
+    "bossAgriculturalTraining" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/bossAgriculturalTraining",
+      "@type" : "@id"
+    },
+    "intensity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/intensity",
+      "@type" : "@id"
+    },
+    "CodeList" : {
+      "@id" : "http://purl.org/linked-data/sdmx#CodeList"
+    },
+    "ratePerPopulation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ratePerPopulation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "deathsDuringFirst24HoursOfLife" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsDuringFirst24HoursOfLife",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ratePer100k" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ratePer100k",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "politicalParties" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/politicalParties",
+      "@type" : "@id"
+    },
+    "causeOfDeath" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/causeOfDeath",
+      "@type" : "@id"
+    },
+    "reasonsForNotTraveling" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForNotTraveling",
+      "@type" : "@id"
+    },
+    "provincialCapitals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/provincialCapitals",
+      "@type" : "@id"
+    },
+    "employedABSValue" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employedABSValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "typeOfMaritalResolution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMaritalResolution",
+      "@type" : "@id"
+    },
+    "typeOfReason" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfReason",
+      "@type" : "@id"
+    },
+    "reasonForLeavingLastJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForLeavingLastJob",
+      "@type" : "@id"
+    },
+    "range" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/range",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "farmSizeByUtat" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmSizeByUtat",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "averageQuantitiesConsumed" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/averageQuantitiesConsumed",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "sentenceDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sentenceDuration",
+      "@type" : "@id"
+    },
+    "mothersEducationLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersEducationLevel",
+      "@type" : "@id"
+    },
+    "economicDestinationOfGoodsCnae93" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicDestinationOfGoodsCnae93",
+      "@type" : "@id"
+    },
+    "PERCENT" : {
+      "@id" : "http://qudt.org/vocab/unit#PERCENT"
+    },
+    "wattsPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/wattsPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "environmentalProblem" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/environmentalProblem",
+      "@type" : "@id"
+    },
+    "tariffs" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tariffs",
+      "@type" : "@id"
+    },
+    "componentesPibpmRent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/componentesPibpmRent",
+      "@type" : "@id"
+    },
+    "typeOfAccidentVictim" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfAccidentVictim",
+      "@type" : "@id"
+    },
+    "economicDestinationOfGoodsCnae2009" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicDestinationOfGoodsCnae2009",
+      "@type" : "@id"
+    },
+    "seriouslyInjuredAndFatalities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/seriouslyInjuredAndFatalities",
+      "@type" : "@id"
+    },
+    "booleanFlag" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/booleanFlag",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "municipalitySize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/municipalitySize",
+      "@type" : "@id"
+    },
+    "relationshipBetweenWorkplaceAndResidence" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipBetweenWorkplaceAndResidence",
+      "@type" : "@id"
+    },
+    "numberOfChildren" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfChildren",
+      "@type" : "@id"
+    },
+    "scenario" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/scenario",
+      "@type" : "@id"
+    },
+    "relationshipBetweenPlaceOfResidenceAndPlaceOfStudy" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipBetweenPlaceOfResidenceAndPlaceOfStudy",
+      "@type" : "@id"
+    },
+    "typeOfWorkPosition" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfWorkPosition",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "perThousandPeople" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/perThousandPeople",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "laborForceStatusInPreviousPeriod" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/laborForceStatusInPreviousPeriod",
+      "@type" : "@id"
+    },
+    "dataTypeLevelsAndRates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dataTypeLevelsAndRates",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfLayingHenHousing" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfLayingHenHousing",
+      "@type" : "@id"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created"
+    },
+    "resourcesAndUses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/resourcesAndUses",
+      "@type" : "@id"
+    },
+    "researchersPerMillionInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/researchersPerMillionInhabitants"
+    },
+    "previousHabitatType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/previousHabitatType",
+      "@type" : "@id"
+    },
+    "euros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/euros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "placeOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/placeOfBirth",
+      "@type" : "@id"
+    },
+    "workOnOwnersHolding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/workOnOwnersHolding",
+      "@type" : "@id"
+    },
+    "percentageOfFemaleMayors" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfFemaleMayors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ageTotals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ageTotals",
+      "@type" : "@id"
+    },
+    "modeOfSupply" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/modeOfSupply",
+      "@type" : "@id"
+    },
+    "coicopepfSubgroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/coicopepfSubgroups",
+      "@type" : "@id"
+    },
+    "kilogramOfSodiumCarbonate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramOfSodiumCarbonate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "universityEntranceExamCall" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/universityEntranceExamCall",
+      "@type" : "@id"
+    },
+    "parliamentaryGroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/parliamentaryGroups",
+      "@type" : "@id"
+    },
+    "mortgageCancellation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mortgageCancellation",
+      "@type" : "@id"
+    },
+    "husbandsPlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/husbandsPlaceOfBirth",
+      "@type" : "@id"
+    },
+    "numberOfUnemployedAmongOtherHouseholdMembers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfUnemployedAmongOtherHouseholdMembers",
+      "@type" : "@id"
+    },
+    "mothersPlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersPlaceOfBirth",
+      "@type" : "@id"
+    },
+    "reasonForNotSeekingEmployment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForNotSeekingEmployment",
+      "@type" : "@id"
+    },
+    "typeOfConsumption" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfConsumption",
+      "@type" : "@id"
+    },
+    "refPeriod" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod",
+      "@type" : "@id"
+    },
+    "yearOfArrivalInSpain" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/yearOfArrivalInSpain",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "tonnesCo2Equivalent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonnesCo2Equivalent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "birthOrder" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthOrder",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "gram" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/gram",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "deathsForEach100kInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsForEach100kInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "license" : {
+      "@id" : "http://creativecommons.org/ns#license"
+    },
+    "thousandCubicMetres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandCubicMetres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "concept" : {
+      "@id" : "http://purl.org/linked-data/cube#concept"
+    },
+    "reporting_type" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reporting_type",
+      "@type" : "@id"
+    },
+    "kilogramPerInhabitantPerDay" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramPerInhabitantPerDay",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "degreeOfOffense" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/degreeOfOffense",
+      "@type" : "@id"
+    },
+    "typeOfAssetdebt" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfAssetdebt",
+      "@type" : "@id"
+    },
+    "percentageOfFemaleSenators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfFemaleSenators",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "desireToModifyUsualSchedule" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/desireToModifyUsualSchedule",
+      "@type" : "@id"
+    },
+    "sdgIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sdgIndicators",
+      "@type" : "@id"
+    },
+    "wageDecile" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/wageDecile",
+      "@type" : "@id"
+    },
+    "expenditureCodes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureCodes",
+      "@type" : "@id"
+    },
+    "sectorOfHighestEducationalAttainment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sectorOfHighestEducationalAttainment",
+      "@type" : "@id"
+    },
+    "countryOfResidence" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countryOfResidence",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "withwithoutSau" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/withwithoutSau",
+      "@type" : "@id"
+    },
+    "periodicity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/periodicity",
+      "@type" : "@id"
+    },
+    "incomeSourceDistribution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/incomeSourceDistribution",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "salesGroup" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/salesGroup",
+      "@type" : "@id"
+    },
+    "numeroOfTabless" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numeroOfTabless",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "excursionsPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/excursionsPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "yearOfArrivalInAutonomousCommunity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/yearOfArrivalInAutonomousCommunity",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "tepM" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tepM",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "mothersAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersAge",
+      "@type" : "@id"
+    },
+    "personPerformingHouseholdActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/personPerformingHouseholdActivity",
+      "@type" : "@id"
+    },
+    "maritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/maritalStatus",
+      "@type" : "@id"
+    },
+    "mainInactivityClass" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mainInactivityClass",
+      "@type" : "@id"
+    },
+    "thousandEuros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandEuros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "educationLev" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#educationLev",
+      "@type" : "@id"
+    },
+    "daysWorkedAtPrivateHome" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/daysWorkedAtPrivateHome",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "numberOfBedplaces" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfBedplaces",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "composite_breakdown" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/composite_breakdown",
+      "@type" : "@id"
+    },
+    "reasonForInternetUse" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForInternetUse",
+      "@type" : "@id"
+    },
+    "economicDestinationOfGoods" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicDestinationOfGoods",
+      "@type" : "@id"
+    },
+    "ruralDevelopmentMeasures" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ruralDevelopmentMeasures",
+      "@type" : "@id"
+    },
+    "generalDistributionOfHolding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generalDistributionOfHolding",
+      "@type" : "@id"
+    },
+    "cropsAndPastures" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cropsAndPastures",
+      "@type" : "@id"
+    },
+    "healthcare" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/healthcare",
+      "@type" : "@id"
+    },
+    "typeOfTransport" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTransport",
+      "@type" : "@id"
+    },
+    "amountEuro" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/amountEuro",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "numberOfIncomeRecipientsInHousehold" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfIncomeRecipientsInHousehold",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfInsolvencyProceeding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfInsolvencyProceeding",
+      "@type" : "@id"
+    },
+    "kilogramOfActiveSubstance" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramOfActiveSubstance",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "emigrationPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/emigrationPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "durationOfAbsence" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/durationOfAbsence",
+      "@type" : "@id"
+    },
+    "index" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/index",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "functionalCategory" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/functionalCategory",
+      "@type" : "@id"
+    },
+    "maturityDate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/maturityDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "basedOnReferencePersonIncomeStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/basedOnReferencePersonIncomeStatus",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "accountingBalances" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accountingBalances",
+      "@type" : "@id"
+    },
+    "sentencesAndMeasures" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sentencesAndMeasures",
+      "@type" : "@id"
+    },
+    "tonnesPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonnesPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "unitOfMeasurement" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unitOfMeasurement",
+      "@type" : "@id"
+    },
+    "sauTenureRegime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sauTenureRegime",
+      "@type" : "@id"
+    },
+    "typeOfSeparation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfSeparation",
+      "@type" : "@id"
+    },
+    "jobSearchDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/jobSearchDuration",
+      "@type" : "@id"
+    },
+    "vabAccountingBalance" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/vabAccountingBalance",
+      "@type" : "@id"
+    },
+    "measuresForDependentFamilyCare" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/measuresForDependentFamilyCare",
+      "@type" : "@id"
+    },
+    "travelOrganization" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/travelOrganization",
+      "@type" : "@id"
+    },
+    "indicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/indicators",
+      "@type" : "@id"
+    },
+    "kilowatts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilowatts",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "spouse2LaborForceStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2LaborForceStatus",
+      "@type" : "@id"
+    },
+    "ageSemiintervals" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#ageSemiintervals",
+      "@type" : "@id"
+    },
+    "modeOfNationalityAcquisition" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/modeOfNationalityAcquisition",
+      "@type" : "@id"
+    },
+    "goldFineTroyOunces" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/goldFineTroyOunces",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "percentageOfTimeWorkedUtatRange" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "spouseToPayAlimony" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouseToPayAlimony",
+      "@type" : "@id"
+    },
+    "touristAreas" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/touristAreas",
+      "@type" : "@id"
+    },
+    "experienceAsFarmManager" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/experienceAsFarmManager",
+      "@type" : "@id"
+    },
+    "hectolitre" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hectolitre",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "perThousandMarriages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/perThousandMarriages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "monthOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/monthOfBirth",
+      "@type" : "@id"
+    },
+    "employedPerSurveyAndNetChangeIndex" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employedPerSurveyAndNetChangeIndex",
+      "@type" : "@id"
+    },
+    "unemploymentProportion" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unemploymentProportion",
+      "@type" : "@id"
+    },
+    "technologicalConcepts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/technologicalConcepts",
+      "@type" : "@id"
+    },
+    "visits" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/visits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "spouse1Age" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1Age",
+      "@type" : "@id"
+    },
+    "variableNotConsidered" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/variableNotConsidered",
+      "@type" : "@id"
+    },
+    "marineDemarcation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marineDemarcation",
+      "@type" : "@id"
+    },
+    "marriageDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriageDuration",
+      "@type" : "@id"
+    },
+    "age" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#age",
+      "@type" : "@id"
+    },
+    "trainingObjectiveNonformal" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/trainingObjectiveNonformal",
+      "@type" : "@id"
+    },
+    "typeOfRailwayAccident" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfRailwayAccident",
+      "@type" : "@id"
+    },
+    "constantDollars" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/constantDollars",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "simplePercentiles" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/simplePercentiles",
+      "@type" : "@id"
+    },
+    "litresOfPureAlcoholConsumedPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/litresOfPureAlcoholConsumedPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "libraries" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/libraries",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "average" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/average",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "monthsRanges" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/monthsRanges",
+      "@type" : "@id"
+    },
+    "per100000inhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/per100000inhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfMarket" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMarket",
+      "@type" : "@id"
+    },
+    "activityBranchSecondaryJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityBranchSecondaryJob",
+      "@type" : "@id"
+    },
+    "spouse2AgeTotals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2AgeTotals",
+      "@type" : "@id"
+    },
+    "ccaa" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ccaa",
+      "@type" : "@id"
+    },
+    "mortgageDurationInYears" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mortgageDurationInYears",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "trainKilometres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/trainKilometres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "keyEconomicVariables" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/keyEconomicVariables",
+      "@type" : "@id"
+    },
+    "attainedEducationLevelsCneda" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/attainedEducationLevelsCneda",
+      "@type" : "@id"
+    },
+    "typeOfDangerousGoods" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfDangerousGoods",
+      "@type" : "@id"
+    },
+    "turnoveroccupiedPersonnel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/turnoveroccupiedPersonnel",
+      "@type" : "@id"
+    },
+    "withOrWithoutOal" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/withOrWithoutOal",
+      "@type" : "@id"
+    },
+    "mainHouseholdIncomeSource" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mainHouseholdIncomeSource",
+      "@type" : "@id"
+    },
+    "numberOfPersonsLivingWithReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfPersonsLivingWithReferencePerson",
+      "@type" : "@id"
+    },
+    "householdComposition" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/householdComposition",
+      "@type" : "@id"
+    },
+    "proportionality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/proportionality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "municipalities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/municipalities",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "transformation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/transformation",
+      "@type" : "@id"
+    },
+    "residenceTime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/residenceTime",
+      "@type" : "@id"
+    },
+    "farmOrganicCertification" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmOrganicCertification",
+      "@type" : "@id"
+    },
+    "typeOfDisability" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfDisability",
+      "@type" : "@id"
+    },
+    "classificationAccordingToEo" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/classificationAccordingToEo",
+      "@type" : "@id"
+    },
+    "costComponents" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/costComponents",
+      "@type" : "@id"
+    },
+    "cubicMetres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cubicMetres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "thousandPairs" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandPairs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "organism" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/organism",
+      "@type" : "@id"
+    },
+    "companyControl" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/companyControl",
+      "@type" : "@id"
+    },
+    "typesOfLivestock" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typesOfLivestock",
+      "@type" : "@id"
+    },
+    "percentileSemiintervals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentileSemiintervals",
+      "@type" : "@id"
+    },
+    "typeOfMaritalDissolution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMaritalDissolution",
+      "@type" : "@id"
+    },
+    "gigajoulesPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/gigajoulesPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "heatingAvailability" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/heatingAvailability",
+      "@type" : "@id"
+    },
+    "activityClassification" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityClassification",
+      "@type" : "@id"
+    },
+    "obsValue" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue",
+      "@type" : "@id"
+    },
+    "hours" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hours",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ratePerWoman" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ratePerWoman",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "countryOfOrigindestination" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countryOfOrigindestination",
+      "@type" : "@id"
+    },
+    "numberOfTouristsABSValue" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfTouristsABSValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "referencePlaceOfDemographicPhenomenon" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/referencePlaceOfDemographicPhenomenon",
+      "@type" : "@id"
+    },
+    "ownershipOfOtherDwellingsBesidesMain" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ownershipOfOtherDwellingsBesidesMain",
+      "@type" : "@id"
+    },
+    "typeOfHiredLabor" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfHiredLabor",
+      "@type" : "@id"
+    },
+    "licences" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/licences",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "tonOfHydrogenPeroxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfHydrogenPeroxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "eurosPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/eurosPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "incomePerConsumptionUnitPercentages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/incomePerConsumptionUnitPercentages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "spouse1Nationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1Nationality",
+      "@type" : "@id"
+    },
+    "classificationAccordingToER" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/classificationAccordingToER",
+      "@type" : "@id"
+    },
+    "accessToDifferentTypesOfHealthcare" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accessToDifferentTypesOfHealthcare",
+      "@type" : "@id"
+    },
+    "typeOfCattleHousing" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfCattleHousing",
+      "@type" : "@id"
+    },
+    "sections" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sections",
+      "@type" : "@id"
+    },
+    "punishment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/punishment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "populationDensity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/populationDensity",
+      "@type" : "@id"
+    },
+    "typeOfFarmBySauAndUg" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfFarmBySauAndUg",
+      "@type" : "@id"
+    },
+    "sundaysWorkedPerMonth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sundaysWorkedPerMonth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "specificOtes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/specificOtes",
+      "@type" : "@id"
+    },
+    "dwellingCondition" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dwellingCondition",
+      "@type" : "@id"
+    },
+    "errorIntervals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/errorIntervals",
+      "@type" : "@id"
+    },
+    "expenditureCodes5Digits" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureCodes5Digits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "numberOfPersonsWithDisability" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfPersonsWithDisability",
+      "@type" : "@id"
+    },
+    "numberOfUnemployedInHousehold" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfUnemployedInHousehold",
+      "@type" : "@id"
+    },
+    "reasonForNotHiringChildcareServices" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForNotHiringChildcareServices",
+      "@type" : "@id"
+    },
+    "birthNormality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthNormality",
+      "@type" : "@id"
+    },
+    "titleOfAcquisition" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/titleOfAcquisition",
+      "@type" : "@id"
+    },
+    "spouse2AgeSemiintervals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2AgeSemiintervals",
+      "@type" : "@id"
+    },
+    "kilogramsPerThousandEuros-ChainedVolumes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramsPerThousandEuros-ChainedVolumes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "employmentAggregates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employmentAggregates",
+      "@type" : "@id"
+    },
+    "subclasses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/subclasses",
+      "@type" : "@id"
+    },
+    "educationalConcept" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/educationalConcept",
+      "@type" : "@id"
+    },
+    "totalOvertimeHoursWorkedPerWeekByEmployees" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/totalOvertimeHoursWorkedPerWeekByEmployees",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfLegalCase" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfLegalCase",
+      "@type" : "@id"
+    },
+    "travel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/travel",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "travelReason" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/travelReason",
+      "@type" : "@id"
+    },
+    "referencePersonsNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/referencePersonsNationality",
+      "@type" : "@id"
+    },
+    "currency" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/currency",
+      "@type" : "@id"
+    },
+    "occupationSecondaryJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/occupationSecondaryJob",
+      "@type" : "@id"
+    },
+    "healthStatusAssessment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/healthStatusAssessment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "expenditureGroups2Digits" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureGroups2Digits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "mothersMaritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersMaritalStatus",
+      "@type" : "@id"
+    },
+    "activityBranchMainJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityBranchMainJob",
+      "@type" : "@id"
+    },
+    "hvdIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hvdIndicators",
+      "@type" : "@id"
+    },
+    "sau" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sau",
+      "@type" : "@id"
+    },
+    "limitation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/limitation",
+      "@type" : "@id"
+    },
+    "compontentsPIBpmDemand" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/compontentsPIBpmDemand",
+      "@type" : "@id"
+    },
+    "taxonomicGroup" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/taxonomicGroup",
+      "@type" : "@id"
+    },
+    "connectionToEconomicActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/connectionToEconomicActivity",
+      "@type" : "@id"
+    },
+    "monthOfCelebration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/monthOfCelebration",
+      "@type" : "@id"
+    },
+    "countriesAndContinents" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countriesAndContinents",
+      "@type" : "@id"
+    },
+    "childbirths" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/childbirths",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "yearOfArrivalInProvince" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/yearOfArrivalInProvince",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "volumeCubicMetreBased" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/volumeCubicMetreBased",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "victimsAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/victimsAge",
+      "@type" : "@id"
+    },
+    "indexValue" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/indexValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "volumeLitreBased" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/volumeLitreBased",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "territorialTotals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/territorialTotals",
+      "@type" : "@id"
+    },
+    "regionalGroupingsNuts1" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/regionalGroupingsNuts1",
+      "@type" : "@id"
+    },
+    "birthsPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthsPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "accessRoute" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accessRoute",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "currentFormalStudies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/currentFormalStudies",
+      "@type" : "@id"
+    },
+    "plots" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/plots",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "civilCasesResolved" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/civilCasesResolved",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "precautionaryMeasures" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/precautionaryMeasures",
+      "@type" : "@id"
+    },
+    "singleAgeValues" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/singleAgeValues",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "categoryType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/categoryType",
+      "@type" : "@id"
+    },
+    "ecoicopSubgroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ecoicopSubgroups",
+      "@type" : "@id"
+    },
+    "typeOfTrade" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTrade",
+      "@type" : "@id"
+    },
+    "workingHourReductionForChildcare" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/workingHourReductionForChildcare",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "tonOfHydrogenChloride" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfHydrogenChloride",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "birthsPer1000Women" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthsPer1000Women",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfPigHousing" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfPigHousing",
+      "@type" : "@id"
+    },
+    "intergenesicInterval" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/intergenesicInterval",
+      "@type" : "@id"
+    },
+    "tonOfSiliconDioxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfSiliconDioxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "geographicalZonesOfSpain" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/geographicalZonesOfSpain",
+      "@type" : "@id"
+    },
+    "productGroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/productGroups",
+      "@type" : "@id"
+    },
+    "tripsPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tripsPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "tonOfSulphurDioxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfSulphurDioxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "accommodationBookingMode" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accommodationBookingMode",
+      "@type" : "@id"
+    },
+    "economicSectorsOfSecondaryJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicSectorsOfSecondaryJob",
+      "@type" : "@id"
+    },
+    "workScheduleForm" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/workScheduleForm",
+      "@type" : "@id"
+    },
+    "economicSectorCnae2009OfLastJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicSectorCnae2009OfLastJob",
+      "@type" : "@id"
+    },
+    "marriagesPerWoman" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriagesPerWoman",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "monthOfDeath" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/monthOfDeath",
+      "@type" : "@id"
+    },
+    "satisfactionLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/satisfactionLevel",
+      "@type" : "@id"
+    },
+    "yearsPerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/yearsPerson",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "cropsPasruresAndOrchards" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cropsPasruresAndOrchards",
+      "@type" : "@id"
+    },
+    "generationdecadesyearOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generationdecadesyearOfBirth",
+      "@type" : "@id"
+    },
+    "unpaidWorkActivities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unpaidWorkActivities",
+      "@type" : "@id"
+    },
+    "inMeasureSet" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/inMeasureSet",
+      "@type" : "@id"
+    },
+    "percentageOfCentres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfCentres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "marriagesPerPerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriagesPerPerson",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "fathersNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fathersNationality",
+      "@type" : "@id"
+    },
+    "tonOfDialuminiumTrioxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfDialuminiumTrioxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "demographicPhenomenon" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/demographicPhenomenon",
+      "@type" : "@id"
+    },
+    "conceptOldBdeDsd" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/conceptOldBdeDsd",
+      "@type" : "@id"
+    },
+    "supracity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/supracity",
+      "@type" : "@id"
+    },
+    "provinces" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/provinces",
+      "@type" : "@id"
+    },
+    "componentsPIBpmSupply" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/componentsPIBpmSupply",
+      "@type" : "@id"
+    },
+    "kilotonnesOfOilEquivalent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilotonnesOfOilEquivalent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "jobTenure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/jobTenure",
+      "@type" : "@id"
+    },
+    "propertyNature" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/propertyNature",
+      "@type" : "@id"
+    },
+    "economicDestinationOfGoodsExport" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicDestinationOfGoodsExport",
+      "@type" : "@id"
+    },
+    "births" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/births",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "referencePersons" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/referencePersons",
+      "@type" : "@id"
+    },
+    "reasonsForIncreasedActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForIncreasedActivity",
+      "@type" : "@id"
+    },
+    "fathersLaborForceStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fathersLaborForceStatus",
+      "@type" : "@id"
+    },
+    "defendantsPlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/defendantsPlaceOfBirth",
+      "@type" : "@id"
+    },
+    "netWealthPercentile" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/netWealthPercentile",
+      "@type" : "@id"
+    },
+    "generalOrganicSurfaceDistribution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generalOrganicSurfaceDistribution",
+      "@type" : "@id"
+    },
+    "economicSectorsOfSecondaryJobCnae2009" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicSectorsOfSecondaryJobCnae2009",
+      "@type" : "@id"
+    },
+    "industrialCapacityUtilizationRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/industrialCapacityUtilizationRate",
+      "@type" : "@id"
+    },
+    "socioeconomicCondition" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/socioeconomicCondition",
+      "@type" : "@id"
+    },
+    "typeOfEntity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfEntity",
+      "@type" : "@id"
+    },
+    "populationOfDisappearedMunicipalities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/populationOfDisappearedMunicipalities",
+      "@type" : "@id"
+    },
+    "ocupationDegreeBedplaces" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ocupationDegreeBedplaces",
+      "@type" : "@id"
+    },
+    "wifesMaritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/wifesMaritalStatus",
+      "@type" : "@id"
+    },
+    "businessDemographicConcepts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/businessDemographicConcepts",
+      "@type" : "@id"
+    },
+    "homologousInstitutionalSector" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/homologousInstitutionalSector",
+      "@type" : "@id"
+    },
+    "typeOfStock" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfStock",
+      "@type" : "@id"
+    },
+    "percentileGroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentileGroups",
+      "@type" : "@id"
+    },
+    "harmonizedLeisureActivitiesList" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/harmonizedLeisureActivitiesList",
+      "@type" : "@id"
+    },
+    "immigrationPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/immigrationPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "yesno" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/yesno",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "laborRelationsRegulationForm" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/laborRelationsRegulationForm",
+      "@type" : "@id"
+    },
+    "accumulationRubrics" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accumulationRubrics",
+      "@type" : "@id"
+    },
+    "divorcedPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorcedPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "establishments" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/establishments",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfScheduleInDesiredJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfScheduleInDesiredJob",
+      "@type" : "@id"
+    },
+    "teraJoulesPerMillionEuros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/teraJoulesPerMillionEuros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "educationalLevelsCnedp" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/educationalLevelsCnedp",
+      "@type" : "@id"
+    },
+    "timeSinceContractStartrenewal" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/timeSinceContractStartrenewal",
+      "@type" : "@id"
+    },
+    "thousandKilometresCuadrados" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandKilometresCuadrados",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "full-timeJobEquivalent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/full-timeJobEquivalent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dwellingOwner" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dwellingOwner",
+      "@type" : "@id"
+    },
+    "cpiSubindex" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cpiSubindex",
+      "@type" : "@id"
+    },
+    "formOfCelebration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/formOfCelebration",
+      "@type" : "@id"
+    },
+    "bornPerThousandDeaths" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/bornPerThousandDeaths",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "generationages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generationages",
+      "@type" : "@id"
+    },
+    "husbandsNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/husbandsNationality",
+      "@type" : "@id"
+    },
+    "typeOfMarriageBySpousesNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMarriageBySpousesNationality",
+      "@type" : "@id"
+    },
+    "professionalCategory" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/professionalCategory",
+      "@type" : "@id"
+    },
+    "instrumentAndAssetClassification" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/instrumentAndAssetClassification",
+      "@type" : "@id"
+    },
+    "studentsAged1625LivingWithReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/studentsAged1625LivingWithReferencePerson",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "dwellingAndEnvironmentProblems" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dwellingAndEnvironmentProblems",
+      "@type" : "@id"
+    },
+    "derivedDemographicConcepts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/derivedDemographicConcepts",
+      "@type" : "@id"
+    },
+    "mtoe" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mtoe",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "familyDwellings" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/familyDwellings",
+      "@type" : "@id"
+    },
+    "activityType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityType",
+      "@type" : "@id"
+    },
+    "full-timeEquivalentEmployment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/full-timeEquivalentEmployment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "fathersAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fathersAge",
+      "@type" : "@id"
+    },
+    "hiredThroughTemporaryWorkAgency" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hiredThroughTemporaryWorkAgency",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "millionPassenger-Kilometres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/millionPassenger-Kilometres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "accidentLocation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accidentLocation",
+      "@type" : "@id"
+    },
+    "averageStay" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/averageStay",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "thousandKwh" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandKwh",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "goodsAndServicesOperations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/goodsAndServicesOperations",
+      "@type" : "@id"
+    },
+    "count" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/count",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "birthMunicipalitySize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthMunicipalitySize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "multiplesOfMinimumWage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/multiplesOfMinimumWage",
+      "@type" : "@id"
+    },
+    "companySize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/companySize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "demographicConcepts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/demographicConcepts",
+      "@type" : "@id"
+    },
+    "numberOfTouristsAccumulatedVarianceRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfTouristsAccumulatedVarianceRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "hectares" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hectares",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "exportsImportsAndServices" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/exportsImportsAndServices",
+      "@type" : "@id"
+    },
+    "compensatedGrossTonnage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/compensatedGrossTonnage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
+    "urbanOrNonurbanArea" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/urbanOrNonurbanArea",
+      "@type" : "@id"
+    },
+    "occupations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/occupations",
+      "@type" : "@id"
+    },
+    "businessVolume" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/businessVolume",
+      "@type" : "@id"
+    },
+    "kilogramsPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramsPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "percentageOfPeople" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfPeople",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "deaths" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deaths",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "deathsPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "totalAndAverageExpenditureMonetary" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/totalAndAverageExpenditureMonetary",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "growthPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/growthPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "kilogram" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogram",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "expenditure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditure",
+      "@type" : "@id"
+    },
+    "marriagesPerMan" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriagesPerMan",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "personalSituation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/personalSituation",
+      "@type" : "@id"
+    },
+    "withwithoutUgt" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/withwithoutUgt",
+      "@type" : "@id"
+    },
+    "islands" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/islands",
+      "@type" : "@id"
+    },
+    "weeklyTimeInterval" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/weeklyTimeInterval",
+      "@type" : "@id"
+    },
+    "migrationsPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/migrationsPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfDivorce" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfDivorce",
+      "@type" : "@id"
+    },
+    "separations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/separations",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "notation" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#notation"
+    },
+    "proposalContent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/proposalContent",
+      "@type" : "@id"
+    },
+    "companyParticipationInTrainingNonformal" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/companyParticipationInTrainingNonformal",
+      "@type" : "@id"
+    },
+    "lodgingType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/lodgingType",
+      "@type" : "@id"
+    },
+    "defendantsAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/defendantsAge",
+      "@type" : "@id"
+    },
+    "personsPerSurveyAndNetChangeIndex" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/personsPerSurveyAndNetChangeIndex",
+      "@type" : "@id"
+    },
+    "hoursSpentInNonformalStudiesLast4Weeks" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hoursSpentInNonformalStudiesLast4Weeks",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "migrationsPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/migrationsPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "reasonForNotSeekingEmploymentDueToCaregiving" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForNotSeekingEmploymentDueToCaregiving",
+      "@type" : "@id"
+    },
+    "kgCo2EquivalentPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kgCo2EquivalentPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "product" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/product",
+      "@type" : "@id"
+    },
+    "numberOfCriminalOffenses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfCriminalOffenses",
+      "@type" : "@id"
+    },
+    "typeOfRomanticRelationship" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfRomanticRelationship",
+      "@type" : "@id"
+    },
+    "businessGroupAffiliation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/businessGroupAffiliation",
+      "@type" : "@id"
+    },
+    "withSolidOrLiquidManure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/withSolidOrLiquidManure",
+      "@type" : "@id"
+    },
+    "referencePersonsAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/referencePersonsAge",
+      "@type" : "@id"
+    },
+    "multipleBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/multipleBirth",
+      "@type" : "@id"
+    },
+    "measuresAdopted" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/measuresAdopted",
+      "@type" : "@id"
+    },
+    "percentageOfGDP" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfGDP",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "reasonsForUnfilledVacanciesInPreviousPeriod" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForUnfilledVacanciesInPreviousPeriod",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "numberOfIndividuals" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfIndividuals",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "statistics" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/statistics",
+      "@type" : "@id"
+    },
+    "householdRegularNetMonthlyIncomeLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/householdRegularNetMonthlyIncomeLevel",
+      "@type" : "@id"
+    },
+    "thousandsOfNetTonnes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandsOfNetTonnes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "cohorts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cohorts",
+      "@type" : "@id"
+    },
+    "position" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/position",
+      "@type" : "@id"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "thousandUnits" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandUnits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "farmSizeByUgt" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmSizeByUgt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "reasonForReducedActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForReducedActivity",
+      "@type" : "@id"
+    },
+    "elapsedTime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/elapsedTime",
+      "@type" : "@id"
+    },
+    "operationsAndBalancesNational" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/operationsAndBalancesNational",
+      "@type" : "@id"
+    },
+    "timePeriodCollection" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/timePeriodCollection",
+      "@type" : "@id"
+    },
+    "decreeRuling" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/decreeRuling",
+      "@type" : "@id"
+    },
+    "rubrics" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/rubrics",
+      "@type" : "@id"
+    },
+    "relationshipToEconomicActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipToEconomicActivity",
+      "@type" : "@id"
+    },
+    "expenditureCodesWithPhysicalQuantity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureCodesWithPhysicalQuantity",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "daysWorkedLateEvening" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/daysWorkedLateEvening",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "victimsPlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/victimsPlaceOfBirth",
+      "@type" : "@id"
+    },
+    "tonnes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonnes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "firstMarriagesPerMan" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/firstMarriagesPerMan",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "nullities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/nullities",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "organicLivestockBreedingOrFattening" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/organicLivestockBreedingOrFattening",
+      "@type" : "@id"
+    },
+    "numberOfPersonsInHousehold" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfPersonsInHousehold",
+      "@type" : "@id"
+    },
+    "typeOfEnergyFlow" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfEnergyFlow",
+      "@type" : "@id"
+    },
+    "tonOfHydrogenFluoride" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfHydrogenFluoride",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "coicopepfSubclasses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/coicopepfSubclasses",
+      "@type" : "@id"
+    },
+    "litres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/litres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "exchangeRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/exchangeRate",
+      "@type" : "@id"
+    },
+    "usdEur" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/usdEur",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "subsections" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/subsections",
+      "@type" : "@id"
+    },
+    "womenPer100Men" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/womenPer100Men",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfComputerTasks" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfComputerTasks",
+      "@type" : "@id"
+    },
+    "gramos-Euros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/gramos-Euros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "existenceOfAdvanceProposal" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/existenceOfAdvanceProposal",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "reasonForSeekingOtherJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForSeekingOtherJob",
+      "@type" : "@id"
+    },
+    "occupationInLastJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/occupationInLastJob",
+      "@type" : "@id"
+    },
+    "deathsOfLessThan1YearsPer1000Born" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsOfLessThan1YearsPer1000Born",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "maritimenonmaritimeZones" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/maritimenonmaritimeZones",
+      "@type" : "@id"
+    },
+    "cubicHectometers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cubicHectometers",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "dataTypeLatestData" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dataTypeLatestData",
+      "@type" : "@id"
+    },
+    "parenthoodGap" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/parenthoodGap",
+      "@type" : "@id"
+    },
+    "economicSectorOfLastJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicSectorOfLastJob",
+      "@type" : "@id"
+    },
+    "massTonnesBased" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/massTonnesBased",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "touristAttractions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/touristAttractions",
+      "@type" : "@id"
+    },
+    "logic" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/logic",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "quantity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/quantity",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "culturalActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/culturalActivity",
+      "@type" : "@id"
+    },
+    "inactivityStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/inactivityStatus",
+      "@type" : "@id"
+    },
+    "sauAndOtherLands" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sauAndOtherLands",
+      "@type" : "@id"
+    },
+    "fieldOfStudy" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fieldOfStudy",
+      "@type" : "@id"
+    },
+    "numberOfActiveJobSearchMethods" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfActiveJobSearchMethods",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sulphuricAcid" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sulphuricAcid",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "birthWeight" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthWeight",
+      "@type" : "@id"
+    },
+    "divorcesPerWoman" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorcesPerWoman",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "tourismConcept" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tourismConcept",
+      "@type" : "@id"
+    },
+    "collective" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/collective",
+      "@type" : "@id"
+    },
+    "usualHoursWorked" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/usualHoursWorked",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "onlinePurchase" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/onlinePurchase",
+      "@type" : "@id"
+    },
+    "peopleAdmittedToTreatment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/peopleAdmittedToTreatment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "numberOfHours" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfHours",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "surname" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/surname",
+      "@type" : "@id"
+    },
+    "marriagesPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriagesPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "extendedBalanceOfPaymentsServicesClassificationCabps" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/extendedBalanceOfPaymentsServicesClassificationCabps",
+      "@type" : "@id"
+    },
+    "numberOfRooms" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfRooms",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "manureApplicationTechnique" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/manureApplicationTechnique",
+      "@type" : "@id"
+    },
+    "activityStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityStatus",
+      "@type" : "@id"
+    },
+    "spouse2Nationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2Nationality",
+      "@type" : "@id"
+    },
+    "prices" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/prices",
+      "@type" : "@id"
+    },
+    "spouse1Occupation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1Occupation",
+      "@type" : "@id"
+    },
+    "newbornSurvival" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/newbornSurvival",
+      "@type" : "@id"
+    },
+    "compensationOfEmployeesOperation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/compensationOfEmployeesOperation",
+      "@type" : "@id"
+    },
+    "apartments" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/apartments",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "tonnesCo2EquivalencePerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonnesCo2EquivalencePerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "companyStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/companyStatus",
+      "@type" : "@id"
+    },
+    "deathsPer100KInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsPer100KInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "macroeconomicalAggregates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/macroeconomicalAggregates",
+      "@type" : "@id"
+    },
+    "percentageOfFemaleCounselors" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfFemaleCounselors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "keyIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/keyIndicators",
+      "@type" : "@id"
+    },
+    "farmSizeByPet" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmSizeByPet",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "reasonForMedicalConsultation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForMedicalConsultation",
+      "@type" : "@id"
+    },
+    "typeOfExpenditure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfExpenditure",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "farmSizeBySauHa" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmSizeBySauHa",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "sauAndSurfaces" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sauAndSurfaces",
+      "@type" : "@id"
+    },
+    "bodyMass" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/bodyMass",
+      "@type" : "@id"
+    },
+    "institutionalSectors" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/institutionalSectors",
+      "@type" : "@id"
+    },
+    "metre" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/metre",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "manureExportAndImport" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/manureExportAndImport",
+      "@type" : "@id"
+    },
+    "seasonalAdjustment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/seasonalAdjustment",
+      "@type" : "@id"
+    },
+    "per100kInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/per100kInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "accommodationSize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accommodationSize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "relationshipToReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipToReferencePerson",
+      "@type" : "@id"
+    },
+    "typesOfCattle" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typesOfCattle",
+      "@type" : "@id"
+    },
+    "jobSearchMethod" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/jobSearchMethod",
+      "@type" : "@id"
+    },
+    "rentalModalities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/rentalModalities",
+      "@type" : "@id"
+    },
+    "kilotonnes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilotonnes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "toe-capita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/toe-capita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "operationsAndFlows" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/operationsAndFlows",
+      "@type" : "@id"
+    },
+    "numberOfTouristsAccumulated" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfTouristsAccumulated",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "numberOfTravelers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfTravelers",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "overnightStays" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/overnightStays",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "typeOfHousedLivestock" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfHousedLivestock",
+      "@type" : "@id"
+    },
+    "numberOfTouristsAnnualVarianceRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfTouristsAnnualVarianceRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "accidentsPer100kWorkers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accidentsPer100kWorkers",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "energySourceForWaterHeating" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/energySourceForWaterHeating",
+      "@type" : "@id"
+    },
+    "per100k" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/per100k",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "minutes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/minutes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "table_identifier" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/table_identifier",
+      "@type" : "@id"
+    },
+    "admissions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/admissions",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "hotWaterAvailability" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hotWaterAvailability",
+      "@type" : "@id"
+    },
+    "balanceOfPayments" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/balanceOfPayments",
+      "@type" : "@id"
+    },
+    "divorcesPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorcesPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "mobilityAreas" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mobilityAreas",
+      "@type" : "@id"
+    },
+    "firstName" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/firstName",
+      "@type" : "@id"
+    },
+    "capitalBrackets" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/capitalBrackets",
+      "@type" : "@id"
+    },
+    "DimensionProperty" : {
+      "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+    },
+    "percentages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "averageNumberOfHours" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/averageNumberOfHours",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "leaveDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/leaveDuration",
+      "@type" : "@id"
+    },
+    "kgCo2EquivalenceEuros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kgCo2EquivalenceEuros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "oalNotRelatedToHolding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/oalNotRelatedToHolding",
+      "@type" : "@id"
+    },
+    "mainDwellingTenureRegime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mainDwellingTenureRegime",
+      "@type" : "@id"
+    },
+    "packagingWaste" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/packagingWaste",
+      "@type" : "@id"
+    },
+    "spouseToExerciseCustody" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouseToExerciseCustody",
+      "@type" : "@id"
+    },
+    "dwellingSize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dwellingSize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "liveBirthOrder" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/liveBirthOrder",
+      "@type" : "@id"
+    },
+    "divorces" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorces",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "employeeStratum" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employeeStratum",
+      "@type" : "@id"
+    },
+    "accidents" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accidents",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "numberOfEmployedAmongOtherHouseholdMembers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfEmployedAmongOtherHouseholdMembers",
+      "@type" : "@id"
+    },
+    "conurbation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/conurbation",
+      "@type" : "@id"
+    },
+    "vacancies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/vacancies",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "workOvertimeOrNot" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/workOvertimeOrNot",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "typeOfFood" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfFood",
+      "@type" : "@id"
+    },
+    "residenceMunicipalitySize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/residenceMunicipalitySize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "classes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/classes",
+      "@type" : "@id"
+    },
+    "commercialEffects" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/commercialEffects",
+      "@type" : "@id"
+    },
+    "number" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/number",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "contractingPartiesGender" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/contractingPartiesGender",
+      "@type" : "@id"
+    },
+    "relationshipBetweenPlaceOfBirthAndResidence" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipBetweenPlaceOfBirthAndResidence",
+      "@type" : "@id"
+    },
+    "secondaryInactivityClass" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/secondaryInactivityClass",
+      "@type" : "@id"
+    },
+    "timeSinceLeavingLastJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/timeSinceLeavingLastJob",
+      "@type" : "@id"
+    },
+    "husbandsAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/husbandsAge",
+      "@type" : "@id"
+    },
+    "typesOfSentences" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typesOfSentences",
+      "@type" : "@id"
+    },
+    "criminalCasesResolved" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/criminalCasesResolved",
+      "@type" : "@id"
+    },
+    "subject" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/subject",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "terajoules" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/terajoules",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "calendarAdjustedIndicesBasedOnCNAE93" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/calendarAdjustedIndicesBasedOnCNAE93",
+      "@type" : "@id"
+    },
+    "businessDemographicConceptsInPreviousPeriod" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/businessDemographicConceptsInPreviousPeriod",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "economicDestinationOfGoodsImport" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicDestinationOfGoodsImport",
+      "@type" : "@id"
+    },
+    "indexAndRates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/indexAndRates",
+      "@type" : "@id"
+    },
+    "legalCaseStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/legalCaseStatus",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/domain",
+      "@type" : "@id"
+    },
+    "birthDeathDifferencePerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/birthDeathDifferencePerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "co2EquivalentTonnes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/co2EquivalentTonnes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "countries" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countries",
+      "@type" : "@id"
+    },
+    "typeOfManureStorage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfManureStorage",
+      "@type" : "@id"
+    },
+    "firstMarriagesPerWoman" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/firstMarriagesPerWoman",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "energySourceForHeating" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/energySourceForHeating",
+      "@type" : "@id"
+    },
+    "relationshipWithJustice" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipWithJustice",
+      "@type" : "@id"
+    },
+    "employmentRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employmentRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "reasonsForParttimeWork" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForParttimeWork",
+      "@type" : "@id"
+    },
+    "tonOfPhosphoricAnhydride" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfPhosphoricAnhydride",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfTransportUnit" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTransportUnit",
+      "@type" : "@id"
+    },
+    "weeksOfGestation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/weeksOfGestation",
+      "@type" : "@id"
+    },
+    "suicidesPer100KInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/suicidesPer100KInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "unemploymentRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unemploymentRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "typeOfDwelling" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfDwelling",
+      "@type" : "@id"
+    },
+    "expenditureGroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureGroups",
+      "@type" : "@id"
+    },
+    "travelDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/travelDuration",
+      "@type" : "@id"
+    },
+    "typeOfSector" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfSector",
+      "@type" : "@id"
+    },
+    "degreeOfUrbanization" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/degreeOfUrbanization",
+      "@type" : "@id"
+    },
+    "transportBookingMode" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/transportBookingMode",
+      "@type" : "@id"
+    },
+    "numberOfSentences" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfSentences",
+      "@type" : "@id"
+    },
+    "marginalRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marginalRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "years" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/years",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "tonOfNitrogen" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfNitrogen",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "borrowedCapital" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/borrowedCapital",
+      "@type" : "@id"
+    },
+    "professionalSituation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/professionalSituation",
+      "@type" : "@id"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "decrees" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/decrees",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "String" : {
+      "@id" : "http://www.w3.org/2001/XMLSchema#String"
+    },
+    "mortages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mortages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "farmManagerTrainingCoursesLast12Months" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmManagerTrainingCoursesLast12Months",
+      "@type" : "@id"
+    },
+    "multiplicitygender" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/multiplicitygender",
+      "@type" : "@id"
+    },
+    "divorcesPerMan" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorcesPerMan",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfFertilizerUsed" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfFertilizerUsed",
+      "@type" : "@id"
+    },
+    "definition" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#definition"
+    },
+    "spouse2Age" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2Age",
+      "@type" : "@id"
+    },
+    "difficultyMakingEndsMeet" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/difficultyMakingEndsMeet",
+      "@type" : "@id"
+    },
+    "sustainableDevelopmentIndicatorsSdgs" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sustainableDevelopmentIndicatorsSdgs",
+      "@type" : "@id"
+    },
+    "cust_breakdown_lb" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cust_breakdown_lb",
+      "@type" : "@id"
+    },
+    "ReasonType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ReasonType"
+    },
+    "expenditureCodes4Digits" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureCodes4Digits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "cinea2011Groupings" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cinea2011Groupings",
+      "@type" : "@id"
+    },
+    "expenditureSubgroups3Digits" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureSubgroups3Digits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfMaterialShortage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMaterialShortage",
+      "@type" : "@id"
+    },
+    "socialSecurityStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/socialSecurityStatus",
+      "@type" : "@id"
+    },
+    "numberOfEmployed" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfEmployed",
+      "@type" : "@id"
+    },
+    "indexRangeScaled" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/indexRangeScaled",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfAdministration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfAdministration",
+      "@type" : "@id"
+    },
+    "openairSau" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/openairSau",
+      "@type" : "@id"
+    },
+    "institutionalBodies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/institutionalBodies",
+      "@type" : "@id"
+    },
+    "PIBDataType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/PIBDataType",
+      "@type" : "@id"
+    },
+    "travellersKm1000" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/travellersKm1000",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "agriculturalIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/agriculturalIndicators",
+      "@type" : "@id"
+    },
+    "litresPerInhabitantPerDay" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/litresPerInhabitantPerDay",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "baseYear" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/baseYear",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "coicopepfClasses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/coicopepfClasses",
+      "@type" : "@id"
+    },
+    "typeOfLabor" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfLabor",
+      "@type" : "@id"
+    },
+    "occupation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/occupation",
+      "@type" : "@id"
+    },
+    "materialsAndLabor" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/materialsAndLabor",
+      "@type" : "@id"
+    },
+    "laborMarketLimitationsDueToCaregiving" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/laborMarketLimitationsDueToCaregiving",
+      "@type" : "@id"
+    },
+    "tonOfPotassiumHydroxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfPotassiumHydroxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "maturity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/maturity",
+      "@type" : "@id"
+    },
+    "dataForDwellingsAndPersons" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dataForDwellingsAndPersons",
+      "@type" : "@id"
+    },
+    "mainCaregiverGender" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mainCaregiverGender",
+      "@type" : "@id"
+    },
+    "professionalSituationInLastJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/professionalSituationInLastJob",
+      "@type" : "@id"
+    },
+    "healthcareConcepts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/healthcareConcepts",
+      "@type" : "@id"
+    },
+    "typeOfLivestockHousing" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfLivestockHousing",
+      "@type" : "@id"
+    },
+    "indicatorType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/indicatorType",
+      "@type" : "@id"
+    },
+    "numberOfPersonsWorkingInEstablishment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfPersonsWorkingInEstablishment",
+      "@type" : "@id"
+    },
+    "financialConcept" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/financialConcept",
+      "@type" : "@id"
+    },
+    "percentageOfMPs" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfMPs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "unemploymentStatusByGender" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unemploymentStatusByGender",
+      "@type" : "@id"
+    },
+    "erteTemporaryEmploymentRegulation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/erteTemporaryEmploymentRegulation",
+      "@type" : "@id"
+    },
+    "ConceptScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    },
+    "relationshipWithTheActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/relationshipWithTheActivity",
+      "@type" : "@id"
+    },
+    "farmLabor" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmLabor",
+      "@type" : "@id"
+    },
+    "typeOfCropsIii" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfCropsIii",
+      "@type" : "@id"
+    },
+    "divorceRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divorceRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "animalSpecies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/animalSpecies",
+      "@type" : "@id"
+    },
+    "touristType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/touristType",
+      "@type" : "@id"
+    },
+    "calendarAdjustedIndicesBasedonCNAE2009" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/calendarAdjustedIndicesBasedonCNAE2009",
+      "@type" : "@id"
+    },
+    "tonOfDiboronTrioxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfDiboronTrioxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "tourismOrigin" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tourismOrigin",
+      "@type" : "@id"
+    },
+    "stages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/stages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "shiftWorkSystem" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/shiftWorkSystem",
+      "@type" : "@id"
+    },
+    "functionalDependency" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/functionalDependency",
+      "@type" : "@id"
+    },
+    "travelersAndRates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/travelersAndRates",
+      "@type" : "@id"
+    },
+    "households" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/households",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "destinationMunicipalitySize" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/destinationMunicipalitySize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "days" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/days",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "thousandSquareMetres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandSquareMetres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "MeasureSet" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/MeasureSet"
+    },
+    "tobaccoConsumption" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tobaccoConsumption",
+      "@type" : "@id"
+    },
+    "horasTrabajadorMes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/horasTrabajadorMes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "leaseContractTenure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/leaseContractTenure",
+      "@type" : "@id"
+    },
+    "source" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/source",
+      "@type" : "@id"
+    },
+    "basicFarmCharacteristics" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/basicFarmCharacteristics",
+      "@type" : "@id"
+    },
+    "fixedCapitalFormationOperations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations",
+      "@type" : "@id"
+    },
+    "deathsPerThousandLiveBirths" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsPerThousandLiveBirths",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "jobs" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/jobs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfTransportByDestination" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTransportByDestination",
+      "@type" : "@id"
+    },
+    "judgements" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/judgements",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "safetyPlan" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/safetyPlan",
+      "@type" : "@id"
+    },
+    "MeasureProperty" : {
+      "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+    },
+    "milMetres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/milMetres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "peopleMarryingForTheFirstTimePerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/peopleMarryingForTheFirstTimePerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "tourismDestination" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tourismDestination",
+      "@type" : "@id"
+    },
+    "existenceOfPriorSeparation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/existenceOfPriorSeparation",
+      "@type" : "@id"
+    },
+    "durationInHours" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/durationInHours",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "grossDomesticProduct" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/grossDomesticProduct",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "EurosUSDRelation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/EurosUSDRelation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "academicYear" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/academicYear",
+      "@type" : "@id"
+    },
+    "locationOfBirthMunicipality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/locationOfBirthMunicipality",
+      "@type" : "@id"
+    },
+    "TypeOfSignificantRailwayAccident" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/TypeOfSignificantRailwayAccident",
+      "@type" : "@id"
+    },
+    "ote" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ote",
+      "@type" : "@id"
+    },
+    "organizations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/organizations",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "reasonsForNoJobVacancies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForNoJobVacancies",
+      "@type" : "@id"
+    },
+    "statisticalMeasures" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/statisticalMeasures",
+      "@type" : "@id"
+    },
+    "collectiveAgreementModifications" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/collectiveAgreementModifications",
+      "@type" : "@id"
+    },
+    "tonOfPotassiumOxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfPotassiumOxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "saturdaysWorkedPerMonth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/saturdaysWorkedPerMonth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "actualHoursWorkedInMainJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/actualHoursWorkedInMainJob",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "regions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/regions",
+      "@type" : "@id"
+    },
+    "employmentByActivityBranchCta" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employmentByActivityBranchCta",
+      "@type" : "@id"
+    },
+    "kilogramOfTitaniumDioxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramOfTitaniumDioxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "thousandsOfTonnes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandsOfTonnes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "squareMetres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/squareMetres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "crimesMisdemeanors" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/crimesMisdemeanors",
+      "@type" : "@id"
+    },
+    "typeOfDelivery" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfDelivery",
+      "@type" : "@id"
+    },
+    "freight" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/freight",
+      "@type" : "@id"
+    },
+    "agePersonsOver16Years" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/agePersonsOver16Years",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "spouse1PlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1PlaceOfBirth",
+      "@type" : "@id"
+    },
+    "perMilleOfMarriedCouples" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/perMilleOfMarriedCouples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "per1000Inhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/per1000Inhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "residenceTimeInMunicipality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/residenceTimeInMunicipality",
+      "@type" : "@id"
+    },
+    "refArea" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refArea",
+      "@type" : "@id"
+    },
+    "places" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/places",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "deceasedMothersPerEach1KLiveBirths" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deceasedMothersPerEach1KLiveBirths",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified"
+    },
+    "percentagePoints" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentagePoints",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "formalStudies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/formalStudies",
+      "@type" : "@id"
+    },
+    "yearOfArrivalInMunicipality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/yearOfArrivalInMunicipality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "cnaeGroupingA64" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cnaeGroupingA64",
+      "@type" : "@id"
+    },
+    "subgroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/subgroups",
+      "@type" : "@id"
+    },
+    "sizeBrackets" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sizeBrackets",
+      "@type" : "@id"
+    },
+    "tourists" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tourists",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "interest" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/interest",
+      "@type" : "@id"
+    },
+    "multiplicityvitalityOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/multiplicityvitalityOfBirth",
+      "@type" : "@id"
+    },
+    "typeOfMaterial" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMaterial",
+      "@type" : "@id"
+    },
+    "typeOfTransferor" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTransferor",
+      "@type" : "@id"
+    },
+    "ratePerThousand" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ratePerThousand",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "sentenceRuling" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sentenceRuling",
+      "@type" : "@id"
+    },
+    "businessConfidenceIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/businessConfidenceIndicators",
+      "@type" : "@id"
+    },
+    "daysWorkedAtNight" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/daysWorkedAtNight",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "companies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/companies",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "distributionOperations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/distributionOperations",
+      "@type" : "@id"
+    },
+    "actualHoursWorkedInMainJobWeek" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/actualHoursWorkedInMainJobWeek",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "childsAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/childsAge",
+      "@type" : "@id"
+    },
+    "sectors" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sectors",
+      "@type" : "@id"
+    },
+    "sectorOfCurrentNonformalStudies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sectorOfCurrentNonformalStudies",
+      "@type" : "@id"
+    },
+    "marriagePerThousandlInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriagePerThousandlInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "publicEmploymentOfficeParticipation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/publicEmploymentOfficeParticipation",
+      "@type" : "@id"
+    },
+    "accountingItem" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accountingItem",
+      "@type" : "@id"
+    },
+    "ontOfSodiumPyrosulphite" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ontOfSodiumPyrosulphite",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "itu" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/itu",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "cnaeGroupingA21" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cnaeGroupingA21",
+      "@type" : "@id"
+    },
+    "generalStDistributionOfHolding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generalStDistributionOfHolding",
+      "@type" : "@id"
+    },
+    "km2-Ha" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/km2-Ha",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "representationSpheres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/representationSpheres",
+      "@type" : "@id"
+    },
+    "husbandsMaritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/husbandsMaritalStatus",
+      "@type" : "@id"
+    },
+    "deathsPerMillion" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsPerMillion",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "convictedPersons" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/convictedPersons",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "inequalityIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/inequalityIndicators",
+      "@type" : "@id"
+    },
+    "inactivityTypeOfHouseholdReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/inactivityTypeOfHouseholdReferencePerson",
+      "@type" : "@id"
+    },
+    "typeOfEducationProvided" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfEducationProvided",
+      "@type" : "@id"
+    },
+    "ituInTeu" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ituInTeu",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "farmManager" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/farmManager",
+      "@type" : "@id"
+    },
+    "emigrationPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/emigrationPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "perThousand" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/perThousand",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "legalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/legalStatus",
+      "@type" : "@id"
+    },
+    "locationOfPreviousResidenceMunicipality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/locationOfPreviousResidenceMunicipality",
+      "@type" : "@id"
+    },
+    "hoursWorked" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hoursWorked",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "totalExpenditureAndUnitValue" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/totalExpenditureAndUnitValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "dailyWage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dailyWage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "unpaidHoursWorked" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unpaidHoursWorked",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "sauWithoutOrchards" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sauWithoutOrchards",
+      "@type" : "@id"
+    },
+    "wifesAge" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/wifesAge",
+      "@type" : "@id"
+    },
+    "typeOfLease" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfLease",
+      "@type" : "@id"
+    },
+    "lci_activity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/lci_activity",
+      "@type" : "@id"
+    },
+    "tonOfFluorine" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfFluorine",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "countryOfOrigin" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countryOfOrigin",
+      "@type" : "@id"
+    },
+    "pairs" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/pairs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "baseDic85100" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/baseDic85100",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "indicatorLatestData" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/indicatorLatestData",
+      "@type" : "@id"
+    },
+    "typeOfHealthProblem" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfHealthProblem",
+      "@type" : "@id"
+    },
+    "environmentalIndicator" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/environmentalIndicator",
+      "@type" : "@id"
+    },
+    "percentageOfHouseholds" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfHouseholds",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "thousandOfPersons" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandOfPersons",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "typeOfWorkSchedule" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfWorkSchedule",
+      "@type" : "@id"
+    },
+    "timeInCurrentJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/timeInCurrentJob",
+      "@type" : "@id"
+    },
+    "reasonsForChangeinJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForChangeinJob",
+      "@type" : "@id"
+    },
+    "hours_workerByweek" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hours_workerByweek",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "millionsOfEuros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/millionsOfEuros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "whoSetsWorkSchedule" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/whoSetsWorkSchedule",
+      "@type" : "@id"
+    },
+    "occupationMainJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/occupationMainJob",
+      "@type" : "@id"
+    },
+    "compilationMethodology" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/compilationMethodology",
+      "@type" : "@id"
+    },
+    "hvdCategories" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hvdCategories",
+      "@type" : "@id"
+    },
+    "personshours" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/personshours",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "spouse1MaritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1MaritalStatus",
+      "@type" : "@id"
+    },
+    "Resource" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+    },
+    "accidentsWithDangerousGoods" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/accidentsWithDangerousGoods",
+      "@type" : "@id"
+    },
+    "sectorOfCurrentFormalStudies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/sectorOfCurrentFormalStudies",
+      "@type" : "@id"
+    },
+    "squareYears" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/squareYears",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "interestRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/interestRate",
+      "@type" : "@id"
+    },
+    "sex" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#sex",
+      "@type" : "@id"
+    },
+    "eurosPerSquareMetre" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/eurosPerSquareMetre",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "energyAmount" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/energyAmount",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "studySectorGroupings" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/studySectorGroupings",
+      "@type" : "@id"
+    },
+    "kilogramOfNitrogen" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramOfNitrogen",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "incomeDistribution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/incomeDistribution",
+      "@type" : "@id"
+    },
+    "percentageOfFemaleCouncillors" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfFemaleCouncillors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "month" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/month",
+      "@type" : "@id"
+    },
+    "personsAged1625LivingWithReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/personsAged1625LivingWithReferencePerson",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "custBreakdown" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/custBreakdown",
+      "@type" : "@id"
+    },
+    "subcity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/subcity",
+      "@type" : "@id"
+    },
+    "megaJoulesPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/megaJoulesPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "economicSectorsOfMainJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicSectorsOfMainJob",
+      "@type" : "@id"
+    },
+    "tonnesPerCapita" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonnesPerCapita",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "mothersOccupation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersOccupation",
+      "@type" : "@id"
+    },
+    "reasonForTemporaryContract" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForTemporaryContract",
+      "@type" : "@id"
+    },
+    "numberOfCases" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfCases",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "spouse2MaritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2MaritalStatus",
+      "@type" : "@id"
+    },
+    "countryOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countryOfBirth",
+      "@type" : "@id"
+    },
+    "activityRate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "residenceOrigin" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/residenceOrigin",
+      "@type" : "@id"
+    },
+    "m0No1Yes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/m0No1Yes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "economicDestinationOfGoodsCalendaradjusted" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicDestinationOfGoodsCalendaradjusted",
+      "@type" : "@id"
+    },
+    "childrenPerWoman" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/childrenPerWoman",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "numberOfRecipients" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfRecipients",
+      "@type" : "@id"
+    },
+    "migrationFlows" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/migrationFlows",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "numberOfDependentMinorsadultChildren" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfDependentMinorsadultChildren",
+      "@type" : "@id"
+    },
+    "deathsPerThousandBirths" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/deathsPerThousandBirths",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "numberOfPeople" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfPeople",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "otherReligions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/otherReligions",
+      "@type" : "@id"
+    },
+    "typeOfExercise" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfExercise",
+      "@type" : "@id"
+    },
+    "contractOrEmploymentRelationshipDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/contractOrEmploymentRelationshipDuration",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "housing" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/housing",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "executionSector" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/executionSector",
+      "@type" : "@id"
+    },
+    "spouse2EducationLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2EducationLevel",
+      "@type" : "@id"
+    },
+    "fathersEducationLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fathersEducationLevel",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "tonOfDryMatterAt90Percent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfDryMatterAt90Percent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "calendarAdjustedIndicesBasedOnCNAE74" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/calendarAdjustedIndicesBasedOnCNAE74",
+      "@type" : "@id"
+    },
+    "districts" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/districts",
+      "@type" : "@id"
+    },
+    "typeOfProcedure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfProcedure",
+      "@type" : "@id"
+    },
+    "fathersOccupation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/fathersOccupation",
+      "@type" : "@id"
+    },
+    "spouseFilingTheClaim" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouseFilingTheClaim",
+      "@type" : "@id"
+    },
+    "spouse1EducationLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1EducationLevel",
+      "@type" : "@id"
+    },
+    "generalSauDistributionOfHolding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generalSauDistributionOfHolding",
+      "@type" : "@id"
+    },
+    "reasonForFulltimeLeave" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForFulltimeLeave",
+      "@type" : "@id"
+    },
+    "statusBeforeJobSearch" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/statusBeforeJobSearch",
+      "@type" : "@id"
+    },
+    "genderGap" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/genderGap",
+      "@type" : "@id"
+    },
+    "numberOfEstablishments" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfEstablishments",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "offences" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/offences",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "thousandLitres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/thousandLitres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ageGroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ageGroups",
+      "@type" : "@id"
+    },
+    "formulaToStopWorking" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/formulaToStopWorking",
+      "@type" : "@id"
+    },
+    "typesOfCropsAndPasturesIi" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typesOfCropsAndPasturesIi",
+      "@type" : "@id"
+    },
+    "ecoicopSubclasses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ecoicopSubclasses",
+      "@type" : "@id"
+    },
+    "contractingPartiesPerThousandInhabitants" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/contractingPartiesPerThousandInhabitants",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "USD" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/USD",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "residence" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/residence",
+      "@type" : "@id"
+    },
+    "tonOfChlorine" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfChlorine",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "divisions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/divisions",
+      "@type" : "@id"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor"
+    },
+    "typeOfBreastfeeding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfBreastfeeding",
+      "@type" : "@id"
+    },
+    "typeOfCropsIv" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfCropsIv",
+      "@type" : "@id"
+    },
+    "internationalAccountsAnnotation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/internationalAccountsAnnotation",
+      "@type" : "@id"
+    },
+    "continents" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/continents",
+      "@type" : "@id"
+    },
+    "massKilogramsBased" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/massKilogramsBased",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "countryNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/countryNationality",
+      "@type" : "@id"
+    },
+    "activityStatusOfHouseholdReferencePerson" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/activityStatusOfHouseholdReferencePerson",
+      "@type" : "@id"
+    },
+    "generalOtes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/generalOtes",
+      "@type" : "@id"
+    },
+    "causeOfLitigation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/causeOfLitigation",
+      "@type" : "@id"
+    },
+    "hoursDay" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hoursDay",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfMarriageByGender" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfMarriageByGender",
+      "@type" : "@id"
+    },
+    "cities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cities",
+      "@type" : "@id"
+    },
+    "numberOfMeasuresAdopted" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfMeasuresAdopted",
+      "@type" : "@id"
+    },
+    "eurosPerCubicMetre" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/eurosPerCubicMetre",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "maritalDissolutions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/maritalDissolutions",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "grossValueAddedByActivities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/grossValueAddedByActivities",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "wifesNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/wifesNationality",
+      "@type" : "@id"
+    },
+    "typeOfRailwayAccidentPrecursor" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfRailwayAccidentPrecursor",
+      "@type" : "@id"
+    },
+    "typeOfEstablishment" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfEstablishment",
+      "@type" : "@id"
+    },
+    "movableProperty" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/movableProperty",
+      "@type" : "@id"
+    },
+    "urbanAuditIndicators" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/urbanAuditIndicators",
+      "@type" : "@id"
+    },
+    "typeOfTransportByContent" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTransportByContent",
+      "@type" : "@id"
+    },
+    "residenceTimeInSpain" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/residenceTimeInSpain",
+      "@type" : "@id"
+    },
+    "workingTime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/workingTime",
+      "@type" : "@id"
+    },
+    "typeOfTrip" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfTrip",
+      "@type" : "@id"
+    },
+    "mothersLaborForceStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersLaborForceStatus",
+      "@type" : "@id"
+    },
+    "legalPersonalityOfOwner" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/legalPersonalityOfOwner",
+      "@type" : "@id"
+    },
+    "householdsAndPersons" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/householdsAndPersons",
+      "@type" : "@id"
+    },
+    "nationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/nationality",
+      "@type" : "@id"
+    },
+    "conceptChanges" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/conceptChanges",
+      "@type" : "@id"
+    },
+    "jobWhereMoreHoursDesired" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/jobWhereMoreHoursDesired",
+      "@type" : "@id"
+    },
+    "unitsOfMeasurement" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unitsOfMeasurement",
+      "@type" : "@id"
+    },
+    "reasonsForNotAccessingHealthcare" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonsForNotAccessingHealthcare",
+      "@type" : "@id"
+    },
+    "currentStudiesNonformal" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/currentStudiesNonformal",
+      "@type" : "@id"
+    },
+    "numberOfCrimes" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfCrimes",
+      "@type" : "@id"
+    },
+    "excursions" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/excursions",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "employedStratum" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employedStratum",
+      "@type" : "@id"
+    },
+    "supervisionOfOtherWorkers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/supervisionOfOtherWorkers",
+      "@type" : "@id"
+    },
+    "ecoicopClasses" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ecoicopClasses",
+      "@type" : "@id"
+    },
+    "periodDetail" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/periodDetail",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "ofVnRepresentingOalsOverTotalVn" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ofVnRepresentingOalsOverTotalVn",
+      "@type" : "@id"
+    },
+    "occupationGroupings" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/occupationGroupings",
+      "@type" : "@id"
+    },
+    "totalEducationClassifications" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/totalEducationClassifications",
+      "@type" : "@id"
+    },
+    "levelsAndRates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/levelsAndRates",
+      "@type" : "@id"
+    },
+    "workstation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/workstation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "previousMaritalStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/previousMaritalStatus",
+      "@type" : "@id"
+    },
+    "typeOfRepresentation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfRepresentation",
+      "@type" : "@id"
+    },
+    "typeOfCurrentStudies" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfCurrentStudies",
+      "@type" : "@id"
+    },
+    "bothPerOne" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/bothPerOne",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "personsWithwithoutDisability" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/personsWithwithoutDisability",
+      "@type" : "@id"
+    },
+    "exposureTime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/exposureTime",
+      "@type" : "@id"
+    },
+    "percentageOfDailySmokers" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfDailySmokers",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfViolence" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfViolence",
+      "@type" : "@id"
+    },
+    "percentageOfFatalities" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/percentageOfFatalities",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "naturalPersonLandLegalEntity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/naturalPersonLandLegalEntity",
+      "@type" : "@id"
+    },
+    "mothersNationality" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mothersNationality",
+      "@type" : "@id"
+    },
+    "tonsKm1000" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonsKm1000",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "eurosPerMeasureOfConsumption" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/eurosPerMeasureOfConsumption",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "tonnesPerMillionEuros" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonnesPerMillionEuros",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "grossFixedCapitalFormationByActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/grossFixedCapitalFormationByActivity",
+      "@type" : "@id"
+    },
+    "spouse1LaborForceStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse1LaborForceStatus",
+      "@type" : "@id"
+    },
+    "professionalSituationOfMainJob" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/professionalSituationOfMainJob",
+      "@type" : "@id"
+    },
+    "groups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/groups",
+      "@type" : "@id"
+    },
+    "nstStandardGoodsClassificationForTransportStatistics2007" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/nstStandardGoodsClassificationForTransportStatistics2007",
+      "@type" : "@id"
+    },
+    "marriages" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/marriages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "typeOfSurname" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfSurname",
+      "@type" : "@id"
+    },
+    "mainNationalAccountsResults" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mainNationalAccountsResults",
+      "@type" : "@id"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "lengthMetreBased" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/lengthMetreBased",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "unemployedPerSurveyAndNetChangeIndex" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/unemployedPerSurveyAndNetChangeIndex",
+      "@type" : "@id"
+    },
+    "spouse2Occupation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/spouse2Occupation",
+      "@type" : "@id"
+    },
+    "consolidation" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/consolidation",
+      "@type" : "@id"
+    },
+    "tonOfSodiumHydroxide" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/tonOfSodiumHydroxide",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "housingRegime" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/housingRegime",
+      "@type" : "@id"
+    },
+    "expenditureCodesWithPhysicalQuantityEcoicopepf" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/expenditureCodesWithPhysicalQuantityEcoicopepf",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "estate" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/estate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "squareKilometres" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/squareKilometres",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "typeOfDissolution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfDissolution",
+      "@type" : "@id"
+    },
+    "cabpsGroupings" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cabpsGroupings",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "typesofNPersonAndLegalEntity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typesofNPersonAndLegalEntity",
+      "@type" : "@id"
+    },
+    "householdType" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/householdType",
+      "@type" : "@id"
+    },
+    "specialGroups" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/specialGroups",
+      "@type" : "@id"
+    },
+    "numberOfCells" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/numberOfCells",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ocupationDegreeRoom" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ocupationDegreeRoom",
+      "@type" : "@id"
+    },
+    "ageAtCompletionOfTraining" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ageAtCompletionOfTraining",
+      "@type" : "@id"
+    },
+    "economicSector" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicSector",
+      "@type" : "@id"
+    },
+    "cnaeGroupingA10" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/cnaeGroupingA10",
+      "@type" : "@id"
+    },
+    "oalRelatedToHolding" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/oalRelatedToHolding",
+      "@type" : "@id"
+    },
+    "mostFrequentLaborForceStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/mostFrequentLaborForceStatus",
+      "@type" : "@id"
+    },
+    "eurosPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/eurosPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "specialValues" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/specialValues",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "firstMarriagesPerInhabitant" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/firstMarriagesPerInhabitant",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "totalExpensesAvgPercentageandIndexAboveAVGExpenditure" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/totalExpensesAvgPercentageandIndexAboveAVGExpenditure",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "economicActivity" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/economicActivity",
+      "@type" : "@id"
+    },
+    "rooms" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/rooms",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "geographicalZonesOfTheRestOfTheWorld" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/geographicalZonesOfTheRestOfTheWorld",
+      "@type" : "@id"
+    },
+    "paymentPlace" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/paymentPlace",
+      "@type" : "@id"
+    },
+    "ugtBrackets" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ugtBrackets",
+      "@type" : "@id"
+    },
+    "lendingInstitution" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/lendingInstitution",
+      "@type" : "@id"
+    },
+    "totalCnaeVariables" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/totalCnaeVariables",
+      "@type" : "@id"
+    },
+    "typeOfWork" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/typeOfWork",
+      "@type" : "@id"
+    },
+    "microgramsPerCubicMetre" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/microgramsPerCubicMetre",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "procedureDuration" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/procedureDuration",
+      "@type" : "@id"
+    },
+    "ownerfamilynonfamily" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/ownerfamilynonfamily",
+      "@type" : "@id"
+    },
+    "Observation" : {
+      "@id" : "http://purl.org/linked-data/cube#Observation"
+    },
+    "dataTypeRates" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/dataTypeRates",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "epaGroupings" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/epaGroupings",
+      "@type" : "@id"
+    },
+    "kilogramsPerInhabitantPerYear" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/kilogramsPerInhabitantPerYear",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "reasonForWorkingDifferentHoursThanUsual" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/reasonForWorkingDifferentHoursThanUsual",
+      "@type" : "@id"
+    },
+    "wifesPlaceOfBirth" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/wifesPlaceOfBirth",
+      "@type" : "@id"
+    },
+    "secondaryRawMaterials" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/secondaryRawMaterials",
+      "@type" : "@id"
+    },
+    "classification" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/classification",
+      "@type" : "@id"
+    },
+    "hiredStaff" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/hiredStaff",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "operations" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/operations",
+      "@type" : "@id"
+    },
+    "incomeLevel" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/incomeLevel",
+      "@type" : "@id"
+    },
+    "employedPercentage" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/employedPercentage",
+      "@type" : "@id"
+    },
+    "derivedLaborForceStatus" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/derivedLaborForceStatus",
+      "@type" : "@id"
+    },
+    "frequency" : {
+      "@id" : "http://lod.ine.es/def/vocabulary/frequency",
+      "@type" : "@id"
+    }
+  }
+}
