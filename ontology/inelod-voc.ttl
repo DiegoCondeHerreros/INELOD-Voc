@@ -1,4 +1,4 @@
-@prefix ine: <https://lod.ine.es/def/vocabulary/>. 
+@prefix ine: <http://lod.ine.es/def/vocabulary/>. 
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -14,7 +14,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
-
+@prefix sdmx-code:    <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
 # Ontology declaration and metadata. 
 
 ine: a owl:Ontology ;
@@ -24,8 +25,8 @@ ine: a owl:Ontology ;
     dcterms:created "2025-05-01"^^xsd:date ;
     dcterms:modified "2025-09-23"^^xsd:date;
     vann:preferredNamespacePrefix "ine" ;
-    vann:preferredNamespaceUri <https://lod.ine.es/de/vocabulary/> ; 
-    owl:versionIRI <https://lod.ine.es/def/vocabulary/1.0.0> ; 
+    vann:preferredNamespaceUri <http://lod.ine.es/def/vocabulary/> ; 
+    owl:versionIRI <http://lod.ine.es/def/vocabulary/1.0.0> ; 
     owl:versionInfo "1.0.0"@en;
     dcterms:description "An ontology for describing the variables used as dimensions and measures in the RDF data cubes from the Instituto Nacional de Estadística"@en, 
                         "Una ontologia para describir las variables empleadas como dimensiones y medidas en los cubos de datos en RDF del Instituto Nacional de Estadística"@es ;
@@ -34,7 +35,6 @@ ine: a owl:Ontology ;
 # Reused Ontology terms from other vocabularies.
 
 
-sdmx-dimension:refPeriod a qb:DimensionProperty, rdf:Property.
 sdmx-dimension:refArea a qb:DimensionProperty, rdf:Property;
     rdfs:range rdfs:Resource;
     rdfs:label "Reference Area"@en .
@@ -46,9 +46,7 @@ foaf:surname a rdf:Property.
 foaf:name a rdf:Property.
 qb:Observation a rdfs:Class, owl:Class.
 qb:DimensionProperty a rdfs:Class, owl:Class.
-qb:DimensionProperty a rdfs:Class, owl:Class.
 skos:Concept a owl:Class.
-qb:Observation a rdfs:Class .
 qb:MeasureProperty a rdfs:Class .
 sdmx-measure:obsValue a qb:MeasureProperty, rdf:Property ;
     rdfs:label "Observation"@en ;
@@ -117,7 +115,8 @@ ine:municipalities
     qb:concept ine:Municipality;
     rdfs:comment "El municipio es la entidad local básica de la organización territorial del Estado. Tiene personalidad jurídica y plena capacidad para el cumplimiento de sus fines."@es ;
     rdfs:label "Municipalities"@en ,
-    "Municipios"@es ,
+    "Municipios"@es ,"Capitales de provincia y principales ciudades"@es,
+    "Capitales y grandes ciudades"@es,
     "MUN"@es .
 
 
@@ -388,14 +387,6 @@ ine:municipalitySize
     rdfs:range rdfs:Literal ;
     rdfs:label "Municipality size"@en ,
     "Tamaño del municipio"@es .
-
-
-ine:municipality a rdf:Property, qb:DimensionProperty;
-    rdfs:label "Municipios"@es;
-    rdfs:label "Capitales de provincia y principales ciudades"@es;
-    rdfs:label "Capitales y grandes ciudades"@es;
-    rdfs:subClassOf sdmx-dimension:refArea;
-    rdfs:range rdfs:Resource.
 
 
 ine:populationDensity
@@ -2347,7 +2338,7 @@ ine:accountingBalances
     rdf:type rdf:Property , qb:DimensionProperty ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Literal ;
-    rdfs:label "ACCOUNTING BALANCES"@en , "SALDOS CONTABLES"@e, "Saldos contables"@es .
+    rdfs:label "ACCOUNTING BALANCES"@en , "SALDOS CONTABLES"@es, "Saldos contables"@es .
 
 
 ine:accumulationRubrics
@@ -2872,7 +2863,7 @@ ine:institutionalSectors
     rdf:type rdf:Property , qb:DimensionProperty ;
     rdfs:subPropertyOf ine:sectors ;
     rdfs:domain qb:Observation ;
-    rdfs:comment"Entidades económicas capaces de ser propietarias de bienes y activos, contraer pasivos y participar en actividades y operaciones económicas con otras unidades, en nombre propio"@es;
+    rdfs:comment "Entidades económicas capaces de ser propietarias de bienes y activos, contraer pasivos y participar en actividades y operaciones económicas con otras unidades, en nombre propio"@es;
     rdfs:range rdfs:Literal ;
     rdfs:label "Institutional sectors"@en ,
     "Sectores institucionales"@es .
@@ -7694,7 +7685,7 @@ ine:tonnesPerMillionEuros a rdf:Property, qb:MeasureProperty ;
 #  rdfs:comment "TODO" ;
   rdfs:label "Toneladas por millón de euros"@es , "Tonnes Per Million Euro amount"@en .
 
-ine:researchersPerMillionInhabitantsa a rdf:Property, qb:MeasureProperty ;
+ine:researchersPerMillionInhabitants a rdf:Property, qb:MeasureProperty ;
   rdfs:subPropertyOf sdmx-measure:obsValue ;
   rdfs:domain qb:Observation ;
   rdfs:range xsd:decimal ;
