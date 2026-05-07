@@ -53,8 +53,15 @@ sdmx-measure:obsValue a qb:MeasureProperty, rdf:Property ;
     rdfs:range rdfs:Resource .
 sdmx-measure:currency a qb:MeasureProperty, rdf:Property  ;
     rdfs:label "Currency"@en ;
-    rdfs:range sdmx-code:Currency .
+    rdfs:range sdmx-code:currency .
 unit:PERCENT a owl:Class . 
+sdmx-code:currency a skos:ConceptScheme, sdmx:CodeList;
+    skos:prefLabel "code list for Currency (CURRENCY) - codelist scheme"@en;
+    rdfs:label "code list for Currency (CURRENCY) - codelist scheme"@en;
+    skos:notation "CL_CURRENCY";
+    skos:note """This code list provides code values for currencies."""@en;
+    skos:definition <http://sdmx.org/wp-content/uploads/2009/01/02_sdmx_cog_annex_2_cl_2009.pdf> ;
+    rdfs:seeAlso sdmx-code:Currency .
 
 # The type of reason class that will be reused as a range for some dimensions.
 ine:ReasonType a rdfs:Class, owl:Class ;
@@ -257,7 +264,7 @@ ine:operationsAndBalancesNational
 
 
 
-ine:economicalActivity
+ine:economicActivity
     rdf:type rdf:Property , qb:DimensionProperty ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Literal ;
@@ -1507,7 +1514,7 @@ ine:dataForDwellingsAndPersons
 
 ine:unitOfMeasurement
     rdf:type rdf:Property , qb:DimensionProperty ;
-    rdfs:subPropertyOf ine:unit ;
+    ine:inMeasureSet ine:unit ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Literal ;
     rdfs:label "Unit of measurement"@en ,
@@ -2023,7 +2030,7 @@ ine:dataTypeLevelsAndRates
     rdf:type rdf:Property , qb:DimensionProperty ;
     rdfs:domain qb:Observation ;
     rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf ine:dataType ;
+    ine:inMeasureSet ine:dataType ;
     rdfs:label "Data type: Levels and Rates"@en ,
     "Tipo de dato: Niveles y Tasas"@es ,
     "Tipo de dato"@es .
@@ -2038,7 +2045,7 @@ ine:levelsAndRates a rdf:Property, qb:DimensionProperty;
 
 ine:dataTypeRates
     rdf:type rdf:Property , qb:DimensionProperty ;
-    rdfs:subPropertyOf ine:dataType ;
+    ine:inMeasureSet ine:dataType ;
     rdfs:domain qb:Observation ;
     rdfs:range xsd:decimal ;
     rdfs:label "Data type: Rates"@en ,
@@ -2858,7 +2865,6 @@ ine:travelDuration
     rdfs:label "Travel duration"@en ,
     "Duración del viaje"@es .
 
-
 ine:institutionalSectors
     rdf:type rdf:Property , qb:DimensionProperty ;
     rdfs:subPropertyOf ine:sectors ;
@@ -3614,7 +3620,7 @@ ine:mainCaregiverGender
     # rdfs:comment "TODO" ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf ine:gender ;
+    rdfs:subPropertyOf ine:sex ;
     rdfs:label "Main caregiver gender"@en ,
     "Sexo del cuidador principal"@es .
 
@@ -3889,7 +3895,7 @@ ine:contractingPartiesGender
     # rdfs:comment "TODO" ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf ine:gender ;
+    rdfs:subPropertyOf ine:sex ;
     rdfs:label "Contracting parties' gender"@en ,
     "Sexo de los contrayentes"@es .
 
@@ -4007,7 +4013,7 @@ ine:typeOfMarriageByGender
     # rdfs:comment "TODO" ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf ine:gender ;
+    rdfs:subPropertyOf ine:sex ;
     rdfs:label "Type of marriage by gender"@en ,
     "Tipo de matrimonio según sexo"@es .
 
@@ -6204,7 +6210,7 @@ ine:hvdCategories
     "Categorías HVD"@es .
 
 ###################################################################################################################################
-LIST OF MEASURES IN THE INE DATASETS
+# LIST OF MEASURES IN THE INE DATASETS
 ###################################################################################################################################
 ############################################################################
 # MEASURE SETS
@@ -6748,7 +6754,7 @@ ine:number a rdf:Property, qb:MeasureProperty ;
 
 
 ine:premises a rdf:Property, qb:MeasureProperty ;
-  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dim:refArea ;
+  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dimension:refArea ;
   rdfs:domain qb:Observation ;
   rdfs:range xsd:decimal ;
 #  rdfs:comment "TODO" ;
@@ -6947,7 +6953,7 @@ ine:thousandPairs a rdf:Property, qb:MeasureProperty ;
   rdfs:label "Mil pares"@es , "Thousand Pairs"@en .
 
 ine:thousandSquareMetres a rdf:Property, qb:MeasureProperty ;
-  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dim:refArea ;
+  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dimension:refArea ;
   rdfs:domain qb:Observation ;
   rdfs:range xsd:decimal ;
 #  rdfs:comment "TODO" ;
@@ -7728,7 +7734,7 @@ ine:admissions a rdf:Property, qb:MeasureProperty ;
   rdfs:label "Admisiones"@es , "Admissions"@en .
 
 ine:km2-Ha a rdf:Property, qb:MeasureProperty ;
-  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dim:refArea ;
+  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dimension:refArea ;
   rdfs:domain qb:Observation ;
   rdfs:range xsd:decimal ;
 #  rdfs:comment "TODO" ;
@@ -7946,7 +7952,7 @@ ine:microgramsPerCubicMetre a rdf:Property, qb:MeasureProperty ;
   rdfs:label "Microgramos/metro cúbico"@es , "Micrograms Per Cubic Metre"@en .
 
 ine:thousandKilometresCuadrados a rdf:Property, qb:MeasureProperty ;
-  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dim:refArea ;
+  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dimension:refArea ;
   rdfs:domain qb:Observation ;
   rdfs:range xsd:decimal ;
 #  rdfs:comment "TODO" ;
@@ -8107,7 +8113,7 @@ ine:eurosPerMeasureOfConsumption a rdf:Property, qb:MeasureProperty ;
   rdfs:label "Euros por unidad de consumo"@es , "Euros Per Measure of Consumption"@en .
 
 ine:eurosPerSquareMetre a rdf:Property, qb:MeasureProperty ;
-  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dim:refArea ;
+  rdfs:subPropertyOf sdmx-measure:obsValue , sdmx-dimension:refArea ;
   rdfs:domain qb:Observation ;
   rdfs:range xsd:decimal ;
 #  rdfs:comment "TODO" ;
