@@ -1,3 +1,152 @@
 <h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<span class="markdown"></span>
+<p>
+    The <strong>Spanish National Statistics Institute</strong>
+    (Instituto Nacional de Estadística, INE) is the autonomous body,
+    attached to the Ministry of Economy, Trade and Enterprise, in charge of
+    the general coordination of the statistical services of the General
+    State Administration in Spain and of the production of statistics for
+    state purposes, as established by
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1989-10767">Law
+    12/1989 of 9 May, on the Public Statistical Function</a>. Its output
+    includes operations as diverse as the continuous population register
+    (<em>padrón continuo</em>), the population and housing census, the
+    national accounts, the price indices, the labour force survey or the
+    death statistics, to mention just a few.
+  </p>
+
+  <p>
+    These operations generate large volumes of statistical data structured
+    as multidimensional tables or <em>data cubes</em>, in which each
+    observation is located by a set of <strong>dimensions</strong>
+    (what is observed: time, territory, sex, age group, economic sector,
+    etc.) and quantified by one or more <strong>measures</strong>
+    (the observed numerical value: number of births, euros, index, rate,
+    etc.). This conceptual organisation comes from the multidimensional
+    model consolidated in OLAP systems and formalised, for statistical
+    data, in the international standard <strong>SDMX</strong>
+    (<em>Statistical Data and Metadata Exchange</em>), published as
+    <a href="https://www.iso.org/standard/87545.html">ISO 17369</a> and
+    maintained by the main international statistical institutions (BIS,
+    ECB, Eurostat, IMF, OECD, UN and World Bank; see
+    <a href="https://sdmx.org/">sdmx.org</a>).
+  </p>
+
+  <p>
+    With the aim of publishing these cubes as Linked Data following the
+    principles set out by
+    <a href="https://www.w3.org/DesignIssues/LinkedData.html">Berners-Lee
+    (2006)</a>, the W3C approved in January 2014 the
+    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube
+    Vocabulary (QB)</a> as an official Recommendation, aligned with the
+    SDMX information model and specifically designed to represent
+    multidimensional statistical data in RDF. QB defines an abstract core
+    (<code>qb:DataSet</code>, <code>qb:DataStructureDefinition</code>,
+    <code>qb:ComponentSpecification</code>, <code>qb:Observation</code>,
+    <code>qb:DimensionProperty</code>, <code>qb:MeasureProperty</code>,
+    <code>qb:AttributeProperty</code>) but, deliberately, leaves the
+    concrete definition of the dimension and measure properties applicable
+    to each domain in the hands of every data producer.
+  </p>
+
+  <p>
+    This document describes <strong>INELOD&nbsp;VOC</strong>, the
+    vocabulary developed within the INELOD project to cover that specific
+    layer: <strong>an ontology that declares, in a harmonised and reusable
+    way, the concrete dimension and measure properties used in the RDF
+    data cubes derived from INE's statistical operations</strong>. The
+    official description registered in the ontology itself by means of
+    <code>dct:description</code> reads: <em>«An ontology to describe the
+    variables used as dimensions and measures in the RDF data cubes of the
+    Instituto Nacional de Estadística»</em>.
+  </p>
+
+    <h3 id="motivation-scope" class="list">Purpose and scope of the vocabulary</h3>
+
+  <p>
+    The purpose of INELOD&nbsp;VOC is to <strong>provide a controlled,
+    unique and unambiguous set of identifiers (URIs) and RDF
+    properties</strong> for all variables acting as dimensions or
+    measures in the cubes published by INE as Linked Data. Three concrete
+    benefits follow from this:
+  </p>
+  <ul>
+    <li>
+      <strong>Semantic interoperability</strong> across INE's own
+      statistical operations: a given variable (e.g., sex, age or
+      nationality) is represented by the same RDF property regardless of
+      the survey or register of origin.
+    </li>
+    <li>
+      <strong>Traceability and international reuse</strong>: specific
+      properties are modelled, whenever possible, as
+      <code>rdfs:subPropertyOf</code> of the dimensions and measures
+      standardised in
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension">sdmx-dimension</a>
+      and
+      <a href="http://purl.org/linked-data/sdmx/2009/measure">sdmx-measure</a>,
+      enabling federated queries with other producers that also reuse
+      SDMX in RDF (W3C Government Linked Data WG; Cyganiak et al.).
+    </li>
+    <li>
+      <strong>Compliance with the European High-Value Datasets framework</strong>
+      defined by
+      <a href="https://eur-lex.europa.eu/eli/reg_impl/2023/138/oj">Commission
+      Implementing Regulation (EU) 2023/138</a>, which includes
+      statistical and demographic categories for which the RDF Data Cube
+      model is the natural semantic representation.
+    </li>
+  </ul>
+
+  <p>
+    The thematic scope of INELOD&nbsp;VOC is deliberately transversal to
+    all areas of INE's statistical production. Among the families of
+    properties incorporated in the vocabulary are those relating to
+    demography (births, deaths, marriages, divorces, age groups,
+    generations, countries and nationalities), economy and national
+    accounts (GDP, aggregates, institutional sectors, balance of payments,
+    accounting transactions), labour market (employment status, NACE
+    branches, EPA), prices (CPI and sub-indices), education (CNED levels,
+    fields of study), health (causes of death, healthcare, birth weight),
+    agriculture (holdings, crops, livestock, holder's training), justice
+    (civil and criminal cases, judgments), tourism (excursions,
+    overnight stays, average length of stay), environment (emissions,
+    waste, water) and units of measurement (euros, hectares, kilograms,
+    hectolitres, kilotonnes, etc.).
+  </p>
+
+    <h3 id="namespaces" class="list">Namespaces and prefixes</h3>
+
+  <p>
+    Throughout this document the following prefixes and namespaces are
+    used:
+  </p>
+  <table class="namespaces">
+    <thead>
+      <tr><th>Prefix</th><th>Namespace (URI)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>ine</strong></td><td><code>http://lod.ine.es/def/vocabulary/</code></td></tr>
+      <tr><td>qb</td><td><code>http://purl.org/linked-data/cube#</code></td></tr>
+      <tr><td>sdmx-dimension</td><td><code>http://purl.org/linked-data/sdmx/2009/dimension#</code></td></tr>
+      <tr><td>sdmx-measure</td><td><code>http://purl.org/linked-data/sdmx/2009/measure#</code></td></tr>
+      <tr><td>skos</td><td><code>http://www.w3.org/2004/02/skos/core#</code></td></tr>
+      <tr><td>foaf</td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
+      <tr><td>dct</td><td><code>http://purl.org/dc/terms/</code></td></tr>
+      <tr><td>vann</td><td><code>http://purl.org/vocab/vann/</code></td></tr>
+      <tr><td>qudt</td><td><code>http://qudt.org/vocab/unit#</code></td></tr>
+      <tr><td>cc</td><td><code>http://creativecommons.org/ns#</code></td></tr>
+      <tr><td>owl</td><td><code>http://www.w3.org/2002/07/owl#</code></td></tr>
+      <tr><td>rdf</td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
+      <tr><td>rdfs</td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
+      <tr><td>xsd</td><td><code>http://www.w3.org/2001/XMLSchema#</code></td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    The preferred prefix of the vocabulary, declared by means of
+    <code>vann:preferredNamespacePrefix</code>, is <code>ine</code>, and
+    its preferred namespace, declared with
+    <code>vann:preferredNamespaceUri</code>, is
+    <code>http://lod.ine.es/def/vocabulary/</code>.
+  </p>

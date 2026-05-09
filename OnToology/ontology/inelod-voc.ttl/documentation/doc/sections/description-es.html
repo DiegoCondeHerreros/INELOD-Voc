@@ -1,3 +1,295 @@
 <h2 id="desc" class="list">INELOD VOC: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
 
-<span class="markdown">Una ontologia para describir las variables empleadas como dimensiones y medidas en los cubos de datos en RDF del Instituto Nacional de Estadística</span>
+<span class="markdown"></span>
+<p>
+    Esta sección describe en detalle el contenido de
+    <strong>INELOD&nbsp;VOC</strong> y muestra, mediante ejemplos sintéticos,
+    cómo se utiliza el vocabulario para construir un cubo de datos completo en
+    RDF. La descripción exhaustiva, término a término, de las clases y
+    propiedades se encuentra en la sección de
+    <a href="#crossref">referencia cruzada</a> generada con LODE.
+  </p>
+
+  <h3 id="estructura-conceptual" class="list">Estructura conceptual</h3>
+
+  <p>
+    Como se ha anticipado en la <a href="#overview">visión general</a>, la
+    ontología no propone una jerarquía taxonómica nueva: contiene un
+    catálogo plano de propiedades de objeto que cumplen uno de los roles del
+    modelo
+    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube
+    Vocabulary</a> (Cyganiak y Reynolds, eds., 2014). En concreto, cada
+    término del vocabulario se clasifica funcionalmente como:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Dimensión</strong>: propiedad cuyo dominio es
+      <code>qb:Observation</code>; identifica el eje por el que se desagrega
+      una observación. Subclasifica, cuando aplica, una de las cinco
+      dimensiones SDMX-RDF
+      (<a href="http://purl.org/linked-data/sdmx/2009/dimension#refArea"><code>refArea</code></a>,
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"><code>refPeriod</code></a>,
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension#age"><code>age</code></a>,
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension#currency"><code>currency</code></a>,
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension#educationLev"><code>educationLev</code></a>).
+    </li>
+    <li>
+      <strong>Medida</strong>: propiedad
+      <code>rdfs:subPropertyOf sdmx-measure:obsValue</code>; aporta el
+      valor cuantitativo asociado a la observación.
+    </li>
+    <li>
+      <strong>Recurso auxiliar</strong>: clase <code>ine:MeasureSet</code>
+      con la propiedad <code>ine:inMeasureSet</code>, que permite agrupar
+      lógicamente medidas afines (por ejemplo, todas las medidas
+      monetarias).
+    </li>
+  </ul>
+
+  <h3 id="patrones-uri" class="list">Patrones de URIs</h3>
+
+  <p>
+    El proyecto INELOD adopta los siguientes patrones de URI, alineados con
+    la guía
+    <a href="https://datos.gob.es/es/documentacion/normas-tecnicas-de-interoperabilidad">«Normas
+    Técnicas de Interoperabilidad. Reutilización de recursos de
+    información»</a> (NTI-RISP) del Esquema Nacional de Interoperabilidad y
+    con las recomendaciones de buenas prácticas de
+    <a href="https://www.w3.org/TR/dwbp/">Data on the Web Best
+    Practices</a> (W3C, 2017):
+  </p>
+
+  <table class="namespaces">
+    <thead>
+      <tr><th>Tipo de recurso</th><th>Patrón de URI</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Término del vocabulario (clase, propiedad)</td>
+        <td><code>http://lod.ine.es/def/vocabulary/{nombreLocal}</code></td>
+      </tr>
+      <tr>
+        <td>Conjunto de datos (<code>qb:DataSet</code>)</td>
+        <td><code>http://lod.ine.es/recurso/{operacion}/DS_{nombre}</code></td>
+      </tr>
+      <tr>
+        <td>Definición de la estructura (<code>qb:DataStructureDefinition</code>)</td>
+        <td><code>http://lod.ine.es/recurso/{operacion}/DSD_{nombre}</code></td>
+      </tr>
+      <tr>
+        <td>Observación (<code>qb:Observation</code>)</td>
+        <td><code>http://lod.ine.es/recurso/{operacion}/observacion/{id}</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="ejemplo-1" class="list">Ejemplo&nbsp;1: cubo de nacimientos por
+  comunidad autónoma y año</h3>
+
+  <p>
+    El primer ejemplo corresponde a un cubo simple basado en el
+    <em>Movimiento Natural de la Población</em> (MNP), una de las
+    estadísticas continuas del INE
+    (<a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176999">operación
+    30301</a>). El cubo registra, para cada par <em>comunidad
+    autónoma&nbsp;×&nbsp;año</em>, el número absoluto de nacimientos y la
+    tasa bruta de natalidad por mil habitantes. Los datos numéricos del
+    ejemplo son ilustrativos, no oficiales.
+  </p>
+
+  <h4>Definición de la estructura del cubo (DSD)</h4>
+
+  <pre><code>@prefix ine:           &lt;http://lod.ine.es/def/vocabulary/&gt; .
+@prefix qb:            &lt;http://purl.org/linked-data/cube#&gt; .
+@prefix sdmx-dimension:&lt;http://purl.org/linked-data/sdmx/2009/dimension#&gt; .
+@prefix sdmx-attribute:&lt;http://purl.org/linked-data/sdmx/2009/attribute#&gt; .
+@prefix dct:           &lt;http://purl.org/dc/terms/&gt; .
+@prefix rdfs:          &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd:           &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# DSD: Nacimientos por comunidad autónoma y año de referencia
+&lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/DSD_NacimientosCcaaAnio&gt;
+    a qb:DataStructureDefinition ;
+    rdfs:label "DSD: Nacimientos por CCAA y año"@es ,
+               "DSD: Births by autonomous community and year"@en ;
+    qb:component
+        [ qb:dimension ine:ccaa                        ; qb:order 1 ] ,
+        [ qb:dimension sdmx-dimension:refPeriod        ; qb:order 2 ] ,
+        [ qb:measure   ine:births                                  ] ,
+        [ qb:measure   ine:birthsPerThousandInhabitants            ] ,
+        [ qb:attribute sdmx-attribute:unitMeasure                  ] .</code></pre>
+
+  <h4>Definición del conjunto de datos (DataSet)</h4>
+
+  <pre><code>&lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/DS_NacimientosCcaaAnio&gt;
+    a qb:DataSet ;
+    rdfs:label "Nacimientos por CCAA y año"@es ;
+    dct:title  "Nacimientos por CCAA y año"@es ;
+    dct:publisher &lt;http://lod.ine.es/recurso/organizacion/INE&gt; ;
+    dct:issued "2025-09-23"^^xsd:date ;
+    qb:structure &lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/DSD_NacimientosCcaaAnio&gt; .</code></pre>
+
+  <h4>Observaciones</h4>
+
+  <p>
+    Cada celda del cubo es una instancia de <code>qb:Observation</code> que
+    enlaza con su <code>qb:DataSet</code> y aporta un valor por cada
+    dimensión y medida declarada en su DSD. Se muestran dos observaciones
+    para ilustrar el patrón de instanciación:
+  </p>
+
+  <pre><code># Observación: Andalucía, 2023
+&lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/observacion/nac-01-2023&gt;
+    a qb:Observation ;
+    qb:dataSet &lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/DS_NacimientosCcaaAnio&gt; ;
+    ine:ccaa &lt;http://datos.ine.es/recurso/territorio/ccaa/01&gt; ;            # Andalucía
+    sdmx-dimension:refPeriod &lt;http://reference.data.gov.uk/id/year/2023&gt; ;
+    ine:births                          "55012"^^xsd:integer ;
+    ine:birthsPerThousandInhabitants    "6.43"^^xsd:decimal .
+
+# Observación: Cataluña, 2023
+&lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/observacion/nac-09-2023&gt;
+    a qb:Observation ;
+    qb:dataSet &lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/DS_NacimientosCcaaAnio&gt; ;
+    ine:ccaa &lt;http://datos.ine.es/recurso/territorio/ccaa/09&gt; ;            # Cataluña
+    sdmx-dimension:refPeriod &lt;http://reference.data.gov.uk/id/year/2023&gt; ;
+    ine:births                          "53450"^^xsd:integer ;
+    ine:birthsPerThousandInhabitants    "6.78"^^xsd:decimal .</code></pre>
+
+  <p>
+    Obsérvese que la dimensión territorial <code>ine:ccaa</code> tiene rango
+    <code>skos:Concept</code>, por lo que su valor es la URI de un concepto
+    SKOS que representa a la comunidad autónoma. Análogamente,
+    <code>sdmx-dimension:refPeriod</code> apunta a un recurso temporal
+    canónico publicado por el Gobierno del Reino Unido y reutilizado
+    ampliamente en datos enlazados europeos.
+  </p>
+
+  <h3 id="ejemplo-2" class="list">Ejemplo&nbsp;2: cubo de defunciones por
+  causa, sexo y edad</h3>
+
+  <p>
+    El segundo ejemplo modela un cubo más rico, basado en la estadística
+    <em>Defunciones según la causa de muerte</em>
+    (<a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176780">operación
+    30417</a> del INE). Se trata de una de las estadísticas con mayor uso en
+    epidemiología y salud pública, y mantiene el cifrado de causas según la
+    Clasificación Estadística Internacional de Enfermedades y Problemas
+    Relacionados con la Salud, décima revisión (CIE-10) de la
+    <a href="https://icd.who.int/browse10/2019/en">OMS</a>.
+  </p>
+
+  <h4>Definición de la estructura del cubo (DSD)</h4>
+
+  <pre><code>&lt;http://lod.ine.es/recurso/defunciones-causa-muerte/DSD_DefuncionesCausaSexoEdadCcaa&gt;
+    a qb:DataStructureDefinition ;
+    rdfs:label "DSD: Defunciones por causa, sexo, grupo de edad y CCAA"@es ;
+    qb:component
+        [ qb:dimension ine:ccaa                ; qb:order 1 ] ,
+        [ qb:dimension sdmx-dimension:refPeriod; qb:order 2 ] ,
+        [ qb:dimension sdmx-dimension:sex      ; qb:order 3 ] ,
+        [ qb:dimension ine:ageGroups           ; qb:order 4 ] ,
+        [ qb:dimension ine:causeOfDeath        ; qb:order 5 ] ,
+        [ qb:measure   ine:deaths                          ] ,
+        [ qb:measure   ine:deathsPer100KInhabitants        ] .</code></pre>
+
+  <h4>Observación (mujeres de 65-69 años, infarto agudo de miocardio,
+  Andalucía, 2023)</h4>
+
+  <pre><code>&lt;http://lod.ine.es/recurso/defunciones-causa-muerte/observacion/def-01-2023-F-65-69-I21&gt;
+    a qb:Observation ;
+    qb:dataSet &lt;http://lod.ine.es/recurso/defunciones-causa-muerte/DS_DefuncionesCausaSexoEdadCcaa&gt; ;
+    ine:ccaa &lt;http://datos.ine.es/recurso/territorio/ccaa/01&gt; ;
+    sdmx-dimension:refPeriod &lt;http://reference.data.gov.uk/id/year/2023&gt; ;
+    sdmx-dimension:sex &lt;http://purl.org/linked-data/sdmx/2009/code#sex-F&gt; ;
+    ine:ageGroups &lt;http://datos.ine.es/recurso/clasificacion/grupo-edad/65-69&gt; ;
+    ine:causeOfDeath &lt;http://id.who.int/icd/release/10/2019/I21&gt; ;
+    ine:deaths                       "234"^^xsd:integer ;
+    ine:deathsPer100KInhabitants     "112.8"^^xsd:decimal .</code></pre>
+
+  <p>
+    Esta observación muestra la potencia del modelo: cada celda combina,
+    sin ambigüedad, cinco dimensiones (territorio, periodo, sexo, edad y
+    causa) y dos medidas, todas ellas referenciadas mediante URIs estables
+    y dereferenciables. Un consumidor del dato puede seguir cada URI para
+    obtener la etiqueta SKOS correspondiente, la jerarquía CIE-10 completa
+    o el conjunto de comunidades autónomas españolas, todo ello sin tener
+    que negociar formatos adicionales.
+  </p>
+
+  <h3 id="ejemplo-sparql" class="list">Ejemplo de consulta SPARQL</h3>
+
+  <p>
+    A continuación se muestra una consulta sobre el cubo del Ejemplo&nbsp;1
+    que recupera la tasa bruta de natalidad de todas las comunidades
+    autónomas en 2023, ordenadas de mayor a menor:
+  </p>
+
+  <pre><code>PREFIX qb:             &lt;http://purl.org/linked-data/cube#&gt;
+PREFIX ine:            &lt;http://lod.ine.es/def/vocabulary/&gt;
+PREFIX sdmx-dimension: &lt;http://purl.org/linked-data/sdmx/2009/dimension#&gt;
+PREFIX kos-year:       &lt;http://reference.data.gov.uk/id/year/&gt;
+
+SELECT ?ccaa ?tasaNatalidad
+WHERE {
+  ?obs a qb:Observation ;
+       qb:dataSet &lt;http://lod.ine.es/recurso/movimiento-natural-poblacion/DS_NacimientosCcaaAnio&gt; ;
+       ine:ccaa ?ccaa ;
+       sdmx-dimension:refPeriod kos-year:2023 ;
+       ine:birthsPerThousandInhabitants ?tasaNatalidad .
+}
+ORDER BY DESC(?tasaNatalidad)</code></pre>
+
+  <p>
+    Una consulta análoga, pero apoyada únicamente en propiedades SDMX
+    genéricas (<code>sdmx-measure:obsValue</code>, <code>sdmx-dimension:refArea</code>),
+    seguiría funcionando sobre los mismos datos gracias a las
+    declaraciones <code>rdfs:subPropertyOf</code> del vocabulario; este es
+    precisamente el beneficio de interoperabilidad descrito en la
+    <a href="#introduction">Introducción</a>.
+  </p>
+
+  <h3 id="extension" class="list">Extensión del vocabulario</h3>
+
+  <p>
+    Cuando una operación estadística del INE requiere una dimensión o
+    medida no contemplada todavía en INELOD&nbsp;VOC, la pauta es:
+  </p>
+  <ol>
+    <li>
+      Comprobar si la propiedad puede modelarse como
+      <code>rdfs:subPropertyOf</code> de un término ya existente en
+      <code>sdmx-dimension</code>, <code>sdmx-measure</code> o en el
+      propio <code>ine</code>.
+    </li>
+    <li>
+      Acuñar la nueva URI bajo el patrón
+      <code>http://lod.ine.es/def/vocabulary/{nombreLocal}</code>, en
+      <em>lowerCamelCase</em>, en inglés y semánticamente unívoca.
+    </li>
+    <li>
+      Anotar el término con <code>rdfs:label</code> y
+      <code>skos:prefLabel</code> en español e inglés, y con
+      <code>rdfs:comment</code> o <code>skos:definition</code> que
+      explique de forma operativa el contenido de la variable, citando la
+      operación estadística de origen.
+    </li>
+    <li>
+      Declarar el dominio (<code>qb:Observation</code> para dimensiones)
+      y el rango (<code>skos:Concept</code> si la dimensión está
+      gobernada por una lista controlada;
+      <code>rdfs:Resource</code>, <code>xsd:decimal</code> u otro tipo
+      según corresponda para medidas).
+    </li>
+  </ol>
+
+  <p>
+    Las propuestas de extensión se canalizan a través del
+    <a href="https://github.com/diegocondeherreros/INELOD-Voc/issues">repositorio
+    de issues</a> del proyecto, siguiendo la práctica habitual de los
+    vocabularios mantenidos por la comunidad de datos enlazados (véase, en
+    el ámbito municipal español, la
+    <a href="https://github.com/CiudadesAbiertas/vocab-demografia-padron-municipal/wiki/Gesti%C3%B3n-de-issues">Gestión
+    de Issues</a> del proyecto Ciudades Abiertas).
+  </p>

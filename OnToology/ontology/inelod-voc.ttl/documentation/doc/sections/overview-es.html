@@ -1,4 +1,110 @@
 <h2 id="overv" class="list">INELOD VOC: Resumen <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+  <p>
+    Esta sección ofrece una panorámica de la arquitectura conceptual de
+    INELOD&nbsp;VOC antes de entrar en el detalle de cada término en la
+    sección de <a href="#crossref">referencia cruzada</a>. La ontología no
+    propone un modelo nuevo de cubo estadístico: <strong>se apoya íntegramente
+    en el modelo abstracto de la
+    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube Vocabulary
+    (QB)</a> del W3C</strong> y se limita a especializar las propiedades
+    concretas que el INE necesita para sus operaciones.
+  </p>
+
+  <h3 id="patron" class="list">Patrón de modelado: dimensiones y medidas como
+  subpropiedades</h3>
+
+  <p>
+    En INELOD&nbsp;VOC cada propiedad pertenece, conceptualmente, a uno de
+    estos dos roles:
+  </p>
+  <ol>
+    <li>
+      <strong>Propiedades de dimensión</strong>: se declaran como
+      <code>owl:ObjectProperty</code> con dominio
+      <code>qb:Observation</code>, lo que las identifica como ejes de
+      desagregación de cualquier observación de un cubo. Cuando la dimensión
+      es una de las cinco dimensiones genéricas SDMX (<em>refArea</em>,
+      <em>refPeriod</em>, <em>age</em>, <em>currency</em>,
+      <em>educationLev</em>), la propiedad ine se declara además como
+      <code>rdfs:subPropertyOf</code> de la dimensión SDMX correspondiente,
+      garantizando interoperabilidad descendente con consultas SDMX-RDF.
+      <br/>Ejemplo: <code>ine:cities rdfs:subPropertyOf
+      sdmx-dimension:refArea</code>;
+      <code>ine:childsAge rdfs:subPropertyOf sdmx-dimension:age</code>.
+    </li>
+    <li>
+      <strong>Propiedades de medida</strong>: se declaran como
+      <code>owl:ObjectProperty</code> y, salvo excepciones, como
+      <code>rdfs:subPropertyOf sdmx-measure:obsValue</code>. Esto permite a
+      cualquier consumidor genérico de datos QB/SDMX recuperar el valor
+      observado sin conocer la propiedad específica.
+      <br/>Ejemplo: <code>ine:births</code>,
+      <code>ine:deathsPerThousandInhabitants</code>,
+      <code>ine:cubicMetres</code>.
+    </li>
+  </ol>
+
+  <p>
+    Adicionalmente, INELOD&nbsp;VOC incorpora la clase auxiliar
+    <code>ine:MeasureSet</code> y la propiedad
+    <code>ine:inMeasureSet</code>, cuyo rango es esa clase, para agrupar
+    explícitamente medidas relacionadas (por ejemplo, todas las medidas
+    monetarias o todas las medidas demográficas relativas a 1.000
+    habitantes). Esta agrupación complementa al mecanismo nativo de QB
+    (<code>qb:MeasureProperty</code> dentro de
+    <code>qb:DataStructureDefinition</code>) y resulta útil para construir
+    interfaces de exploración en los portales de datos.
+  </p>
+
+   <h3 id="vocabularios-reutilizados" class="list">Vocabularios reutilizados</h3>
+
+  <p>
+    Siguiendo la recomendación FAIR de maximizar la reutilización (Wilkinson
+    et&nbsp;al., 2016, <em>Scientific Data</em>), INELOD&nbsp;VOC reutiliza:
+  </p>
+  <ul>
+    <li>
+      <a href="https://www.w3.org/TR/vocab-data-cube/">QB (RDF Data Cube
+      Vocabulary)</a> como modelo abstracto de cubo estadístico.
+    </li>
+    <li>
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension">SDMX-Dimension</a>
+      y
+      <a href="http://purl.org/linked-data/sdmx/2009/measure">SDMX-Measure</a>
+      para alinearse con el estándar SDMX/ISO&nbsp;17369.
+    </li>
+    <li>
+      <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> como rango de
+      varias propiedades de dimensión cuyas categorías son listas
+      controladas (por ejemplo, comunidades autónomas, sectores económicos,
+      países).
+    </li>
+    <li>
+      <a href="http://xmlns.com/foaf/spec/">FOAF</a> para anotaciones
+      personales (nombre, apellido) reutilizadas como subpropiedades.
+    </li>
+    <li>
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI
+      Metadata Terms</a> para la metainformación de la ontología
+      (<code>dct:title</code>, <code>dct:creator</code>,
+      <code>dct:description</code>, <code>dct:created</code>,
+      <code>dct:modified</code>).
+    </li>
+    <li>
+      <a href="http://purl.org/vocab/vann/">VANN</a> para declarar el
+      prefijo y espacio de nombres preferidos.
+    </li>
+    <li>
+      <a href="http://qudt.org/">QUDT</a> para tipar el rango de
+      propiedades cuyo valor es un porcentaje
+      (<code>qudt:PERCENT</code>).
+    </li>
+    <li>
+      <a href="https://creativecommons.org/ns">Creative Commons (cc)</a>
+      para declarar la licencia, que es CC&nbsp;BY&nbsp;4.0.
+    </li>
+  </ul>
+
 <span class="markdown">La ontolog&iacute;a se compone de las siguientes clases y propiedades:</span>
 <h4>Clases</h4>
 <ul xmlns:widoco="https://w3id.org/widoco/vocab#"

@@ -1,2 +1,150 @@
 <h2 id="intro" class="list">Introducci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
-<span class="markdown">Este p&aacute;rrafo deber&iacute;a hablar sobre la ontolog&iacute;a, motivaci&oacute;n estado del arte y objetivos</span>
+<span class="markdown"></span>
+<p>
+    El <strong>Instituto Nacional de Estadística</strong> (INE) es el organismo
+    autónomo, adscrito al Ministerio de Economía, Comercio y Empresa, encargado
+    en España de la coordinación general de los servicios estadísticos de la
+    Administración General del Estado y de la elaboración de las estadísticas
+    para fines estatales, según se establece en la
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1989-10767">Ley 12/1989,
+    de 9 de mayo, de la Función Estadística Pública</a>. Su producción incluye
+    operaciones tan diversas como el padrón continuo, el censo de población y
+    viviendas, las cuentas nacionales, los índices de precios, la encuesta de
+    población activa o las estadísticas de defunciones, por citar solo algunas.
+  </p>
+
+  <p>
+    Estas operaciones generan grandes volúmenes de datos estadísticos
+    estructurados como tablas multidimensionales o <em>cubos de datos</em>, en
+    los que cada observación se localiza por un conjunto de
+    <strong>dimensiones</strong> (qué se observa: tiempo, territorio, sexo,
+    grupo de edad, sector económico, etc.) y se cuantifica mediante una o
+    varias <strong>medidas</strong> (valor numérico observado: número de
+    nacimientos, euros, índice, tasa, etc.). Esta organización conceptual
+    proviene del modelo multidimensional consolidado en los sistemas OLAP y
+    formalizado para datos estadísticos en el estándar internacional
+    <strong>SDMX</strong> (<em>Statistical Data and Metadata Exchange</em>),
+    publicado como
+    <a href="https://www.iso.org/standard/87545.html">norma ISO 17369</a> y
+    mantenido por las principales instituciones estadísticas internacionales
+    (BIS, BCE, Eurostat, FMI, OCDE, ONU y Banco Mundial; véase
+    <a href="https://sdmx.org/">sdmx.org</a>).
+  </p>
+
+  <p>
+    Con el objetivo de publicar estos cubos como datos enlazados (<em>Linked
+    Data</em>) siguiendo los principios formulados por
+    <a href="https://www.w3.org/DesignIssues/LinkedData.html">Berners-Lee
+    (2006)</a>, el W3C aprobó en enero de 2014 la
+    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube Vocabulary
+    (QB)</a> como recomendación oficial, alineada con el modelo de información
+    de SDMX y diseñada específicamente para representar datos estadísticos
+    multidimensionales en RDF. QB define un núcleo abstracto
+    (<code>qb:DataSet</code>, <code>qb:DataStructureDefinition</code>,
+    <code>qb:ComponentSpecification</code>, <code>qb:Observation</code>,
+    <code>qb:DimensionProperty</code>, <code>qb:MeasureProperty</code>,
+    <code>qb:AttributeProperty</code>) pero, deliberadamente, deja en manos de
+    cada productor de datos la definición concreta de las propiedades de
+    dimensión y medida que aplican a su dominio.
+  </p>
+
+  <p>
+    El presente documento describe <strong>INELOD&nbsp;VOC</strong>, el
+    vocabulario desarrollado en el marco del proyecto INELOD para cubrir esa
+    capa específica: <strong>una ontología que declara, de forma armonizada y
+    reutilizable, las propiedades concretas de dimensión y medida empleadas en
+    los cubos de datos en RDF derivados de las operaciones estadísticas del
+    INE</strong>. La descripción oficial registrada en la propia ontología
+    mediante <code>dct:description</code> es: <em>«Una ontología para describir
+    las variables empleadas como dimensiones y medidas en los cubos de datos en
+    RDF del Instituto Nacional de Estadística»</em>.
+  </p>
+
+    <h3 id="motivacion-alcance" class="list">Propósito y alcance del vocabulario</h3>
+
+  <p>
+    El propósito de INELOD&nbsp;VOC es <strong>proporcionar un conjunto
+    controlado, único y no ambiguo de identificadores (URIs) y de
+    propiedades RDF</strong> para todas las variables que actúan como dimensión
+    o medida en los cubos publicados por el INE como datos enlazados. De este
+    modo se persiguen tres beneficios concretos:
+  </p>
+  <ul>
+    <li>
+      <strong>Interoperabilidad semántica</strong> entre operaciones
+      estadísticas del propio INE: una misma variable (por ejemplo, sexo,
+      edad o nacionalidad) se representa con la misma propiedad RDF
+      independientemente de la encuesta o registro de origen.
+    </li>
+    <li>
+      <strong>Trazabilidad y reutilización internacional</strong>: las
+      propiedades específicas se modelan, siempre que es posible, como
+      <code>rdfs:subPropertyOf</code> de las dimensiones y medidas
+      estandarizadas en
+      <a href="http://purl.org/linked-data/sdmx/2009/dimension">sdmx-dimension</a>
+      y
+      <a href="http://purl.org/linked-data/sdmx/2009/measure">sdmx-measure</a>,
+      facilitando consultas federadas con otros productores que también
+      reutilicen SDMX en RDF (W3C Government Linked Data WG; Cyganiak et al.).
+    </li>
+    <li>
+      <strong>Cumplimiento del marco europeo de datos abiertos de alto valor</strong>
+      definido por el
+      <a href="https://eur-lex.europa.eu/eli/reg_impl/2023/138/oj">Reglamento de
+      Ejecución (UE) 2023/138</a>, que incluye categorías estadísticas y
+      demográficas para las que el modelo RDF Data Cube es la representación
+      semántica natural.
+    </li>
+  </ul>
+
+  <p>
+    El alcance temático de INELOD&nbsp;VOC es deliberadamente transversal a
+    todas las áreas de la producción estadística del INE. Entre las familias de
+    propiedades que el vocabulario incorpora se encuentran las relativas a
+    demografía (nacimientos, defunciones, matrimonios, divorcios, grupos de
+    edad, generaciones, países y nacionalidades), economía y cuentas nacionales
+    (PIB, agregados, sectores institucionales, balanza de pagos, operaciones
+    contables), mercado laboral (situación laboral, ramas CNAE, EPA), precios
+    (IPC y subíndices), educación (niveles CNED, campos de estudio), sanidad
+    (causas de muerte, asistencia sanitaria, peso al nacer), agricultura
+    (explotaciones, cultivos, ganadería, formación del titular), justicia
+    (causas civiles y penales, sentencias), turismo (excursiones, pernoctaciones,
+    estancia media), medio ambiente (emisiones, residuos, agua) y unidades de
+    medida (euros, hectáreas, kilogramos, hectolitros, kilotoneladas, etc.).
+  </p>
+
+    <h3 id="namespaces" class="list">Espacios de nombres y prefijos</h3>
+
+  <p>
+    A lo largo de este documento se utilizan los siguientes prefijos y espacios
+    de nombres:
+  </p>
+  <table class="namespaces">
+    <thead>
+      <tr><th>Prefijo</th><th>Espacio de nombres (URI)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>ine</strong></td><td><code>http://lod.ine.es/def/vocabulary/</code></td></tr>
+      <tr><td>qb</td><td><code>http://purl.org/linked-data/cube#</code></td></tr>
+      <tr><td>sdmx-dimension</td><td><code>http://purl.org/linked-data/sdmx/2009/dimension#</code></td></tr>
+      <tr><td>sdmx-measure</td><td><code>http://purl.org/linked-data/sdmx/2009/measure#</code></td></tr>
+      <tr><td>skos</td><td><code>http://www.w3.org/2004/02/skos/core#</code></td></tr>
+      <tr><td>foaf</td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
+      <tr><td>dct</td><td><code>http://purl.org/dc/terms/</code></td></tr>
+      <tr><td>vann</td><td><code>http://purl.org/vocab/vann/</code></td></tr>
+      <tr><td>qudt</td><td><code>http://qudt.org/vocab/unit#</code></td></tr>
+      <tr><td>cc</td><td><code>http://creativecommons.org/ns#</code></td></tr>
+      <tr><td>owl</td><td><code>http://www.w3.org/2002/07/owl#</code></td></tr>
+      <tr><td>rdf</td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
+      <tr><td>rdfs</td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
+      <tr><td>xsd</td><td><code>http://www.w3.org/2001/XMLSchema#</code></td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    El prefijo preferido del vocabulario, declarado mediante
+    <code>vann:preferredNamespacePrefix</code>, es <code>ine</code>, y su
+    espacio de nombres preferido, declarado con
+    <code>vann:preferredNamespaceUri</code>, es
+    <code>http://lod.ine.es/def/vocabulary/</code>.
+  </p>

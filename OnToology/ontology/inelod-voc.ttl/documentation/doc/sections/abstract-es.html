@@ -1,2 +1,29 @@
 <h2>S&iacute;ntesis</h2><span class="markdown">
-Este es el lugar donde escribir un resumen de la ontolog&iacute;a. Un par de frases bastan para resumir su prop&oacute;sito.</span>
+<p>
+    <strong>INELOD&nbsp;VOC</strong> es una ontología OWL que define las
+    propiedades de dimensión y de medida empleadas para representar como
+    datos enlazados (RDF) los cubos estadísticos publicados por el
+    <a href="https://www.ine.es/">Instituto Nacional de Estadística</a>
+    (INE) de España. El vocabulario reutiliza el modelo abstracto de la
+    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube
+    Vocabulary</a> (Cyganiak y Reynolds, eds., W3C&nbsp;Rec.&nbsp;2014) y se
+    alinea con las dimensiones y medidas genéricas del estándar
+    <a href="https://sdmx.org/">SDMX</a>
+    (<a href="https://www.iso.org/standard/87545.html">ISO&nbsp;17369</a>),
+    de modo que cada propiedad específica del INE se declara, cuando procede,
+    como <code>rdfs:subPropertyOf</code> de su correspondiente término SDMX,
+    garantizando interoperabilidad descendente con consultas SDMX-RDF.
+  </p>
+
+  <p>
+    Su alcance es transversal a toda la producción estadística del INE
+    &mdash;demografía, economía y cuentas nacionales, mercado laboral,
+    precios, sanidad, educación, agricultura, justicia, turismo y medio
+    ambiente&mdash; y proporciona un conjunto controlado, único y
+    dereferenciable de URIs sobre las que construir
+    <code>qb:DataStructureDefinition</code> y <code>qb:Observation</code>
+    reutilizables. El presente documento describe la ontología, sus
+    convenciones de modelado y patrones de URI, e ilustra su uso mediante
+    cubos de datos sintéticos con sus correspondientes consultas SPARQL.
+  </p>
+</span>
