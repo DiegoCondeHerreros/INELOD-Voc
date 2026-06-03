@@ -1,111 +1,4 @@
 <h2 id="overv" class="list">INELOD VOC: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-  <p>
-    This section provides an overview of the conceptual architecture of
-    INELOD&nbsp;VOC before going into the detail of every term in the
-    <a href="#crossref">cross-reference section</a>. The ontology does not
-    propose a new model of statistical cube: <strong>it relies entirely on
-    the abstract model of the W3C
-    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube
-    Vocabulary (QB)</a></strong> and merely specialises the concrete
-    properties that INE needs for its statistical operations.
-  </p>
-
-  <h3 id="pattern" class="list">Modelling pattern: dimensions and measures
-  as subproperties</h3>
-
-  <p>
-    In INELOD&nbsp;VOC every property conceptually plays one of these two
-    roles:
-  </p>
-  <ol>
-    <li>
-      <strong>Dimension properties</strong>: declared as
-      <code>owl:ObjectProperty</code> with domain
-      <code>qb:Observation</code>, which identifies them as axes of
-      disaggregation of any observation in a cube. When the dimension is
-      one of the five generic SDMX dimensions (<em>refArea</em>,
-      <em>refPeriod</em>, <em>age</em>, <em>currency</em>,
-      <em>educationLev</em>), the ine property is additionally declared
-      as <code>rdfs:subPropertyOf</code> of the corresponding SDMX
-      dimension, ensuring downstream interoperability with SDMX-RDF
-      queries.
-      <br/>Example: <code>ine:cities rdfs:subPropertyOf
-      sdmx-dimension:refArea</code>;
-      <code>ine:childsAge rdfs:subPropertyOf sdmx-dimension:age</code>.
-    </li>
-    <li>
-      <strong>Measure properties</strong>: declared as
-      <code>owl:ObjectProperty</code> and, with few exceptions, as
-      <code>rdfs:subPropertyOf sdmx-measure:obsValue</code>. This allows
-      any generic QB/SDMX consumer to retrieve the observed value
-      without knowing the specific property.
-      <br/>Example: <code>ine:births</code>,
-      <code>ine:deathsPerThousandInhabitants</code>,
-      <code>ine:cubicMetres</code>.
-    </li>
-  </ol>
-
-  <p>
-    Additionally, INELOD&nbsp;VOC defines the auxiliary class
-    <code>ine:MeasureSet</code> and the property
-    <code>ine:inMeasureSet</code>, whose range is that class, in order to
-    explicitly group related measures (for example, all monetary measures
-    or all demographic measures expressed per 1,000 inhabitants). This
-    grouping complements the native QB mechanism
-    (<code>qb:MeasureProperty</code> within
-    <code>qb:DataStructureDefinition</code>) and is useful for building
-    exploration interfaces in data portals.
-  </p>
-
-  <h3 id="reused-vocabularies" class="list">Reused vocabularies</h3>
-
-  <p>
-    Following the FAIR recommendation to maximise reuse (Wilkinson et&nbsp;al.,
-    2016, <em>Scientific Data</em>), INELOD&nbsp;VOC reuses:
-  </p>
-  <ul>
-    <li>
-      <a href="https://www.w3.org/TR/vocab-data-cube/">QB (RDF Data Cube
-      Vocabulary)</a> as the abstract statistical-cube model.
-    </li>
-    <li>
-      <a href="http://purl.org/linked-data/sdmx/2009/dimension">SDMX-Dimension</a>
-      and
-      <a href="http://purl.org/linked-data/sdmx/2009/measure">SDMX-Measure</a>
-      to align with the SDMX/ISO&nbsp;17369 standard.
-    </li>
-    <li>
-      <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> as the
-      range of several dimension properties whose categories are
-      controlled lists (for example, autonomous communities, economic
-      sectors, countries).
-    </li>
-    <li>
-      <a href="http://xmlns.com/foaf/spec/">FOAF</a> for personal
-      annotations (name, surname) reused as subproperties.
-    </li>
-    <li>
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI
-      Metadata Terms</a> for ontology metadata
-      (<code>dct:title</code>, <code>dct:creator</code>,
-      <code>dct:description</code>, <code>dct:created</code>,
-      <code>dct:modified</code>).
-    </li>
-    <li>
-      <a href="http://purl.org/vocab/vann/">VANN</a> to declare the
-      preferred prefix and namespace.
-    </li>
-    <li>
-      <a href="http://qudt.org/">QUDT</a> to type the range of
-      properties whose value is a percentage
-      (<code>qudt:PERCENT</code>).
-    </li>
-    <li>
-      <a href="https://creativecommons.org/ns">Creative Commons (cc)</a>
-      to declare the licence, which is CC&nbsp;BY&nbsp;4.0.
-    </li>
-  </ul>
-
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -12481,4 +12374,6 @@ This ontology has the following classes and properties.</span>
          <span>YES/NO</span>
       </a>
    </li>
-</ul><iframe src="webvowl/index.html"></iframe> 
+</ul><h4> Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist"/>
