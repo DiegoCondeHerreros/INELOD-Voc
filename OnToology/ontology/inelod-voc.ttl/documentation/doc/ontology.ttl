@@ -9,7 +9,9 @@
 <http://lod.ine.es/def/vocabulary/> rdf:type owl:Ontology ;
                                      owl:versionIRI <http://lod.ine.es/def/vocabulary/1.0.0> ;
                                      <http://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-                                     <http://purl.org/dc/terms/contributor> "Diego Conde-Herreros" ;
+                                     <http://purl.org/dc/terms/contributor> "Diego Conde-Herreros" ,
+                                                                            "Luis M. Vilches-Blázquez" ,
+                                                                            "Oscar Corcho" ;
                                      <http://purl.org/dc/terms/created> "2025-05-01"^^xsd:date ;
                                      <http://purl.org/dc/terms/creator> "Diego Conde-Herreros" ;
                                      <http://purl.org/dc/terms/description> "An ontology for describing the variables used as dimensions and measures in the RDF data cubes from the Instituto Nacional de Estadística"@en ,
@@ -28,6 +30,11 @@
 <http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
 
 
+###  http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling
+:bedplacesPerTouristDwelling rdf:type owl:AnnotationProperty ;
+                             rdfs:subPropertyOf :rate .
+
+
 ###  http://lod.ine.es/def/vocabulary/contractingPartiesGender
 :contractingPartiesGender rdf:type owl:AnnotationProperty ;
                           rdfs:subPropertyOf :sex .
@@ -38,9 +45,22 @@
            rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> .
 
 
+###  http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20
+:incomePercentileRatioP80P20 rdf:type owl:AnnotationProperty ;
+                             rdfs:subPropertyOf :rate .
+
+
 ###  http://lod.ine.es/def/vocabulary/mainCaregiverGender
 :mainCaregiverGender rdf:type owl:AnnotationProperty ;
                      rdfs:subPropertyOf :sex .
+
+
+###  http://lod.ine.es/def/vocabulary/population
+:population rdf:type owl:AnnotationProperty .
+
+
+###  http://lod.ine.es/def/vocabulary/rate
+:rate rdf:type owl:AnnotationProperty .
 
 
 ###  http://lod.ine.es/def/vocabulary/sex
@@ -50,6 +70,11 @@
 ###  http://lod.ine.es/def/vocabulary/surname
 :surname rdf:type owl:AnnotationProperty ;
          rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/surname> .
+
+
+###  http://lod.ine.es/def/vocabulary/totalPopulation
+:totalPopulation rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :population .
 
 
 ###  http://lod.ine.es/def/vocabulary/typeOfMarriageByGender
@@ -132,12 +157,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://lod.ine.es/def/vocabulary/EurosUSDRelation
 :EurosUSDRelation rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
-
-
-###  http://lod.ine.es/def/vocabulary/PIBDataType
-:PIBDataType rdf:type owl:ObjectProperty ;
-             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
-             rdfs:range xsd:String .
 
 
 ###  http://lod.ine.es/def/vocabulary/TypeOfSignificantRailwayAccident
@@ -517,6 +536,13 @@ xsd:date rdf:type rdfs:Datatype .
       rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
+###  http://lod.ine.es/def/vocabulary/censusSection
+:censusSection rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ;
+               rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+               rdfs:range :CensusSection .
+
+
 ###  http://lod.ine.es/def/vocabulary/childbirths
 :childbirths rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
@@ -734,6 +760,13 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://lod.ine.es/def/vocabulary/constantDollars
 :constantDollars rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
+
+
+###  http://lod.ine.es/def/vocabulary/consumedProduct
+:consumedProduct rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :productGroups ;
+                 rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                 rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  http://lod.ine.es/def/vocabulary/continents
@@ -1331,6 +1364,12 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:range rdfs:Resource .
 
 
+###  http://lod.ine.es/def/vocabulary/equipmentType
+:equipmentType rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+               rdfs:range rdfs:Resource .
+
+
 ###  http://lod.ine.es/def/vocabulary/errorIntervals
 :errorIntervals rdf:type owl:ObjectProperty ;
                 rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
@@ -1574,6 +1613,12 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:range rdfs:Resource .
 
 
+###  http://lod.ine.es/def/vocabulary/fiveYearAgeGroup
+:fiveYearAgeGroup rdf:type owl:ObjectProperty ;
+                  rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                  rdfs:range rdfs:Resource .
+
+
 ###  http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations
 :fixedCapitalFormationOperations rdf:type owl:ObjectProperty ;
                                  rdfs:subPropertyOf :operations ;
@@ -1750,6 +1795,12 @@ xsd:date rdf:type rdfs:Datatype .
                                  rdfs:range rdfs:Resource .
 
 
+###  http://lod.ine.es/def/vocabulary/hazardType
+:hazardType rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+            rdfs:range rdfs:Resource .
+
+
 ###  http://lod.ine.es/def/vocabulary/healthcare
 :healthcare rdf:type owl:ObjectProperty ;
             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
@@ -1848,6 +1899,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://lod.ine.es/def/vocabulary/housing
 :housing rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
+
+
+###  http://lod.ine.es/def/vocabulary/housingFeatures
+:housingFeatures rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                 rdfs:range rdfs:Resource .
 
 
 ###  http://lod.ine.es/def/vocabulary/housingRegime
@@ -1956,16 +2013,16 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
 
 
+###  http://lod.ine.es/def/vocabulary/indicator
+:indicator rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+           rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
 ###  http://lod.ine.es/def/vocabulary/indicatorLatestData
 :indicatorLatestData rdf:type owl:ObjectProperty ;
                      rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                      rdfs:range rdfs:Resource .
-
-
-###  http://lod.ine.es/def/vocabulary/indicatorType
-:indicatorType rdf:type owl:ObjectProperty ;
-               rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
-               rdfs:range rdfs:Resource .
 
 
 ###  http://lod.ine.es/def/vocabulary/indicators
@@ -2034,6 +2091,11 @@ xsd:date rdf:type rdfs:Datatype .
 :internationalAccountsAnnotation rdf:type owl:ObjectProperty ;
                                  rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                                  rdfs:range rdfs:Resource .
+
+
+###  http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment
+:invoiceforSewerageAndWastewaterTreatment rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#currency> .
 
 
 ###  http://lod.ine.es/def/vocabulary/islands
@@ -2660,8 +2722,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://lod.ine.es/def/vocabulary/municipalities
 :municipalities rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ,
-                                   <http://purl.org/linked-data/sdmx/2009/measure#obsValue> ;
+                rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ;
                 rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                 rdfs:range rdfs:Resource .
 
@@ -5083,6 +5144,12 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:range rdfs:Resource .
 
 
+###  http://lod.ine.es/def/vocabulary/wasteType
+:wasteType rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+           rdfs:range rdfs:Resource .
+
+
 ###  http://lod.ine.es/def/vocabulary/wattsPerCapita
 :wattsPerCapita rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
@@ -5098,6 +5165,12 @@ xsd:date rdf:type rdfs:Datatype .
 :weeksOfGestation rdf:type owl:ObjectProperty ;
                   rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                   rdfs:range rdfs:Resource .
+
+
+###  http://lod.ine.es/def/vocabulary/weightingConfiguration
+:weightingConfiguration rdf:type owl:ObjectProperty ;
+                        rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                        rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  http://lod.ine.es/def/vocabulary/whoSetsWorkSchedule
@@ -5247,6 +5320,12 @@ xsd:date rdf:type rdfs:Datatype .
                   rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/PIBDataType
+:PIBDataType rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+             rdfs:range xsd:string .
+
+
 ###  http://lod.ine.es/def/vocabulary/USD
 :USD rdf:type owl:DatatypeProperty ;
      rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
@@ -5367,6 +5446,12 @@ xsd:date rdf:type rdfs:Datatype .
 :basedOnReferencePersonIncomeStatus rdf:type owl:DatatypeProperty ;
                                     rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                                     rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling
+:bedplacesPerTouristDwelling rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                             rdfs:range xsd:decimal .
 
 
 ###  http://lod.ine.es/def/vocabulary/birthDeathDifferencePerThousandInhabitants
@@ -5759,6 +5844,13 @@ xsd:date rdf:type rdfs:Datatype .
                     rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/eurosPerHousehold
+:eurosPerHousehold rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :euros ;
+                   rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                   rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/eurosPerInhabitant
 :eurosPerInhabitant rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf :ratePerPopulation ;
@@ -5900,11 +5992,25 @@ xsd:date rdf:type rdfs:Datatype .
                               rdfs:subPropertyOf :baseYear .
 
 
+###  http://lod.ine.es/def/vocabulary/gentrificationIndex
+:gentrificationIndex rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :indexRangeScaled ;
+                     rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                     rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/gigajoulesPerCapita
 :gigajoulesPerCapita rdf:type owl:DatatypeProperty ;
                      rdfs:subPropertyOf :energyAmount ;
                      rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                      rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/giniIndex
+:giniIndex rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :index ;
+           rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+           rdfs:range xsd:decimal .
 
 
 ###  http://lod.ine.es/def/vocabulary/goldFineTroyOunces
@@ -5929,6 +6035,20 @@ xsd:date rdf:type rdfs:Datatype .
 :grossDomesticProduct rdf:type owl:DatatypeProperty ;
                       rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                       rdfs:range xsd:float .
+
+
+###  http://lod.ine.es/def/vocabulary/grossEurosPerHousehold
+:grossEurosPerHousehold rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf :eurosPerHousehold ;
+                        rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                        rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant
+:grossEurosPerInhabitant rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf :eurosPerInhabitant ;
+                         rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                         rdfs:range xsd:decimal .
 
 
 ###  http://lod.ine.es/def/vocabulary/grossValueAddedByActivities
@@ -6042,6 +6162,12 @@ xsd:date rdf:type rdfs:Datatype .
                                      rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20
+:incomePercentileRatioP80P20 rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                             rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson
 :incomeRecipientsLivingWithReferencePerson rdf:type owl:DatatypeProperty ;
                                            rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
@@ -6069,6 +6195,12 @@ xsd:date rdf:type rdfs:Datatype .
 :indexValue rdf:type owl:DatatypeProperty ;
             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
             rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment
+:invoiceforSewerageAndWastewaterTreatment rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                                          rdfs:range xsd:float .
 
 
 ###  http://lod.ine.es/def/vocabulary/itu
@@ -6326,6 +6458,32 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:range xsd:date .
 
 
+###  http://lod.ine.es/def/vocabulary/meanAge
+:meanAge rdf:type owl:DatatypeProperty ;
+         rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+         rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit
+:meanEurosPerConsumptionUnit rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf :euros ;
+                             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                             rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/meanHouseholdSize
+:meanHouseholdSize rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                   rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit
+:medianEurosPerConsumptionUnit rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf :euros ;
+                               rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                               rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/megaJoulesPerCapita
 :megaJoulesPerCapita rdf:type owl:DatatypeProperty ;
                      rdfs:subPropertyOf :energyAmount ;
@@ -6408,12 +6566,6 @@ xsd:date rdf:type rdfs:Datatype .
       rdfs:subPropertyOf :massTonnesBased ;
       rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
       rdfs:range xsd:decimal .
-
-
-###  http://lod.ine.es/def/vocabulary/municipalities
-:municipalities rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf :count ;
-                rdfs:range xsd:integer .
 
 
 ###  http://lod.ine.es/def/vocabulary/nullities
@@ -6643,6 +6795,13 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold
+:percentageBelowPovertyThreshold rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf :percentageOfPeople ;
+                                 rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                                 rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/percentageOfCentres
 :percentageOfCentres rdf:type owl:DatatypeProperty ;
                      rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
@@ -6654,6 +6813,13 @@ xsd:date rdf:type rdfs:Datatype .
                           rdfs:subPropertyOf :percentage ;
                           rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                           rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation
+:percentageOfElderlyPopulation rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf :percentageOfPeople ;
+                               rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                               rdfs:range xsd:decimal .
 
 
 ###  http://lod.ine.es/def/vocabulary/percentageOfFatalities
@@ -6715,10 +6881,31 @@ xsd:date rdf:type rdfs:Datatype .
                     rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds
+:percentageOfSingleHouseholds rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf :percentage ;
+                              rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                              rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation
+:percentageOfSpanishPopulation rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf :percentageOfPeople ;
+                               rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                               rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange
 :percentageOfTimeWorkedUtatRange rdf:type owl:DatatypeProperty ;
                                  rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                                  rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation
+:percentageOfYoungPopulation rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf :percentageOfPeople ;
+                             rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                             rdfs:range xsd:decimal .
 
 
 ###  http://lod.ine.es/def/vocabulary/percentagePoints
@@ -6846,6 +7033,12 @@ xsd:date rdf:type rdfs:Datatype .
                            rdfs:range xsd:date .
 
 
+###  http://lod.ine.es/def/vocabulary/reusedWaterVolume
+:reusedWaterVolume rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                   rdfs:range xsd:float .
+
+
 ###  http://lod.ine.es/def/vocabulary/rooms
 :rooms rdf:type owl:DatatypeProperty ;
        rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
@@ -6864,10 +7057,22 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/sewerageNetworkLength
+:sewerageNetworkLength rdf:type owl:DatatypeProperty ;
+                       rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                       rdfs:range xsd:float .
+
+
 ###  http://lod.ine.es/def/vocabulary/singleAgeValues
 :singleAgeValues rdf:type owl:DatatypeProperty ;
                  rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                  rdfs:range xsd:integer .
+
+
+###  http://lod.ine.es/def/vocabulary/sludgeVolume
+:sludgeVolume rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+              rdfs:range xsd:float .
 
 
 ###  http://lod.ine.es/def/vocabulary/specialValues
@@ -7200,6 +7405,26 @@ xsd:date rdf:type rdfs:Datatype .
                                             rdfs:range xsd:decimal .
 
 
+###  http://lod.ine.es/def/vocabulary/totalPopulation
+:totalPopulation rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                 rdfs:range xsd:integer .
+
+
+###  http://lod.ine.es/def/vocabulary/touristDwellings
+:touristDwellings rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :apartments ;
+                  rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                  rdfs:range xsd:integer .
+
+
+###  http://lod.ine.es/def/vocabulary/touristDwellingsRatio
+:touristDwellingsRatio rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :percentage ;
+                       rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                       rdfs:range xsd:decimal .
+
+
 ###  http://lod.ine.es/def/vocabulary/tourists
 :tourists rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf :count ;
@@ -7224,6 +7449,12 @@ xsd:date rdf:type rdfs:Datatype .
 :travellersKm1000 rdf:type owl:DatatypeProperty ;
                   rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                   rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume
+:treatedResidualWaterVolume rdf:type owl:DatatypeProperty ;
+                            rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                            rdfs:range xsd:float .
 
 
 ###  http://lod.ine.es/def/vocabulary/tripsPerThousandInhabitants
@@ -7285,6 +7516,12 @@ xsd:date rdf:type rdfs:Datatype .
 :volumeLitreBased rdf:type owl:DatatypeProperty ;
                   rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
                   rdfs:range xsd:decimal .
+
+
+###  http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated
+:volumeOfSludgeGenerated rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://purl.org/linked-data/cube#Observation> ;
+                         rdfs:range xsd:float .
 
 
 ###  http://lod.ine.es/def/vocabulary/wattsPerCapita
@@ -7368,11 +7605,32 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
+###  http://lod.ine.es/def/vocabulary/CensusSection
+:CensusSection rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+               rdfs:comment "Unidad territorial de menor nivel definida por el INE para la organización del Censo Electoral. Identificada por un código de 10 dígitos: 2 de provincia + 3 de municipio + 2 de distrito + 3 de sección."@es ;
+               rdfs:label "Census section"@en ,
+                          "Sección censal"@es .
+
+
+###  http://lod.ine.es/def/vocabulary/District
+:District rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+          rdfs:comment "Subdivisión administrativa de un municipio. En municipios grandes (Madrid, Barcelona, Valencia, etc.) los distritos agrupan secciones censales y son la unidad territorial intermedia entre el municipio y la sección censal."@es ;
+          rdfs:label "District"@en ,
+                     "Distrito"@es .
+
+
 ###  http://lod.ine.es/def/vocabulary/MeasureSet
 :MeasureSet rdf:type owl:Class ;
             rdfs:comment "La clase OWL que representa a aquellas variables del INE que corresponden al conjunto de medidas de un conjunto de datos"@es ;
             rdfs:label "Conjunto de Medidas"@es ,
                        "Set of Measurements"@en .
+
+
+###  http://lod.ine.es/def/vocabulary/Municipality
+:Municipality rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  http://lod.ine.es/def/vocabulary/ReasonType
@@ -7409,10 +7667,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://www.w3.org/2000/01/rdf-schema#Resource
 rdfs:Resource rdf:type owl:Class .
-
-
-###  http://www.w3.org/2001/XMLSchema#String
-xsd:String rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
@@ -7653,6 +7907,12 @@ xsd:String rdf:type owl:Class .
                                    <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling
+:bedplacesPerTouristDwelling rdf:type owl:NamedIndividual ,
+                                      <http://purl.org/linked-data/cube#MeasureProperty> ;
+                             :inMeasureSet :rate .
+
+
 ###  http://lod.ine.es/def/vocabulary/birthDeathDifferencePerThousandInhabitants
 :birthDeathDifferencePerThousandInhabitants rdf:type owl:NamedIndividual ,
                                                      <http://purl.org/linked-data/cube#MeasureProperty> .
@@ -7806,6 +8066,11 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/ccaa
 :ccaa rdf:type owl:NamedIndividual ,
                <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/censusSection
+:censusSection rdf:type owl:NamedIndividual ,
+                        <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
 ###  http://lod.ine.es/def/vocabulary/childbirths
@@ -7996,6 +8261,11 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/constantDollars
 :constantDollars rdf:type owl:NamedIndividual ,
                           <http://purl.org/linked-data/cube#MeasureProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/consumedProduct
+:consumedProduct rdf:type owl:NamedIndividual ,
+                          <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
 ###  http://lod.ine.es/def/vocabulary/continents
@@ -8584,6 +8854,11 @@ xsd:String rdf:type owl:Class .
                        <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/equipmentType
+:equipmentType rdf:type owl:NamedIndividual ,
+                        <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
 ###  http://lod.ine.es/def/vocabulary/errorIntervals
 :errorIntervals rdf:type owl:NamedIndividual ,
                          <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -8617,6 +8892,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/eurosPerCubicMetre
 :eurosPerCubicMetre rdf:type owl:NamedIndividual ,
                              <http://purl.org/linked-data/cube#MeasureProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/eurosPerHousehold
+:eurosPerHousehold rdf:type owl:NamedIndividual ,
+                            <http://purl.org/linked-data/cube#MeasureProperty> ;
+                   :inMeasureSet :measures .
 
 
 ###  http://lod.ine.es/def/vocabulary/eurosPerInhabitant
@@ -8839,6 +9120,11 @@ xsd:String rdf:type owl:Class .
                     <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/fiveYearAgeGroup
+:fiveYearAgeGroup rdf:type owl:NamedIndividual ,
+                           <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
 ###  http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations
 :fixedCapitalFormationOperations rdf:type owl:NamedIndividual ,
                                           <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -8929,6 +9215,12 @@ xsd:String rdf:type owl:Class .
                                        <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/gentrificationIndex
+:gentrificationIndex rdf:type owl:NamedIndividual ,
+                              <http://purl.org/linked-data/cube#MeasureProperty> ;
+                     :inMeasureSet :indicators .
+
+
 ###  http://lod.ine.es/def/vocabulary/geographicalZonesOfSpain
 :geographicalZonesOfSpain rdf:type owl:NamedIndividual ,
                                    <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -8942,6 +9234,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/gigajoulesPerCapita
 :gigajoulesPerCapita rdf:type owl:NamedIndividual ,
                               <http://purl.org/linked-data/cube#MeasureProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/giniIndex
+:giniIndex rdf:type owl:NamedIndividual ,
+                    <http://purl.org/linked-data/cube#MeasureProperty> ;
+           :inMeasureSet :rate .
 
 
 ###  http://lod.ine.es/def/vocabulary/goldFineTroyOunces
@@ -8969,6 +9267,18 @@ xsd:String rdf:type owl:Class .
                                <http://purl.org/linked-data/cube#MeasureProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/grossEurosPerHousehold
+:grossEurosPerHousehold rdf:type owl:NamedIndividual ,
+                                 <http://purl.org/linked-data/cube#MeasureProperty> ;
+                        :inMeasureSet :measures .
+
+
+###  http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant
+:grossEurosPerInhabitant rdf:type owl:NamedIndividual ,
+                                  <http://purl.org/linked-data/cube#MeasureProperty> ;
+                         :inMeasureSet :measures .
+
+
 ###  http://lod.ine.es/def/vocabulary/grossFixedCapitalFormationByActivity
 :grossFixedCapitalFormationByActivity rdf:type owl:NamedIndividual ,
                                                <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -8992,6 +9302,11 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/harmonizedLeisureActivitiesList
 :harmonizedLeisureActivitiesList rdf:type owl:NamedIndividual ,
                                           <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/hazardType
+:hazardType rdf:type owl:NamedIndividual ,
+                     <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
 ###  http://lod.ine.es/def/vocabulary/healthStatusAssessment
@@ -9109,6 +9424,11 @@ xsd:String rdf:type owl:Class .
                   <http://purl.org/linked-data/cube#MeasureProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/housingFeatures
+:housingFeatures rdf:type owl:NamedIndividual ,
+                          <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
 ###  http://lod.ine.es/def/vocabulary/housingRegime
 :housingRegime rdf:type owl:NamedIndividual ,
                         <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -9174,6 +9494,12 @@ xsd:String rdf:type owl:Class .
                                               <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20
+:incomePercentileRatioP80P20 rdf:type owl:NamedIndividual ,
+                                      <http://purl.org/linked-data/cube#MeasureProperty> ;
+                             :inMeasureSet :rate .
+
+
 ###  http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson
 :incomeRecipientsLivingWithReferencePerson rdf:type owl:NamedIndividual ,
                                                     <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -9205,6 +9531,11 @@ xsd:String rdf:type owl:Class .
                      <http://purl.org/linked-data/cube#MeasureProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/indicator
+:indicator rdf:type owl:NamedIndividual ,
+                    <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
 ###  http://lod.ine.es/def/vocabulary/indicatorLatestData
 :indicatorLatestData rdf:type owl:NamedIndividual ,
                               <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -9212,7 +9543,10 @@ xsd:String rdf:type owl:Class .
 
 ###  http://lod.ine.es/def/vocabulary/indicatorType
 :indicatorType rdf:type owl:NamedIndividual ,
-                        <http://purl.org/linked-data/cube#DimensionProperty> .
+                        :MeasureSet ;
+               rdfs:comment "TODO" ;
+               rdfs:label "Indicator type"@en ,
+                          "Tipo de indicador"@es .
 
 
 ###  http://lod.ine.es/def/vocabulary/indicators
@@ -9269,6 +9603,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/internationalAccountsAnnotation
 :internationalAccountsAnnotation rdf:type owl:NamedIndividual ,
                                           <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment
+:invoiceforSewerageAndWastewaterTreatment rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/linked-data/cube#MeasureProperty> ;
+                                          :inMeasureSet :indicatorType .
 
 
 ###  http://lod.ine.es/def/vocabulary/islands
@@ -9651,6 +9991,24 @@ xsd:String rdf:type owl:Class .
                        <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/meanAge
+:meanAge rdf:type owl:NamedIndividual ,
+                  <http://purl.org/linked-data/cube#MeasureProperty> ;
+         :inMeasureSet :measures .
+
+
+###  http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit
+:meanEurosPerConsumptionUnit rdf:type owl:NamedIndividual ,
+                                      <http://purl.org/linked-data/cube#MeasureProperty> ;
+                             :inMeasureSet :measures .
+
+
+###  http://lod.ine.es/def/vocabulary/meanHouseholdSize
+:meanHouseholdSize rdf:type owl:NamedIndividual ,
+                            <http://purl.org/linked-data/cube#MeasureProperty> ;
+                   :inMeasureSet :measures .
+
+
 ###  http://lod.ine.es/def/vocabulary/measures
 :measures rdf:type owl:NamedIndividual ,
                    :MeasureSet ;
@@ -9667,6 +10025,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/measuresForDependentFamilyCare
 :measuresForDependentFamilyCare rdf:type owl:NamedIndividual ,
                                          <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit
+:medianEurosPerConsumptionUnit rdf:type owl:NamedIndividual ,
+                                        <http://purl.org/linked-data/cube#MeasureProperty> ;
+                               :inMeasureSet :measures .
 
 
 ###  http://lod.ine.es/def/vocabulary/megaJoulesPerCapita
@@ -9846,8 +10210,7 @@ xsd:String rdf:type owl:Class .
 
 ###  http://lod.ine.es/def/vocabulary/municipalities
 :municipalities rdf:type owl:NamedIndividual ,
-                         <http://purl.org/linked-data/cube#DimensionProperty> ,
-                         <http://purl.org/linked-data/cube#MeasureProperty> .
+                         <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
 ###  http://lod.ine.es/def/vocabulary/municipalitySize
@@ -10284,6 +10647,12 @@ xsd:String rdf:type owl:Class .
                      <http://purl.org/linked-data/cube#MeasureProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold
+:percentageBelowPovertyThreshold rdf:type owl:NamedIndividual ,
+                                          <http://purl.org/linked-data/cube#MeasureProperty> ;
+                                 :inMeasureSet :rate .
+
+
 ###  http://lod.ine.es/def/vocabulary/percentageOfCentres
 :percentageOfCentres rdf:type owl:NamedIndividual ,
                               <http://purl.org/linked-data/cube#MeasureProperty> .
@@ -10292,6 +10661,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/percentageOfDailySmokers
 :percentageOfDailySmokers rdf:type owl:NamedIndividual ,
                                    <http://purl.org/linked-data/cube#MeasureProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation
+:percentageOfElderlyPopulation rdf:type owl:NamedIndividual ,
+                                        <http://purl.org/linked-data/cube#MeasureProperty> ;
+                               :inMeasureSet :rate .
 
 
 ###  http://lod.ine.es/def/vocabulary/percentageOfFatalities
@@ -10339,9 +10714,27 @@ xsd:String rdf:type owl:Class .
                              <http://purl.org/linked-data/cube#MeasureProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds
+:percentageOfSingleHouseholds rdf:type owl:NamedIndividual ,
+                                       <http://purl.org/linked-data/cube#MeasureProperty> ;
+                              :inMeasureSet :rate .
+
+
+###  http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation
+:percentageOfSpanishPopulation rdf:type owl:NamedIndividual ,
+                                        <http://purl.org/linked-data/cube#MeasureProperty> ;
+                               :inMeasureSet :rate .
+
+
 ###  http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange
 :percentageOfTimeWorkedUtatRange rdf:type owl:NamedIndividual ,
                                           <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation
+:percentageOfYoungPopulation rdf:type owl:NamedIndividual ,
+                                      <http://purl.org/linked-data/cube#MeasureProperty> ;
+                             :inMeasureSet :rate .
 
 
 ###  http://lod.ine.es/def/vocabulary/percentagePoints
@@ -10568,10 +10961,7 @@ xsd:String rdf:type owl:Class .
 
 ###  http://lod.ine.es/def/vocabulary/rate
 :rate rdf:type owl:NamedIndividual ,
-               :MeasureSet ;
-      rdfs:comment "Relación entre dos magnitudes"@es ;
-      rdfs:label "Rates"@en ,
-                 "Tasas"@es .
+               :MeasureSet .
 
 
 ###  http://lod.ine.es/def/vocabulary/ratePer100k
@@ -10816,6 +11206,12 @@ xsd:String rdf:type owl:Class .
                            <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/reusedWaterVolume
+:reusedWaterVolume rdf:type owl:NamedIndividual ,
+                            <http://purl.org/linked-data/cube#MeasureProperty> ;
+                   :inMeasureSet :indicatorType .
+
+
 ###  http://lod.ine.es/def/vocabulary/rooms
 :rooms rdf:type owl:NamedIndividual ,
                 <http://purl.org/linked-data/cube#MeasureProperty> .
@@ -10961,6 +11357,12 @@ xsd:String rdf:type owl:Class .
                                         <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/sewerageNetworkLength
+:sewerageNetworkLength rdf:type owl:NamedIndividual ,
+                                <http://purl.org/linked-data/cube#MeasureProperty> ;
+                       :inMeasureSet :indicatorType .
+
+
 ###  http://lod.ine.es/def/vocabulary/shiftWorkSystem
 :shiftWorkSystem rdf:type owl:NamedIndividual ,
                           <http://purl.org/linked-data/cube#DimensionProperty> .
@@ -10979,6 +11381,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/sizeBrackets
 :sizeBrackets rdf:type owl:NamedIndividual ,
                        <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/sludgeVolume
+:sludgeVolume rdf:type owl:NamedIndividual ,
+                       <http://purl.org/linked-data/cube#MeasureProperty> ;
+              :inMeasureSet :indicatorType .
 
 
 ###  http://lod.ine.es/def/vocabulary/socialClassBasedOnOccupation
@@ -11510,6 +11918,12 @@ xsd:String rdf:type owl:Class .
                                                      <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/totalPopulation
+:totalPopulation rdf:type owl:NamedIndividual ,
+                          <http://purl.org/linked-data/cube#MeasureProperty> ;
+                 :inMeasureSet :count .
+
+
 ###  http://lod.ine.es/def/vocabulary/totalQuantityThousandsOfUnitsAverageQuantity-Units
 :totalQuantityThousandsOfUnitsAverageQuantity-Units rdf:type owl:NamedIndividual ,
                                                              :MeasureSet ;
@@ -11540,6 +11954,18 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/touristAttractions
 :touristAttractions rdf:type owl:NamedIndividual ,
                              <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/touristDwellings
+:touristDwellings rdf:type owl:NamedIndividual ,
+                           <http://purl.org/linked-data/cube#MeasureProperty> ;
+                  :inMeasureSet :measures .
+
+
+###  http://lod.ine.es/def/vocabulary/touristDwellingsRatio
+:touristDwellingsRatio rdf:type owl:NamedIndividual ,
+                                <http://purl.org/linked-data/cube#MeasureProperty> ;
+                       :inMeasureSet :rate .
 
 
 ###  http://lod.ine.es/def/vocabulary/touristType
@@ -11600,6 +12026,12 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/travellersKm1000
 :travellersKm1000 rdf:type owl:NamedIndividual ,
                            <http://purl.org/linked-data/cube#MeasureProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume
+:treatedResidualWaterVolume rdf:type owl:NamedIndividual ,
+                                     <http://purl.org/linked-data/cube#MeasureProperty> ;
+                            :inMeasureSet :indicatorType .
 
 
 ###  http://lod.ine.es/def/vocabulary/tripsPerThousandInhabitants
@@ -12100,9 +12532,20 @@ xsd:String rdf:type owl:Class .
                            <http://purl.org/linked-data/cube#MeasureProperty> .
 
 
+###  http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated
+:volumeOfSludgeGenerated rdf:type owl:NamedIndividual ,
+                                  <http://purl.org/linked-data/cube#MeasureProperty> ;
+                         :inMeasureSet :indicatorType .
+
+
 ###  http://lod.ine.es/def/vocabulary/wageDecile
 :wageDecile rdf:type owl:NamedIndividual ,
                      <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/wasteType
+:wasteType rdf:type owl:NamedIndividual ,
+                    <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
 ###  http://lod.ine.es/def/vocabulary/wattsPerCapita
@@ -12118,6 +12561,11 @@ xsd:String rdf:type owl:Class .
 ###  http://lod.ine.es/def/vocabulary/weeksOfGestation
 :weeksOfGestation rdf:type owl:NamedIndividual ,
                            <http://purl.org/linked-data/cube#DimensionProperty> .
+
+
+###  http://lod.ine.es/def/vocabulary/weightingConfiguration
+:weightingConfiguration rdf:type owl:NamedIndividual ,
+                                 <http://purl.org/linked-data/cube#DimensionProperty> .
 
 
 ###  http://lod.ine.es/def/vocabulary/whoSetsWorkSchedule
@@ -12481,6 +12929,11 @@ xsd:String rdf:type owl:Class .
                                      "Características básicas de la explotación"@es .
 
 
+:bedplacesPerTouristDwelling rdfs:comment "Número medio de plazas por vivienda turística en el territorio. Publicado por el INE en la Medición experimental de viviendas turísticas."@es ;
+                             rdfs:label "Bedplaces per tourist dwelling"@en ,
+                                        "Plazas por vivienda turística"@es .
+
+
 :birthDeathDifferencePerThousandInhabitants rdfs:label "Births minus deaths (per thousand inhabitants)"@en ,
                                                        "Nacimientos menos defunciones (por mil habitantes)"@es .
 
@@ -12610,9 +13063,16 @@ xsd:String rdf:type owl:Class .
       rdfs:label "Autonomous communities and cities"@en ,
                  "CCAA"@es ,
                  "Comunidad autónoma de destino"@es ,
+                 "Comunidades"@es ,
                  "Comunidades autónomas"@es ,
                  "Comunidades y Ciudades Autónomas"@es ,
-                 "Comunidades y ciudades autonomas"@es .
+                 "Comunidades y ciudades autonomas"@es ,
+                 "Comunidades y ciudades autónomas"@es .
+
+
+:censusSection rdfs:comment "Dimensión territorial al nivel de sección censal. Cada sección censal pertenece a un distrito mediante skos:broader."@es ;
+               rdfs:label "Census section"@en ,
+                          "Sección censal"@es .
 
 
 :childbirths rdfs:label "Childbirths"@en ,
@@ -12779,6 +13239,10 @@ xsd:String rdf:type owl:Class .
 
 :constantDollars rdfs:label "Constant dollars of 2015"@en ,
                             "Dolares constantes de 2015"@es .
+
+
+:consumedProduct rdfs:label "Consumed product"@en ,
+                            "Producto consumido"@es .
 
 
 :continents rdfs:label "Continentes"@es ,
@@ -13037,7 +13501,8 @@ xsd:String rdf:type owl:Class .
                                    "OPERACIONES DE DISTRIBUCIÓN"@es .
 
 
-:districts rdfs:label "DIST"@es ,
+:districts rdfs:comment "Dimensión territorial a nivel de distrito municipal. Apunta a recursos de tipo ine:District."@es ;
+           rdfs:label "DIST"@es ,
                       "Districts"@en ,
                       "Distritos"@es .
 
@@ -13125,8 +13590,10 @@ xsd:String rdf:type owl:Class .
 
 :economicActivity rdfs:comment "Se define como la generación de valor añadido mediante la producción de bienes y servicios."@es ;
                   rdfs:label "Actividad económica (CNAE-09)"@es ,
+                             "Actividad económica (CNAE-2009)"@es ,
                              "Actividad económica (CNAE-93)"@es ,
                              "Actividad principal"@es ,
+                             "Actividad principal (CNAE-2009 a 1, 2 y 3 dígitos)"@es ,
                              "Actividades económicas (Histórico Base 90)"@es ,
                              "Activity branch (main job) CNAE 2009"@en ,
                              "Activity branch - CNAE93"@en ,
@@ -13278,6 +13745,10 @@ xsd:String rdf:type owl:Class .
                          "EPA groupings"@en .
 
 
+:equipmentType rdfs:label "Equipment type"@en ,
+                          "Tipo de equipamiento"@es .
+
+
 :errorIntervals rdfs:label "Error intervals"@en ,
                            "Intervalos de error"@es .
 
@@ -13304,6 +13775,12 @@ xsd:String rdf:type owl:Class .
 
 :eurosPerCubicMetre rdfs:label "Euros Per Cubic Metre"@en ,
                                "Euros por metro cúbico"@es .
+
+
+:eurosPerHousehold rdfs:comment "Average amount in euros per household."@en ,
+                                "Cantidad media en euros referida al hogar como unidad."@es ;
+                   rdfs:label "Euros per household"@en ,
+                              "Euros por hogar"@es .
 
 
 :eurosPerInhabitant rdfs:label "Euros Per Inhabitant"@en ,
@@ -13367,7 +13844,8 @@ xsd:String rdf:type owl:Class .
                                                            "Expenditure codes with physical quantity (ECOICOP/EPF)"@en .
 
 
-:expenditureGroups rdfs:label "Expenditure groups"@en ,
+:expenditureGroups rdfs:label "Clase de gasto"@es ,
+                              "Expenditure groups"@en ,
                               "Grupos de gasto"@es .
 
 
@@ -13484,6 +13962,11 @@ xsd:String rdf:type owl:Class .
                       "Nombre"@es .
 
 
+:fiveYearAgeGroup <http://purl.org/linked-data/cube#concept> :ageGroups ;
+                  rdfs:label "Five-year age groups"@en ,
+                             "Grupo quinquenal de edad"@es .
+
+
 :fixedCapitalFormationOperations rdfs:label "FIXED CAPITAL FORMATION OPERATIONS"@en ,
                                             "OPERACIÓN DE BIENES Y SERVICIOS FBCF"@es .
 
@@ -13556,6 +14039,11 @@ xsd:String rdf:type owl:Class .
                                          "Generation/Decades/Year of birth"@en .
 
 
+:gentrificationIndex rdfs:comment "Índice compuesto que mide la intensidad del fenómeno de gentrificación en una unidad territorial, calculado como combinación lineal ponderada de indicadores elementales normalizados por percentiles. Toma valores entre 0 y 100."@es ;
+                     rdfs:label "Gentrification index"@en ,
+                                "Índice de gentrificación"@es .
+
+
 :geographicalZonesOfSpain rdfs:label "Geographical zones of Spain"@en ,
                                      "Zonas geográficas de España"@es .
 
@@ -13566,6 +14054,12 @@ xsd:String rdf:type owl:Class .
 
 :gigajoulesPerCapita rdfs:label "Gigajoules per capita"@en ,
                                 "Gigajulios por habitante"@es .
+
+
+:giniIndex rdfs:comment "Coeficiente de Gini de la distribución territorial de la renta. Toma valores entre 0 (igualdad perfecta) y 1 (desigualdad máxima)."@es ,
+                        "Gini coefficient of the territorial distribution of income. Takes values between 0 (perfect equality) and 1 (maximum inequality)."@en ;
+           rdfs:label "Gini index"@en ,
+                      "Índice de Gini"@es .
 
 
 :goldFineTroyOunces rdfs:label "Gold Fine Troy Ounces (value)"@en ,
@@ -13586,6 +14080,16 @@ xsd:String rdf:type owl:Class .
 
 :grossDomesticProduct rdfs:comment "El producto interior bruto (PIB) es un indicador económico que refleja el valor monetario de todos los bienes y servicios finales producidos por un territorio en un determinado periodo de tiempo."@es ;
                       rdfs:label "Producto Interior Bruto"@es .
+
+
+:grossEurosPerHousehold rdfs:comment "Cantidad media en euros por hogar antes de impuestos y cotizaciones sociales."@es ;
+                        rdfs:label "Gross euros per household"@en ,
+                                   "Renta bruta media por hogar"@es .
+
+
+:grossEurosPerInhabitant rdfs:comment "Cantidad media en euros por habitante antes de impuestos y cotizaciones sociales."@es ;
+                         rdfs:label "Gross euros per inhabitant"@en ,
+                                    "Renta bruta media por persona"@es .
 
 
 :grossFixedCapitalFormationByActivity rdfs:label "Formación Bruta de Capital Fijo de actividades"@es ,
@@ -13633,6 +14137,10 @@ xsd:String rdf:type owl:Class .
 
 :harmonizedLeisureActivitiesList rdfs:label "Harmonized leisure activities list"@en ,
                                             "Lista de actividades de ocio armonizada"@es .
+
+
+:hazardType rdfs:label "Hazard type"@en ,
+                       "Tipo de peligrosidad"@es .
 
 
 :healthStatusAssessment rdfs:label "Health status assessment"@en ,
@@ -13730,6 +14238,11 @@ xsd:String rdf:type owl:Class .
                     "Vivienda"@es .
 
 
+:housingFeatures rdfs:comment "Características de la vivienda como el número de habitaciones, el número de personas por habitación, la superficie útil, etc."@es ;
+                 rdfs:label "Características de la vivienda"@es ,
+                            "Housing features"@en .
+
+
 :housingRegime rdfs:comment "El régimen de la vivienda es el régimen de protección en las viviendas, es decir, si éstas son de precio libre o tienen algún régimen de protección oficial. - Vivienda de precio libre.- Si la vivienda no está sometida a ningún tipo de protección. - Vivienda sujeta a algún régimen de protección.- Si la vivienda está sometida a alguna protección oficial: VPO, Tipo VPO u Otro VPO."@es ;
                rdfs:label "Housing regime"@en ,
                           "Régimen de la vivienda"@es .
@@ -13783,6 +14296,11 @@ xsd:String rdf:type owl:Class .
                                                 "Porcentajes de renta por unidad de consumo"@es .
 
 
+:incomePercentileRatioP80P20 rdfs:comment "Cociente entre la renta del percentil 80 y la del percentil 20 de la distribución territorial de ingresos. Es una medida estándar de desigualdad de ingresos."@es ;
+                             rdfs:label "Income percentile ratio P80/P20"@en ,
+                                        "Ratio de percentiles de renta P80/P20"@es .
+
+
 :incomeRecipientsLivingWithReferencePerson rdfs:label "Income recipients living with reference person"@en ,
                                                       "Perceptores de ingresos que conviven con la persona de referencia"@es .
 
@@ -13810,12 +14328,14 @@ xsd:String rdf:type owl:Class .
                        "Índice"@es .
 
 
+:indicator rdfs:comment "Dimension that identifies the indicator for each observation within a derived indicators cube."@en ,
+                        "Dimensión que identifica de qué indicador se trata cada observación dentro de un cubo de indicadores derivados."@es ;
+           rdfs:label "Indicador"@es ,
+                      "Indicator"@en .
+
+
 :indicatorLatestData rdfs:label "Indicador (últimos datos)"@es ,
                                 "Indicator (latest data)"@en .
-
-
-:indicatorType rdfs:label "Indicator type"@en ,
-                          "Tipo de indicador"@es .
 
 
 :indicators rdfs:label "Indicador"@es ,
@@ -13863,6 +14383,11 @@ xsd:String rdf:type owl:Class .
 
 :internationalAccountsAnnotation rdfs:label "Anotación de cuentas internacionales"@es ,
                                             "International accounts annotation"@en .
+
+
+:invoiceforSewerageAndWastewaterTreatment rdfs:comment "TODO" ;
+                                          rdfs:label "Amount invoiced for sewerage and wastewater treatment"@en ,
+                                                     "Importe facturado por alcantarillado y depuración"@es .
 
 
 :islands rdfs:label "Islands"@en ,
@@ -14173,12 +14698,32 @@ xsd:String rdf:type owl:Class .
                          "Vencimiento"@es .
 
 
+:meanAge rdfs:comment "Edad media de la población residente en la unidad territorial, expresada en años."@es ;
+         rdfs:label "Edad media"@es ,
+                    "Mean age"@en .
+
+
+:meanEurosPerConsumptionUnit rdfs:comment "Media de los ingresos del hogar divididos entre las unidades de consumo, calculadas según la escala OCDE modificada (1 para el primer adulto, 0,5 para el resto de mayores de 13 años, 0,3 para los menores de 14)."@es ;
+                             rdfs:label "Mean income per consumption unit"@en ,
+                                        "Media de la renta por unidad de consumo"@es .
+
+
+:meanHouseholdSize rdfs:comment "Número medio de personas por hogar en el territorio."@es ;
+                   rdfs:label "Mean household size"@en ,
+                              "Tamaño medio del hogar"@es .
+
+
 :measuresAdopted rdfs:label "Measures adopted"@en ,
                             "Medidas adoptadas"@es .
 
 
 :measuresForDependentFamilyCare rdfs:label "Measures for dependent family care"@en ,
                                            "Medidas adptadas para el cuidado de familiares dependientes"@es .
+
+
+:medianEurosPerConsumptionUnit rdfs:comment "Mediana de los ingresos del hogar divididos entre las unidades de consumo, según la escala OCDE modificada."@es ;
+                               rdfs:label "Median income per consumption unit"@en ,
+                                          "Mediana de la renta por unidad de consumo"@es .
 
 
 :megaJoulesPerCapita rdfs:label "Megajoules Per Capita"@en ,
@@ -14692,12 +15237,23 @@ xsd:String rdf:type owl:Class .
                        "Porcentaje"@es .
 
 
+:percentageBelowPovertyThreshold rdfs:comment "Percentage of population in the territory whose net income per consumption unit is below 60% of the national median."@en ,
+                                              "Porcentaje de población en el territorio cuya renta neta por unidad de consumo es inferior al 60% de la mediana nacional."@es ;
+                                 rdfs:label "Percentage of population below poverty threshold"@en ,
+                                            "Porcentaje de población bajo umbral de pobreza"@es .
+
+
 :percentageOfCentres rdfs:label "Percentage of centres"@en ,
                                 "Porcentaje de centros"@es .
 
 
 :percentageOfDailySmokers rdfs:label "Percentage of daily smokers"@en ,
                                      "Porcentaje fumadores diarios"@es .
+
+
+:percentageOfElderlyPopulation rdfs:comment "Porcentaje de personas de 65 años o más sobre el total de la población del territorio."@es ;
+                               rdfs:label "Percentage of elderly population (65 and over)"@en ,
+                                          "Porcentaje de población de 65 y más años"@es .
 
 
 :percentageOfFatalities rdfs:label "Percentage of fatalities"@en ,
@@ -14736,8 +15292,23 @@ xsd:String rdf:type owl:Class .
                                "Porcentaje de personas"@es .
 
 
+:percentageOfSingleHouseholds rdfs:comment "Porcentaje de hogares formados por una sola persona sobre el total de hogares del territorio."@es ;
+                              rdfs:label "Percentage of single-person households"@en ,
+                                         "Porcentaje de hogares unipersonales"@es .
+
+
+:percentageOfSpanishPopulation rdfs:comment "Porcentaje de población con nacionalidad española sobre el total de la población del territorio."@es ;
+                               rdfs:label "Percentage of Spanish population"@en ,
+                                          "Porcentaje de población española"@es .
+
+
 :percentageOfTimeWorkedUtatRange rdfs:label "Percentage of time worked (UTAT range)"@en ,
                                             "Porcentaje de tiempo trabajado (tramo UTAT)"@es .
+
+
+:percentageOfYoungPopulation rdfs:comment "Porcentaje de personas menores de 18 años sobre el total de la población del territorio."@es ;
+                             rdfs:label "Percentage of young population (under 18)"@en ,
+                                        "Porcentaje de población menor de 18 años"@es .
 
 
 :percentagePoints rdfs:label "Percentage Points"@en ,
@@ -14941,6 +15512,11 @@ xsd:String rdf:type owl:Class .
                   "Rango [1,6]"@es .
 
 
+:rate rdfs:comment "Relación entre dos magnitudes"@es ;
+      rdfs:label "Rates"@en ,
+                 "Tasas"@es .
+
+
 :ratePer100k rdfs:label "Rate per 100,000 inhabitants"@en ,
                         "Tasa por 100.000 habitantes"@es .
 
@@ -15132,6 +15708,11 @@ xsd:String rdf:type owl:Class .
                              "Resources and uses"@en .
 
 
+:reusedWaterVolume rdfs:comment "TODO" ;
+                   rdfs:label "Total volume of reused water"@en ,
+                              "Volumen total de agua reutilizada"@es .
+
+
 :rooms rdfs:label "Habitaciones"@es ,
                   "Rooms"@en .
 
@@ -15275,6 +15856,11 @@ xsd:String rdf:type owl:Class .
                                           "Seriously injured and fatalities"@en .
 
 
+:sewerageNetworkLength rdfs:comment "TODO" ;
+                       rdfs:label "Length of the sewerage network (km)"@en ,
+                                  "Longitud de la red de alcantarillado (km)"@es .
+
+
 :shiftWorkSystem rdfs:label "Shift work system"@en ,
                             "Trabajo con un sistema de turnos"@es .
 
@@ -15289,6 +15875,11 @@ xsd:String rdf:type owl:Class .
 
 :sizeBrackets rdfs:label "Size brackets"@en ,
                          "Tramos de extensión"@es .
+
+
+:sludgeVolume rdfs:comment "TODO" ;
+              rdfs:label "Volume of sludge generated during wastewater treatment"@en ,
+                         "Volumen de lodos generados en el tratamiento de aguas residuales"@es .
 
 
 :socialClassBasedOnOccupation rdfs:label "Clase social basada en la ocupación"@es ,
@@ -15736,6 +16327,11 @@ xsd:String rdf:type owl:Class .
                                                        "Total overtime hours worked per week by employees"@en .
 
 
+:totalPopulation rdfs:comment "Número total de personas residentes en el territorio."@es ;
+                 rdfs:label "Población total"@es ,
+                            "Total population"@en .
+
+
 :tourismConcept rdfs:label "Concepto turístico"@es ,
                            "Tourism concept"@en .
 
@@ -15754,6 +16350,18 @@ xsd:String rdf:type owl:Class .
 
 :touristAttractions rdfs:label "PUNTOS TURISTÍCOS"@es ,
                                "TOURIST ATTRACTIONS"@en .
+
+
+:touristDwellings rdfs:comment "Number of tourist dwellings identified according to the experimental measurement by INE based on short-term rental platforms."@en ,
+                               "Número de viviendas de uso turístico identificadas según la Medición experimental del INE basada en plataformas de alquiler turístico."@es ;
+                  rdfs:label "Tourist dwellings"@en ,
+                             "Viviendas turísticas"@es .
+
+
+:touristDwellingsRatio rdfs:comment "Cociente entre el número de viviendas de uso turístico y el parque residencial total del territorio, expresado como porcentaje."@es ,
+                                    "Quotient between the number of tourist dwellings and the total residential stock of the territory, expressed as a percentage."@en ;
+                       rdfs:label "Porcentaje de viviendas turísticas sobre el parque total"@es ,
+                                  "Tourist dwellings ratio"@en .
 
 
 :touristType rdfs:label "Tipo de visitante"@es ,
@@ -15805,6 +16413,11 @@ xsd:String rdf:type owl:Class .
 
 :travellersKm1000 rdfs:label "Travellers Km1000"@en ,
                              "Viajeros-Km (1000)"@es .
+
+
+:treatedResidualWaterVolume rdfs:comment "TODO" ;
+                            rdfs:label "Volumen de aguas residuales tratadas"@es ,
+                                       "Volumes of treated wastewater"@en .
 
 
 :tripsPerThousandInhabitants rdfs:label "Trips per thousand inhabitants"@en ,
@@ -16201,8 +16814,17 @@ xsd:String rdf:type owl:Class .
                              "Volumen (litros)"@es .
 
 
+:volumeOfSludgeGenerated rdfs:comment "TODO" ;
+                         rdfs:label "Volume of sludge generated during wastewater treatment (tons of dry matter/year)"@en ,
+                                    "Volumen de lodos generados en el tratamiento de aguas residuales (toneladas de materia seca/año)"@es .
+
+
 :wageDecile rdfs:label "Decil de salarios"@es ,
                        "Wage decile"@en .
+
+
+:wasteType rdfs:label "Clase de residuo"@es ,
+                      "Waste type"@en .
 
 
 :wattsPerCapita rdfs:label "Vatios per cápita"@es ,
@@ -16215,6 +16837,12 @@ xsd:String rdf:type owl:Class .
 
 :weeksOfGestation rdfs:label "Semanas de gestación"@es ,
                              "Weeks of gestation"@en .
+
+
+:weightingConfiguration rdfs:comment "Dimension that identifies the weighting configuration used to calculate a composite indicator. Allows the same cube to contain the indicator calculated with various distinct configurations."@en ,
+                                     "Dimensión que identifica la configuración de pesos utilizada para calcular un indicador compuesto. Permite que un mismo cubo contenga el indicador calculado con varias configuraciones distintas."@es ;
+                        rdfs:label "Configuración de pesos"@es ,
+                                   "Weighting configuration"@en .
 
 
 :whoSetsWorkSchedule rdfs:label "Quien fija el horario de trabajo"@es ,
@@ -16356,7 +16984,8 @@ xsd:String rdf:type owl:Class .
                                                             rdfs:label "Period"@en ,
                                                                        "Periodo"@es ,
                                                                        "Reference Period"@en ,
-                                                                       "TIME_PERIOD"@en .
+                                                                       "TIME_PERIOD"@en ,
+                                                                       "periodo"@es .
 
 
 <http://purl.org/linked-data/sdmx/2009/dimension#sex> <http://purl.org/linked-data/cube#concept> <http://purl.org/linked-data/sdmx/2009/concept#sex> ;
@@ -16372,7 +17001,8 @@ xsd:String rdf:type owl:Class .
 <http://purl.org/linked-data/sdmx/2009/measure#currency> rdfs:label "Currency"@en .
 
 
-<http://purl.org/linked-data/sdmx/2009/measure#obsValue> rdfs:label "Observation"@en .
+<http://purl.org/linked-data/sdmx/2009/measure#obsValue> rdfs:label "Observation"@en ,
+                                                                    "Total"@es .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
