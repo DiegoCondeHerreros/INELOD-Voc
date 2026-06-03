@@ -9,6 +9,10 @@
   } ],
   "http://purl.org/dc/terms/contributor" : [ {
     "@value" : "Diego Conde-Herreros"
+  }, {
+    "@value" : "Luis M. Vilches-Blázquez"
+  }, {
+    "@value" : "Oscar Corcho"
   } ],
   "http://purl.org/dc/terms/created" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -43,6 +47,40 @@
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@language" : "en",
     "@value" : "1.0.0"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/CensusSection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Unidad territorial de menor nivel definida por el INE para la organización del Censo Electoral. Identificada por un código de 10 dígitos: 2 de provincia + 3 de municipio + 2 de distrito + 3 de sección."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Census section"
+  }, {
+    "@language" : "es",
+    "@value" : "Sección censal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/District",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Subdivisión administrativa de un municipio. En municipios grandes (Madrid, Barcelona, Valencia, etc.) los distritos agrupan secciones censales y son la unidad territorial intermedia entre el municipio y la sección censal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "District"
+  }, {
+    "@language" : "es",
+    "@value" : "Distrito"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/EurosUSDRelation",
@@ -81,8 +119,14 @@
     "@value" : "Set of Measurements"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/Municipality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/PIBDataType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
   } ],
@@ -98,7 +142,7 @@
     "@value" : "Tipo de dato de PIB"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#String"
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/ReasonType",
@@ -1041,6 +1085,35 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número medio de plazas por vivienda turística en el territorio. Publicado por el INE en la Medición experimental de viviendas turísticas."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bedplaces per tourist dwelling"
+  }, {
+    "@language" : "es",
+    "@value" : "Plazas por vivienda turística"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/birthDeathDifferencePerThousandInhabitants",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1688,6 +1761,9 @@
     "@value" : "Comunidad autónoma de destino"
   }, {
     "@language" : "es",
+    "@value" : "Comunidades"
+  }, {
+    "@language" : "es",
     "@value" : "Comunidades autónomas"
   }, {
     "@language" : "es",
@@ -1695,9 +1771,38 @@
   }, {
     "@language" : "es",
     "@value" : "Comunidades y ciudades autonomas"
+  }, {
+    "@language" : "es",
+    "@value" : "Comunidades y ciudades autónomas"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/censusSection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Dimensión territorial al nivel de sección censal. Cada sección censal pertenece a un distrito mediante skos:broader."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Census section"
+  }, {
+    "@language" : "es",
+    "@value" : "Sección censal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/CensusSection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refArea"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/childbirths",
@@ -2494,6 +2599,28 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/consumedProduct",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Consumed product"
+  }, {
+    "@language" : "es",
+    "@value" : "Producto consumido"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/productGroups"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/continents",
@@ -3844,6 +3971,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Dimensión territorial a nivel de distrito municipal. Apunta a recursos de tipo ine:District."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/linked-data/cube#Observation"
   } ],
@@ -4267,10 +4398,16 @@
     "@value" : "Actividad económica (CNAE-09)"
   }, {
     "@language" : "es",
+    "@value" : "Actividad económica (CNAE-2009)"
+  }, {
+    "@language" : "es",
     "@value" : "Actividad económica (CNAE-93)"
   }, {
     "@language" : "es",
     "@value" : "Actividad principal"
+  }, {
+    "@language" : "es",
+    "@value" : "Actividad principal (CNAE-2009 a 1, 2 y 3 dígitos)"
   }, {
     "@language" : "es",
     "@value" : "Actividades económicas (Histórico Base 90)"
@@ -4990,6 +5127,25 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/equipmentType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Equipment type"
+  }, {
+    "@language" : "es",
+    "@value" : "Tipo de equipamiento"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/errorIntervals",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -5138,6 +5294,38 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/eurosPerHousehold",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Average amount in euros per household."
+  }, {
+    "@language" : "es",
+    "@value" : "Cantidad media en euros referida al hogar como unidad."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Euros per household"
+  }, {
+    "@language" : "es",
+    "@value" : "Euros por hogar"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/euros"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/eurosPerInhabitant",
@@ -5465,6 +5653,9 @@
     "@id" : "http://purl.org/linked-data/cube#Observation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Clase de gasto"
+  }, {
     "@language" : "en",
     "@value" : "Expenditure groups"
   }, {
@@ -6035,6 +6226,28 @@
     "@id" : "http://xmlns.com/foaf/0.1/name"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/fiveYearAgeGroup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/linked-data/cube#concept" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/ageGroups"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Five-year age groups"
+  }, {
+    "@language" : "es",
+    "@value" : "Grupo quinquenal de edad"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -6392,6 +6605,35 @@
     "@id" : "http://lod.ine.es/def/vocabulary/baseYear"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/gentrificationIndex",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicators"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Índice compuesto que mide la intensidad del fenómeno de gentrificación en una unidad territorial, calculado como combinación lineal ponderada de indicadores elementales normalizados por percentiles. Toma valores entre 0 y 100."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gentrification index"
+  }, {
+    "@language" : "es",
+    "@value" : "Índice de gentrificación"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indexRangeScaled"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/geographicalZonesOfSpain",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -6455,6 +6697,38 @@
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
   }, {
     "@id" : "http://lod.ine.es/def/vocabulary/energyAmount"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/giniIndex",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Coeficiente de Gini de la distribución territorial de la renta. Toma valores entre 0 (igualdad perfecta) y 1 (desigualdad máxima)."
+  }, {
+    "@language" : "en",
+    "@value" : "Gini coefficient of the territorial distribution of income. Takes values between 0 (perfect equality) and 1 (maximum inequality)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gini index"
+  }, {
+    "@language" : "es",
+    "@value" : "Índice de Gini"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/index"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/goldFineTroyOunces",
@@ -6566,6 +6840,64 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#currency"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/grossEurosPerHousehold",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Cantidad media en euros por hogar antes de impuestos y cotizaciones sociales."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gross euros per household"
+  }, {
+    "@language" : "es",
+    "@value" : "Renta bruta media por hogar"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/eurosPerHousehold"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Cantidad media en euros por habitante antes de impuestos y cotizaciones sociales."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gross euros per inhabitant"
+  }, {
+    "@language" : "es",
+    "@value" : "Renta bruta media por persona"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/eurosPerInhabitant"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/grossFixedCapitalFormationByActivity",
@@ -6742,6 +7074,25 @@
   }, {
     "@language" : "es",
     "@value" : "Lista de actividades de ocio armonizada"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/hazardType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Hazard type"
+  }, {
+    "@language" : "es",
+    "@value" : "Tipo de peligrosidad"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
@@ -7234,6 +7585,29 @@
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/housingFeatures",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Características de la vivienda como el número de habitaciones, el número de personas por habitación, la superficie útil, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Características de la vivienda"
+  }, {
+    "@language" : "en",
+    "@value" : "Housing features"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/housingRegime",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -7514,6 +7888,35 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Cociente entre la renta del percentil 80 y la del percentil 20 de la distribución territorial de ingresos. Es una medida estándar de desigualdad de ingresos."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Income percentile ratio P80/P20"
+  }, {
+    "@language" : "es",
+    "@value" : "Ratio de percentiles de renta P80/P20"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -7654,6 +8057,32 @@
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/indicator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Dimension that identifies the indicator for each observation within a derived indicators cube."
+  }, {
+    "@language" : "es",
+    "@value" : "Dimensión que identifica de qué indicador se trata cada observación dentro de un cubo de indicadores derivados."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Indicador"
+  }, {
+    "@language" : "en",
+    "@value" : "Indicator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/indicatorLatestData",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -7674,12 +8103,12 @@
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/indicatorType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+    "@id" : "http://lod.ine.es/def/vocabulary/MeasureSet"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/linked-data/cube#Observation"
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -7687,9 +8116,6 @@
   }, {
     "@language" : "es",
     "@value" : "Tipo de indicador"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/indicators",
@@ -7917,6 +8343,34 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicatorType"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Amount invoiced for sewerage and wastewater treatment"
+  }, {
+    "@language" : "es",
+    "@value" : "Importe facturado por alcantarillado y depuración"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#currency"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/islands",
@@ -9549,6 +10003,87 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#date"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/meanAge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Edad media de la población residente en la unidad territorial, expresada en años."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Edad media"
+  }, {
+    "@language" : "en",
+    "@value" : "Mean age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Media de los ingresos del hogar divididos entre las unidades de consumo, calculadas según la escala OCDE modificada (1 para el primer adulto, 0,5 para el resto de mayores de 13 años, 0,3 para los menores de 14)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Mean income per consumption unit"
+  }, {
+    "@language" : "es",
+    "@value" : "Media de la renta por unidad de consumo"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/euros"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/meanHouseholdSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número medio de personas por hogar en el territorio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Mean household size"
+  }, {
+    "@language" : "es",
+    "@value" : "Tamaño medio del hogar"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/measures",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -9601,6 +10136,35 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Mediana de los ingresos del hogar divididos entre las unidades de consumo, según la escala OCDE modificada."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Median income per consumption unit"
+  }, {
+    "@language" : "es",
+    "@value" : "Mediana de la renta por unidad de consumo"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/euros"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/megaJoulesPerCapita",
@@ -10337,14 +10901,12 @@
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/municipalities",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/linked-data/cube#concept" : [ {
     "@id" : "http://lod.ine.es/def/vocabulary/Municipality"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
-  }, {
-    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -10371,15 +10933,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
-  }, {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refArea"
-  }, {
-    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
-  }, {
-    "@id" : "http://lod.ine.es/def/vocabulary/count"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/municipalitySize",
@@ -12220,6 +12776,38 @@
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Percentage of population in the territory whose net income per consumption unit is below 60% of the national median."
+  }, {
+    "@language" : "es",
+    "@value" : "Porcentaje de población en el territorio cuya renta neta por unidad de consumo es inferior al 60% de la mediana nacional."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Percentage of population below poverty threshold"
+  }, {
+    "@language" : "es",
+    "@value" : "Porcentaje de población bajo umbral de pobreza"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/percentageOfPeople"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/percentageOfCentres",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -12262,6 +12850,35 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://lod.ine.es/def/vocabulary/percentage"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Porcentaje de personas de 65 años o más sobre el total de la población del territorio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Percentage of elderly population (65 and over)"
+  }, {
+    "@language" : "es",
+    "@value" : "Porcentaje de población de 65 y más años"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/percentageOfPeople"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/percentageOfFatalities",
@@ -12472,6 +13089,64 @@
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Porcentaje de hogares formados por una sola persona sobre el total de hogares del territorio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Percentage of single-person households"
+  }, {
+    "@language" : "es",
+    "@value" : "Porcentaje de hogares unipersonales"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/percentage"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Porcentaje de población con nacionalidad española sobre el total de la población del territorio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Percentage of Spanish population"
+  }, {
+    "@language" : "es",
+    "@value" : "Porcentaje de población española"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/percentageOfPeople"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -12492,6 +13167,35 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#age"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Porcentaje de personas menores de 18 años sobre el total de la población del territorio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Percentage of young population (under 18)"
+  }, {
+    "@language" : "es",
+    "@value" : "Porcentaje de población menor de 18 años"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/percentageOfPeople"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/percentagePoints",
@@ -12866,6 +13570,9 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
   } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/population",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/populationDensity",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -13473,7 +14180,7 @@
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/rate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://lod.ine.es/def/vocabulary/MeasureSet"
   } ],
@@ -14443,6 +15150,31 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/reusedWaterVolume",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicatorType"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Total volume of reused water"
+  }, {
+    "@language" : "es",
+    "@value" : "Volumen total de agua reutilizada"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/rooms",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -15091,6 +15823,31 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/sewerageNetworkLength",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicatorType"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Length of the sewerage network (km)"
+  }, {
+    "@language" : "es",
+    "@value" : "Longitud de la red de alcantarillado (km)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/sex",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -15171,6 +15928,31 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/sludgeVolume",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicatorType"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Volume of sludge generated during wastewater treatment"
+  }, {
+    "@language" : "es",
+    "@value" : "Volumen de lodos generados en el tratamiento de aguas residuales"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/socialClassBasedOnOccupation",
@@ -17464,6 +18246,35 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/totalPopulation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/count"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de personas residentes en el territorio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Población total"
+  }, {
+    "@language" : "en",
+    "@value" : "Total population"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/population"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/totalQuantityThousandsOfUnitsAverageQuantity-Units",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -17570,6 +18381,70 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/touristDwellings",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/measures"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Number of tourist dwellings identified according to the experimental measurement by INE based on short-term rental platforms."
+  }, {
+    "@language" : "es",
+    "@value" : "Número de viviendas de uso turístico identificadas según la Medición experimental del INE basada en plataformas de alquiler turístico."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Tourist dwellings"
+  }, {
+    "@language" : "es",
+    "@value" : "Viviendas turísticas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/apartments"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/touristDwellingsRatio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/rate"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Cociente entre el número de viviendas de uso turístico y el parque residencial total del territorio, expresado como porcentaje."
+  }, {
+    "@language" : "en",
+    "@value" : "Quotient between the number of tourist dwellings and the total residential stock of the territory, expressed as a percentage."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Porcentaje de viviendas turísticas sobre el parque total"
+  }, {
+    "@language" : "en",
+    "@value" : "Tourist dwellings ratio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/percentage"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/touristType",
@@ -17826,6 +18701,31 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicatorType"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Volumen de aguas residuales tratadas"
+  }, {
+    "@language" : "en",
+    "@value" : "Volumes of treated wastewater"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/tripsPerThousandInhabitants",
@@ -19759,6 +20659,31 @@
     "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
   } ]
 }, {
+  "@id" : "http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://lod.ine.es/def/vocabulary/inMeasureSet" : [ {
+    "@id" : "http://lod.ine.es/def/vocabulary/indicatorType"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Volume of sludge generated during wastewater treatment (tons of dry matter/year)"
+  }, {
+    "@language" : "es",
+    "@value" : "Volumen de lodos generados en el tratamiento de aguas residuales (toneladas de materia seca/año)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
   "@id" : "http://lod.ine.es/def/vocabulary/wageDecile",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -19773,6 +20698,25 @@
   }, {
     "@language" : "en",
     "@value" : "Wage decile"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/wasteType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Clase de residuo"
+  }, {
+    "@language" : "en",
+    "@value" : "Waste type"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
@@ -19838,6 +20782,32 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ]
+}, {
+  "@id" : "http://lod.ine.es/def/vocabulary/weightingConfiguration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Dimension that identifies the weighting configuration used to calculate a composite indicator. Allows the same cube to contain the indicator calculated with various distinct configurations."
+  }, {
+    "@language" : "es",
+    "@value" : "Dimensión que identifica la configuración de pesos utilizada para calcular un indicador compuesto. Permite que un mismo cubo contenga el indicador calculado con varias configuraciones distintas."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/linked-data/cube#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Configuración de pesos"
+  }, {
+    "@language" : "en",
+    "@value" : "Weighting configuration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
   "@id" : "http://lod.ine.es/def/vocabulary/whoSetsWorkSchedule",
@@ -20524,6 +21494,9 @@
   }, {
     "@language" : "en",
     "@value" : "TIME_PERIOD"
+  }, {
+    "@language" : "es",
+    "@value" : "periodo"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
@@ -20585,6 +21558,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Observation"
+  }, {
+    "@language" : "es",
+    "@value" : "Total"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
@@ -20600,9 +21576,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#String",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
