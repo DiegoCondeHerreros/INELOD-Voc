@@ -15,12 +15,14 @@
 @prefix sdmx-code:    <http://purl.org/linked-data/sdmx/2009/code#> .
 @prefix unit: <http://qudt.org/vocab/unit#> .
 @prefix sdmx:    <http://purl.org/linked-data/sdmx#> .
+@prefix places:        <http://purl.org/ontology/places#> .
+
 # Ontology declaration and metadata. 
 
 ine: a owl:Ontology ;
     cc:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
     dcterms:creator "Diego Conde-Herreros";
-    dcterms:contributor "Diego Conde-Herreros";
+    dcterms:contributor "Diego Conde-Herreros", "Oscar Corcho", "Luis M. Vilches-Blázquez" ;
     dcterms:created "2025-05-01"^^xsd:date ;
     dcterms:modified "2025-09-23"^^xsd:date;
     vann:preferredNamespacePrefix "ine" ;
@@ -48,7 +50,7 @@ qb:DimensionProperty a rdfs:Class, owl:Class.
 skos:Concept a owl:Class.
 qb:MeasureProperty a rdfs:Class .
 sdmx-measure:obsValue a qb:MeasureProperty, rdf:Property ;
-    rdfs:label "Observation"@en ;
+    rdfs:label "Observation"@en, "Total"@es ;
     rdfs:range rdfs:Resource .
 sdmx-measure:currency a qb:MeasureProperty, rdf:Property  ;
     rdfs:label "Currency"@en ;
@@ -83,7 +85,7 @@ ine:ccaa
     rdfs:domain qb:Observation ;
     rdfs:range skos:Concept ;
     rdfs:comment "Una comunidad autónoma (C. A.) es una entidad territorial que, dentro del actual ordenamiento jurídico constitucional, está dotada de autonomía, con instituciones y representantes propios y determinadas competencias legislativas, ejecutivas y administrativas, lo que la asimila en muchos aspectos a entidades federadas."@es;
-    rdfs:label "Autonomous communities and cities"@en , "Comunidades y Ciudades Autónomas"@es , "Comunidades y ciudades autonomas"@es, "CCAA"@es, "Comunidades autónomas"@es, "Comunidad autónoma de destino"@es ;
+    rdfs:label "Autonomous communities and cities"@en , "Comunidades y Ciudades Autónomas"@es , "Comunidades y ciudades autonomas"@es, "CCAA"@es, "Comunidades autónomas"@es, "Comunidad autónoma de destino"@es, "Comunidades"@es, "Comunidades y ciudades autónomas"@es ;
     qb:concept  <http://lod.ine.es/kos/ccaa/CCAA> .
 
 
@@ -103,6 +105,11 @@ ine:provinces
     rdfs:label "Provinces"@en, "Provincias"@es, "PROV"@es ;
     qb:concept  <http://lod.ine.es/kos/provincias/PROVINCIAS>  .
 
+ine:equipmentType 
+    rdf:type rdf:Property , qb:DimensionProperty ;
+    rdfs:domain qb:Observation ;
+    rdfs:range rdfs:Resource ;
+    rdfs:label "Equipment type"@en , "Tipo de equipamiento"@es .
 
 ine:sauAndOtherLands
     rdf:type rdf:Property , qb:DimensionProperty ;
@@ -134,6 +141,19 @@ ine:subcity
     "Subciudad"@es ,
     "SUBCITY"@es .
 
+ine:wasteType
+    rdf:type rdf:Property , qb:DimensionProperty ;
+    rdfs:domain qb:Observation ;
+    rdfs:range rdfs:Resource ;
+    rdfs:label "Waste type"@en ,
+    "Clase de residuo"@es .
+
+ine:hazardType
+    rdf:type rdf:Property , qb:DimensionProperty ;
+    rdfs:domain qb:Observation ;
+    rdfs:range rdfs:Resource ;
+    rdfs:label "Hazard type"@en ,
+    "Tipo de peligrosidad"@es .
 
 ine:supracity
     rdf:type rdf:Property , qb:DimensionProperty ;
@@ -160,7 +180,8 @@ ine:districts
     rdfs:range rdfs:Resource ;
     rdfs:label "Districts"@en ,
     "Distritos"@es ,
-    "DIST"@es .
+    "DIST"@es ;
+    rdfs:comment "Dimensión territorial a nivel de distrito municipal. Apunta a recursos de tipo ine:District."@es .
 
 
 ine:sections
@@ -199,11 +220,19 @@ ine:productGroups
     rdfs:label "Product groups"@en ,
     "Grupos de Productos"@es .
 
+ine:consumedProduct
+    rdf:type rdf:Property , qb:DimensionProperty ;
+    rdfs:subPropertyOf ine:productGroups ;
+    rdfs:domain qb:Observation ;
+    rdfs:range skos:Concept ;
+    rdfs:label "Consumed product"@en ,
+    "Producto consumido"@es .
+
 sdmx-dimension:refPeriod a qb:DimensionProperty, rdf:Property ;
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Resource;
     qb:concept sdmx-concept:refPeriod ;
-    rdfs:label "Reference Period"@en , "Period"@en, "Periodo"@es, "TIME_PERIOD"@en ;
+    rdfs:label "Reference Period"@en , "Period"@en, "Periodo"@es, "TIME_PERIOD"@en, "periodo"@es ;
     rdfs:comment """The period of time or point in time to which the measured observation is intended to refer."""@en ;
     rdfs:isDefinedBy <https://sdmx.org/wp-content/uploads/01_sdmx_cog_annex_1_cdc_2009.pdf> .
 
@@ -221,7 +250,7 @@ ine:PIBDataType  a rdf:Property, qb:DimensionProperty;
     rdfs:label "Tipo de dato de PIB"@es;
     rdfs:comment "Incluye: Datos no ajustados de estacionalidad y calendario, y Datos ajustados de estacionalidad y calendario"@es;
     rdfs:domain qb:Observation;
-    rdfs:range xsd:String.
+    rdfs:range xsd:string.
 
 
 ine:compontentsPIBpmDemand
@@ -285,7 +314,9 @@ ine:economicActivity
     "Economic activity (CNAE-93)"@en ,
     "Actividad económica (CNAE-93)"@es ,
     "Economic activity (CNAE-09)"@en ,
-    "Actividad económica (CNAE-09)"@es .
+    "Actividad económica (CNAE-09)"@es ,
+    "Actividad económica (CNAE-2009)"@es,
+    "Actividad principal (CNAE-2009 a 1, 2 y 3 dígitos)"@es .
 
 ine:economicSector 
     a rdf:Property, qb:DimensionProperty;
@@ -322,6 +353,11 @@ sdmx-dimension:sex a qb:DimensionProperty, rdf:Property ;
     rdfs:comment """The state of being male or female."""@en , "El sexo se refiere al sexo biológico de la persona. Según la OMS, el sexo hace referencia a las características biológicas y fisiológicas que definen a hombres y mujeres, mientras que el género se refiere a los roles, conductas, actividades y atributos construidos socialmente que una cultura determinada considera apropiados para hombres y mujeres. De acuerdo con esta descripción, la OMS considera que hombre y mujer son categorías de sexo, mientras que masculino y femenino son categorías de género."@es ;
     rdfs:isDefinedBy <https://sdmx.org/wp-content/uploads/01_sdmx_cog_annex_1_cdc_2009.pdf> .
 
+ine:housingFeatures a rdf:Property, qb:DimensionProperty ;
+    rdfs:label "Housing features"@en , "Características de la vivienda"@es ;
+    rdfs:comment "Características de la vivienda como el número de habitaciones, el número de personas por habitación, la superficie útil, etc."@es ;
+    rdfs:domain qb:Observation ;
+    rdfs:range rdfs:Resource .
 
 ine:islands
     rdf:type rdf:Property , qb:DimensionProperty ;
@@ -440,7 +476,7 @@ ine:expenditureGroups
     rdfs:domain qb:Observation ;
     rdfs:range rdfs:Resource ;
     rdfs:label "Expenditure groups"@en ,
-    "Grupos de gasto"@es .
+    "Grupos de gasto"@es, "Clase de gasto"@es .
 
 
 ine:expenditureGroups2Digits
@@ -686,6 +722,13 @@ ine:ageGroups
     rdfs:range rdfs:Resource ;
     qb:concept sdmx-concept:age ;
     rdfs:label "Age groups"@en , "Grupos de edad"@es .
+
+ine:fiveYearAgeGroup
+    rdf:type rdf:Property , qb:DimensionProperty ;
+    rdfs:domain qb:Observation ;
+    rdfs:range rdfs:Resource ;
+    qb:concept ine:ageGroups ;
+    rdfs:label "Five-year age groups"@en , "Grupo quinquenal de edad"@es .
 
 ine:professionalSituation
     rdf:type rdf:Property , qb:DimensionProperty ;
@@ -1534,14 +1577,6 @@ ine:classificationAccordingToEo
     rdfs:range rdfs:Resource ;
     rdfs:label "Classification according to E.O."@en ,
     "Clasificación según E.O."@es .
-
-
-ine:indicatorType
-    rdf:type rdf:Property , qb:DimensionProperty ;
-    rdfs:domain qb:Observation ;
-    rdfs:range rdfs:Resource ;
-    rdfs:label "Indicator type"@en ,
-    "Tipo de indicador"@es .
 
 
 ine:actualHoursWorkedInMainJob
@@ -6269,18 +6304,64 @@ ine:unitEmployed
 ine:dataType
     a ine:MeasureSet ;
     rdfs:label "Tipo de dato"@es, "Datatype"@en ;
-    rdfs:comment "Relación entre dos magnitudes"@es.
+    rdfs:comment "Relación entre dos magnitudes"@es .
 
 ine:datatypeTourists
     a ine:MeasureSet ;
     rdfs:label "Tipo de dato Turistas"@es, "Datatype Tourists"@en ;
-    rdfs:comment "Relación entre dos magnitudes"@es.
+    rdfs:comment "Relación entre dos magnitudes"@es .
 
-
+ine:indicatorType
+    a ine:MeasureSet ;
+    rdfs:label "Indicator type"@en , "Tipo de indicador"@es ;
+    rdfs:comment "TODO" .
 
 ###############################################################################
 # MEASURES IN SETS
 ################################################################################
+
+ine:volumeOfSludgeGenerated a rdf:Property, qb:MeasureProperty ;
+    rdfs:label "Volumen de lodos generados en el tratamiento de aguas residuales (toneladas de materia seca/año)"@es, "Volume of sludge generated during wastewater treatment (tons of dry matter/year)"@en ;
+    rdfs:comment "TODO" ;
+    ine:inMeasureSet ine:indicatorType ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:float .
+
+ine:treatedResidualWaterVolume a rdf:Property, qb:MeasureProperty ;
+    rdfs:label "Volumen de aguas residuales tratadas"@es, "Volumes of treated wastewater"@en ;
+    rdfs:comment "TODO" ;
+    ine:inMeasureSet ine:indicatorType ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:float .
+
+ine:reusedWaterVolume a rdf:Property, qb:MeasureProperty ;
+    rdfs:label "Volumen total de agua reutilizada"@es, "Total volume of reused water"@en ;
+    rdfs:comment "TODO" ;
+    ine:inMeasureSet ine:indicatorType ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:float .
+
+ine:invoiceforSewerageAndWastewaterTreatment a rdf:Property, qb:MeasureProperty ;
+    rdfs:label "Importe facturado por alcantarillado y depuración"@es, "Amount invoiced for sewerage and wastewater treatment"@en ;
+    rdfs:comment "TODO" ;
+    rdfs:subPropertyOf sdmx-measure:currency ;
+    ine:inMeasureSet ine:indicatorType ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:float .
+
+ine:sewerageNetworkLength a rdf:Property, qb:MeasureProperty ;
+    rdfs:label "Longitud de la red de alcantarillado (km)"@es, "Length of the sewerage network (km)"@en ;
+    rdfs:comment "TODO" ;
+    ine:inMeasureSet ine:indicatorType ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:float .
+
+ine:sludgeVolume a rdf:Property, qb:MeasureProperty ;
+    rdfs:label "Volumen de lodos generados en el tratamiento de aguas residuales"@es, "Volume of sludge generated during wastewater treatment"@en ;
+    rdfs:comment "TODO" ;
+    ine:inMeasureSet ine:indicatorType ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:float .
 
 ine:unemploymentRate a rdf:Property, qb:MeasureProperty;
     rdfs:label "Tasas de Paro"@es, "Tasa de paro de la población"@es;
@@ -6766,14 +6847,6 @@ ine:index  a rdf:Property , qb:MeasureProperty;
     rdfs:subPropertyOf sdmx-measure:obsValue;
     rdfs:domain qb:Observation; 
     rdfs:range xsd:int.
-
-ine:municipalities a rdf:Property, qb:MeasureProperty ;
-  rdfs:subPropertyOf sdmx-measure:obsValue , ine:count ;
-  rdfs:domain qb:Observation ;
-  rdfs:range xsd:integer ;
-  rdfs:comment "El municipio es la entidad local básica de la organización territorial del Estado. Tiene personalidad jurídica y plena capacidad para el cumplimiento de sus fines."@es ;
-  rdfs:label "Municipios"@es , "Municipalities"@en .
-
 
 ine:peopleMarryingForTheFirstTimePerThousandInhabitants a rdf:Property, qb:MeasureProperty ;
   rdfs:subPropertyOf sdmx-measure:obsValue , ine:count ;
@@ -8139,3 +8212,231 @@ ine:thousandsOfTonnes a rdf:Property, qb:MeasureProperty ;
 #  rdfs:comment "TODO" ;
   rdfs:label "Miles de Toneladas"@es , "Thousands Of Tonnes"@en .
 
+
+############ Extensión para el los indicadores de gentrificación. ##############################
+
+##############################################################################
+# Extensiones del INELOD-Voc para la aplicación de cálculo de indicadores de gentrificación (Madrid)
+# Diego Conde-Herreros et al. — 2026
+##############################################################################
+
+########################################################################
+# 1. CLASES TERRITORIALES NUEVAS
+########################################################################
+ine:District a rdfs:Class, owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "District"@en , "Distrito"@es ;
+    rdfs:comment "Subdivisión administrativa de un municipio. En municipios grandes (Madrid, Barcelona, Valencia, etc.) los distritos agrupan secciones censales y son la unidad territorial intermedia entre el municipio y la sección censal."@es .
+
+ine:CensusSection a rdfs:Class, owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Census section"@en , "Sección censal"@es ;
+    rdfs:comment "Unidad territorial de menor nivel definida por el INE para la organización del Censo Electoral. Identificada por un código de 10 dígitos: 2 de provincia + 3 de municipio + 2 de distrito + 3 de sección."@es .
+
+########################################################################
+# 2. ANOTACIÓN SOBRE LA CLASE DE MUNICIPIO PREEXISTENTE
+########################################################################
+ine:Municipality rdfs:subClassOf skos:Concept .
+
+
+########################################################################
+# 3. DIMENSIÓN TERRITORIAL NUEVA: SECCIÓN CENSAL
+########################################################################
+ine:censusSection a rdf:Property, qb:DimensionProperty ;
+    rdfs:subPropertyOf sdmx-dimension:refArea ;
+    rdfs:domain qb:Observation ;
+    rdfs:range ine:CensusSection ;
+    rdfs:label "Census section"@en , "Sección censal"@es ;
+    rdfs:comment "Dimensión territorial al nivel de sección censal. Cada sección censal pertenece a un distrito mediante skos:broader."@es .
+
+########################################################################
+# 4. MEDIDAS NUEVAS — CUBO ADRH
+########################################################################
+
+ine:eurosPerHousehold a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:euros ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Euros per household"@en , "Euros por hogar"@es ;
+    rdfs:comment "Cantidad media en euros referida al hogar como unidad."@es, "Average amount in euros per household."@en .
+
+ine:meanEurosPerConsumptionUnit a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:euros ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Mean income per consumption unit"@en ,
+               "Media de la renta por unidad de consumo"@es ;
+    rdfs:comment "Media de los ingresos del hogar divididos entre las unidades de consumo, calculadas según la escala OCDE modificada (1 para el primer adulto, 0,5 para el resto de mayores de 13 años, 0,3 para los menores de 14)."@es .
+
+ine:medianEurosPerConsumptionUnit a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:euros ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Median income per consumption unit"@en ,
+               "Mediana de la renta por unidad de consumo"@es ;
+    rdfs:comment "Mediana de los ingresos del hogar divididos entre las unidades de consumo, según la escala OCDE modificada."@es .
+
+ine:grossEurosPerInhabitant a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:eurosPerInhabitant ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Gross euros per inhabitant"@en ,
+               "Renta bruta media por persona"@es ;
+    rdfs:comment "Cantidad media en euros por habitante antes de impuestos y cotizaciones sociales."@es .
+
+ine:grossEurosPerHousehold a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:eurosPerHousehold ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Gross euros per household"@en ,
+               "Renta bruta media por hogar"@es ;
+    rdfs:comment "Cantidad media en euros por hogar antes de impuestos y cotizaciones sociales."@es .
+
+ine:giniIndex a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:index ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Gini index"@en , "Índice de Gini"@es ;
+    rdfs:comment "Coeficiente de Gini de la distribución territorial de la renta. Toma valores entre 0 (igualdad perfecta) y 1 (desigualdad máxima)."@es, "Gini coefficient of the territorial distribution of income. Takes values between 0 (perfect equality) and 1 (maximum inequality)."@en .
+
+ine:incomePercentileRatioP80P20 a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:rate ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Income percentile ratio P80/P20"@en ,
+               "Ratio de percentiles de renta P80/P20"@es ;
+    rdfs:comment "Cociente entre la renta del percentil 80 y la del percentil 20 de la distribución territorial de ingresos. Es una medida estándar de desigualdad de ingresos."@es .
+
+ine:percentageBelowPovertyThreshold a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:percentageOfPeople ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Percentage of population below poverty threshold"@en ,
+               "Porcentaje de población bajo umbral de pobreza"@es ;
+    rdfs:comment "Porcentaje de población en el territorio cuya renta neta por unidad de consumo es inferior al 60% de la mediana nacional."@es, "Percentage of population in the territory whose net income per consumption unit is below 60% of the national median."@en .
+
+
+########################################################################
+# 5. MEDIDAS NUEVAS — CUBO VIVIENDAS TURÍSTICAS
+########################################################################
+
+ine:touristDwellings a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:apartments ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Tourist dwellings"@en , "Viviendas turísticas"@es ;
+    rdfs:comment "Número de viviendas de uso turístico identificadas según la Medición experimental del INE basada en plataformas de alquiler turístico."@es, "Number of tourist dwellings identified according to the experimental measurement by INE based on short-term rental platforms."@en .
+
+ine:touristDwellingsRatio a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:percentage ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Tourist dwellings ratio"@en ,
+               "Porcentaje de viviendas turísticas sobre el parque total"@es ;
+    rdfs:comment "Cociente entre el número de viviendas de uso turístico y el parque residencial total del territorio, expresado como porcentaje."@es, "Quotient between the number of tourist dwellings and the total residential stock of the territory, expressed as a percentage."@en .
+
+ine:meanAge a rdf:Property, qb:MeasureProperty ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Mean age"@en , "Edad media"@es ;
+    rdfs:comment "Edad media de la población residente en la unidad territorial, expresada en años."@es .
+
+ine:percentageOfYoungPopulation a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:percentageOfPeople ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Percentage of young population (under 18)"@en ,
+               "Porcentaje de población menor de 18 años"@es ;
+    rdfs:comment "Porcentaje de personas menores de 18 años sobre el total de la población del territorio."@es .
+
+ine:percentageOfElderlyPopulation a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:percentageOfPeople ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Percentage of elderly population (65 and over)"@en ,
+               "Porcentaje de población de 65 y más años"@es ;
+    rdfs:comment "Porcentaje de personas de 65 años o más sobre el total de la población del territorio."@es .
+
+ine:meanHouseholdSize a rdf:Property, qb:MeasureProperty ;
+    ine:inMeasureSet ine:measures ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Mean household size"@en , "Tamaño medio del hogar"@es ;
+    rdfs:comment "Número medio de personas por hogar en el territorio."@es .
+
+ine:percentageOfSingleHouseholds a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:percentage ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Percentage of single-person households"@en ,
+               "Porcentaje de hogares unipersonales"@es ;
+    rdfs:comment "Porcentaje de hogares formados por una sola persona sobre el total de hogares del territorio."@es .
+
+ine:totalPopulation a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:population ;
+    ine:inMeasureSet ine:count ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Total population"@en , "Población total"@es ;
+    rdfs:comment "Número total de personas residentes en el territorio."@es .
+
+ine:percentageOfSpanishPopulation a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:percentageOfPeople ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Percentage of Spanish population"@en ,
+               "Porcentaje de población española"@es ;
+    rdfs:comment "Porcentaje de población con nacionalidad española sobre el total de la población del territorio."@es .
+
+########################################################################
+# 6. MEDIDA NUEVA — CUBO DE INDICADORES DERIVADOS
+########################################################################
+
+ine:gentrificationIndex a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:indexRangeScaled ;
+    ine:inMeasureSet ine:indicators ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Gentrification index"@en , "Índice de gentrificación"@es ;
+    rdfs:comment "Índice compuesto que mide la intensidad del fenómeno de gentrificación en una unidad territorial, calculado como combinación lineal ponderada de indicadores elementales normalizados por percentiles. Toma valores entre 0 y 100."@es .
+
+
+########################################################################
+# 7. DIMENSIONES NUEVAS — IDENTIFICACIÓN DE INDICADORES Y CONFIGURACIÓN
+########################################################################
+
+ine:indicator a rdf:Property, qb:DimensionProperty ;
+    rdfs:domain qb:Observation ;
+    rdfs:range skos:Concept ;
+    rdfs:label "Indicator"@en , "Indicador"@es ;
+    rdfs:comment "Dimensión que identifica de qué indicador se trata cada observación dentro de un cubo de indicadores derivados."@es, "Dimension that identifies the indicator for each observation within a derived indicators cube."@en .
+
+ine:weightingConfiguration a rdf:Property, qb:DimensionProperty ;
+    rdfs:domain qb:Observation ;
+    rdfs:range skos:Concept ;
+    rdfs:label "Weighting configuration"@en , "Configuración de pesos"@es ;
+    rdfs:comment "Dimensión que identifica la configuración de pesos utilizada para calcular un indicador compuesto. Permite que un mismo cubo contenga el indicador calculado con varias configuraciones distintas."@es, "Dimension that identifies the weighting configuration used to calculate a composite indicator. Allows the same cube to contain the indicator calculated with various distinct configurations."@en .
+
+ine:bedplacesPerTouristDwelling a rdf:Property, qb:MeasureProperty ;
+    rdfs:subPropertyOf ine:rate ;
+    ine:inMeasureSet ine:rate ;
+    rdfs:domain qb:Observation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Bedplaces per tourist dwelling"@en ,
+               "Plazas por vivienda turística"@es ;
+    rdfs:comment "Número medio de plazas por vivienda turística en el territorio. Publicado por el INE en la Medición experimental de viviendas turísticas."@es .
