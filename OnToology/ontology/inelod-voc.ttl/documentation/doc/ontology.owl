@@ -17,6 +17,8 @@
         <owl:versionIRI rdf:resource="http://lod.ine.es/def/vocabulary/1.0.0"/>
         <ns:license rdf:resource="https://creativecommons.org/licenses/by/4.0/legalcode"/>
         <terms:contributor>Diego Conde-Herreros</terms:contributor>
+        <terms:contributor>Luis M. Vilches-Blázquez</terms:contributor>
+        <terms:contributor>Oscar Corcho</terms:contributor>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-05-01</terms:created>
         <terms:creator>Diego Conde-Herreros</terms:creator>
         <terms:description xml:lang="en">An ontology for describing the variables used as dimensions and measures in the RDF data cubes from the Instituto Nacional de Estadística</terms:description>
@@ -49,6 +51,15 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling -->
+
+
+    <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/contractingPartiesGender -->
 
 
@@ -67,12 +78,35 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20 -->
+
+
+    <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/mainCaregiverGender -->
 
 
     <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/mainCaregiverGender">
         <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/sex"/>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/population -->
+
+
+    <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/population"/>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/rate -->
+
+
+    <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/rate"/>
     
 
 
@@ -88,6 +122,15 @@
 
     <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/surname">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/surname"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/totalPopulation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://lod.ine.es/def/vocabulary/totalPopulation">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/population"/>
     </owl:AnnotationProperty>
     
 
@@ -242,16 +285,6 @@
 
     <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/EurosUSDRelation">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://lod.ine.es/def/vocabulary/PIBDataType -->
-
-
-    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/PIBDataType">
-        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
     </owl:ObjectProperty>
     
 
@@ -893,6 +926,17 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/censusSection -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/censusSection">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/dimension#refArea"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://lod.ine.es/def/vocabulary/CensusSection"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/childbirths -->
 
 
@@ -1256,6 +1300,17 @@
 
     <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/constantDollars">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/consumedProduct -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/consumedProduct">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/productGroups"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     </owl:ObjectProperty>
     
 
@@ -2259,6 +2314,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/equipmentType -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/equipmentType">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/errorIntervals -->
 
 
@@ -2674,6 +2739,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/fiveYearAgeGroup -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/fiveYearAgeGroup">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations -->
 
 
@@ -2970,6 +3045,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/hazardType -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/hazardType">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/healthcare -->
 
 
@@ -3138,6 +3223,16 @@
 
     <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/housing">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/housingFeatures -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/housingFeatures">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     </owl:ObjectProperty>
     
 
@@ -3316,20 +3411,20 @@
     
 
 
-    <!-- http://lod.ine.es/def/vocabulary/indicatorLatestData -->
+    <!-- http://lod.ine.es/def/vocabulary/indicator -->
 
 
-    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/indicatorLatestData">
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/indicator">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://lod.ine.es/def/vocabulary/indicatorType -->
+    <!-- http://lod.ine.es/def/vocabulary/indicatorLatestData -->
 
 
-    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/indicatorType">
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/indicatorLatestData">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     </owl:ObjectProperty>
@@ -3444,6 +3539,15 @@
     <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/internationalAccountsAnnotation">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#currency"/>
     </owl:ObjectProperty>
     
 
@@ -4519,7 +4623,6 @@
 
     <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/municipalities">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/dimension#refArea"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     </owl:ObjectProperty>
@@ -8607,6 +8710,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/wasteType -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/wasteType">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/wattsPerCapita -->
 
 
@@ -8632,6 +8745,16 @@
     <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/weeksOfGestation">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/weightingConfiguration -->
+
+
+    <owl:ObjectProperty rdf:about="http://lod.ine.es/def/vocabulary/weightingConfiguration">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     </owl:ObjectProperty>
     
 
@@ -8891,6 +9014,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/PIBDataType -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/PIBDataType">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/USD -->
 
 
@@ -9087,6 +9220,16 @@
 
 
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/basedOnReferencePersonIncomeStatus">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
@@ -9731,6 +9874,17 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/eurosPerHousehold -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/eurosPerHousehold">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/euros"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/eurosPerInhabitant -->
 
 
@@ -9964,11 +10118,33 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/gentrificationIndex -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/gentrificationIndex">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/indexRangeScaled"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/gigajoulesPerCapita -->
 
 
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/gigajoulesPerCapita">
         <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/energyAmount"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/giniIndex -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/giniIndex">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/index"/>
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
@@ -10011,6 +10187,28 @@
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/grossDomesticProduct">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/grossEurosPerHousehold -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/grossEurosPerHousehold">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/eurosPerHousehold"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/eurosPerInhabitant"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
@@ -10198,6 +10396,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson -->
 
 
@@ -10243,6 +10451,16 @@
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/indexValue">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
@@ -10654,6 +10872,48 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/meanAge -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/meanAge">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/euros"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/meanHouseholdSize -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/meanHouseholdSize">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/euros"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/megaJoulesPerCapita -->
 
 
@@ -10786,16 +11046,6 @@
         <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/massTonnesBased"/>
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://lod.ine.es/def/vocabulary/municipalities -->
-
-
-    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/municipalities">
-        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/count"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
@@ -11171,6 +11421,17 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentageOfPeople"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/percentageOfCentres -->
 
 
@@ -11186,6 +11447,17 @@
 
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageOfDailySmokers">
         <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentage"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentageOfPeople"/>
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
@@ -11287,10 +11559,43 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentage"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentageOfPeople"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange -->
 
 
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentageOfPeople"/>
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
@@ -11502,6 +11807,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/reusedWaterVolume -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/reusedWaterVolume">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/rooms -->
 
 
@@ -11532,12 +11847,32 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/sewerageNetworkLength -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/sewerageNetworkLength">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/singleAgeValues -->
 
 
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/singleAgeValues">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/sludgeVolume -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/sludgeVolume">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
@@ -12080,6 +12415,38 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/totalPopulation -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/totalPopulation">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/touristDwellings -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/touristDwellings">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/apartments"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/touristDwellingsRatio -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/touristDwellingsRatio">
+        <rdfs:subPropertyOf rdf:resource="http://lod.ine.es/def/vocabulary/percentage"/>
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/tourists -->
 
 
@@ -12118,6 +12485,16 @@
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/travellersKm1000">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
@@ -12219,6 +12596,16 @@
     <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/volumeLitreBased">
         <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated -->
+
+
+    <owl:DatatypeProperty rdf:about="http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated">
+        <rdfs:domain rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
@@ -12360,6 +12747,30 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/CensusSection -->
+
+
+    <owl:Class rdf:about="http://lod.ine.es/def/vocabulary/CensusSection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="es">Unidad territorial de menor nivel definida por el INE para la organización del Censo Electoral. Identificada por un código de 10 dígitos: 2 de provincia + 3 de municipio + 2 de distrito + 3 de sección.</rdfs:comment>
+        <rdfs:label xml:lang="en">Census section</rdfs:label>
+        <rdfs:label xml:lang="es">Sección censal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/District -->
+
+
+    <owl:Class rdf:about="http://lod.ine.es/def/vocabulary/District">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="es">Subdivisión administrativa de un municipio. En municipios grandes (Madrid, Barcelona, Valencia, etc.) los distritos agrupan secciones censales y son la unidad territorial intermedia entre el municipio y la sección censal.</rdfs:comment>
+        <rdfs:label xml:lang="en">District</rdfs:label>
+        <rdfs:label xml:lang="es">Distrito</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/MeasureSet -->
 
 
@@ -12367,6 +12778,15 @@
         <rdfs:comment xml:lang="es">La clase OWL que representa a aquellas variables del INE que corresponden al conjunto de medidas de un conjunto de datos</rdfs:comment>
         <rdfs:label xml:lang="es">Conjunto de Medidas</rdfs:label>
         <rdfs:label xml:lang="en">Set of Measurements</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/Municipality -->
+
+
+    <owl:Class rdf:about="http://lod.ine.es/def/vocabulary/Municipality">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     </owl:Class>
     
 
@@ -12429,13 +12849,6 @@
 
 
     <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#String -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#String"/>
     
 
 
@@ -12871,6 +13284,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/birthDeathDifferencePerThousandInhabitants -->
 
 
@@ -13145,6 +13568,15 @@
 
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/ccaa">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/censusSection -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/censusSection">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
     </owl:NamedIndividual>
     
@@ -13488,6 +13920,15 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/constantDollars">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/consumedProduct -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/consumedProduct">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
     </owl:NamedIndividual>
     
 
@@ -14538,6 +14979,15 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/equipmentType -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/equipmentType">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/errorIntervals -->
 
 
@@ -14597,6 +15047,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/eurosPerCubicMetre">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/eurosPerHousehold -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/eurosPerHousehold">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
     </owl:NamedIndividual>
     
 
@@ -14997,6 +15457,15 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/fiveYearAgeGroup -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/fiveYearAgeGroup">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations -->
 
 
@@ -15159,6 +15628,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/gentrificationIndex -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/gentrificationIndex">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicators"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/geographicalZonesOfSpain -->
 
 
@@ -15182,6 +15661,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/gigajoulesPerCapita">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/giniIndex -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/giniIndex">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
     </owl:NamedIndividual>
     
 
@@ -15231,6 +15720,26 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/grossEurosPerHousehold -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/grossEurosPerHousehold">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/grossFixedCapitalFormationByActivity -->
 
 
@@ -15271,6 +15780,15 @@
 
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/harmonizedLeisureActivitiesList">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/hazardType -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/hazardType">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
     </owl:NamedIndividual>
     
@@ -15483,6 +16001,15 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/housingFeatures -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/housingFeatures">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/housingRegime -->
 
 
@@ -15600,6 +16127,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20 -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson -->
 
 
@@ -15655,6 +16192,15 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/indicator -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/indicator">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/indicatorLatestData -->
 
 
@@ -15668,7 +16214,10 @@
 
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/indicatorType">
-        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+        <rdf:type rdf:resource="http://lod.ine.es/def/vocabulary/MeasureSet"/>
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="en">Indicator type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de indicador</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -15769,6 +16318,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/internationalAccountsAnnotation">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicatorType"/>
     </owl:NamedIndividual>
     
 
@@ -16457,6 +17016,36 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/meanAge -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/meanAge">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/meanHouseholdSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/meanHouseholdSize">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/measures -->
 
 
@@ -16483,6 +17072,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/measuresForDependentFamilyCare">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
     </owl:NamedIndividual>
     
 
@@ -16807,7 +17406,6 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/municipalities">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
-        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
     </owl:NamedIndividual>
     
 
@@ -17590,6 +18188,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/percentageOfCentres -->
 
 
@@ -17604,6 +18212,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageOfDailySmokers">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
     </owl:NamedIndividual>
     
 
@@ -17689,11 +18307,41 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange -->
 
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
     </owl:NamedIndividual>
     
 
@@ -18101,9 +18749,6 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/rate">
         <rdf:type rdf:resource="http://lod.ine.es/def/vocabulary/MeasureSet"/>
-        <rdfs:comment xml:lang="es">Relación entre dos magnitudes</rdfs:comment>
-        <rdfs:label xml:lang="en">Rates</rdfs:label>
-        <rdfs:label xml:lang="es">Tasas</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -18542,6 +19187,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/reusedWaterVolume -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/reusedWaterVolume">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicatorType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/rooms -->
 
 
@@ -18803,6 +19458,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/sewerageNetworkLength -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/sewerageNetworkLength">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicatorType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/shiftWorkSystem -->
 
 
@@ -18835,6 +19500,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/sizeBrackets">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/sludgeVolume -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/sludgeVolume">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicatorType"/>
     </owl:NamedIndividual>
     
 
@@ -19788,6 +20463,16 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/totalPopulation -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/totalPopulation">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/count"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/totalQuantityThousandsOfUnitsAverageQuantity-Units -->
 
 
@@ -19840,6 +20525,26 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/touristAttractions">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/touristDwellings -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/touristDwellings">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/measures"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/touristDwellingsRatio -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/touristDwellingsRatio">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/rate"/>
     </owl:NamedIndividual>
     
 
@@ -19948,6 +20653,16 @@
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/travellersKm1000">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicatorType"/>
     </owl:NamedIndividual>
     
 
@@ -20842,10 +21557,29 @@
     
 
 
+    <!-- http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+        <inMeasureSet rdf:resource="http://lod.ine.es/def/vocabulary/indicatorType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://lod.ine.es/def/vocabulary/wageDecile -->
 
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/wageDecile">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/wasteType -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/wasteType">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
     </owl:NamedIndividual>
     
@@ -20873,6 +21607,15 @@
 
 
     <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/weeksOfGestation">
+        <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lod.ine.es/def/vocabulary/weightingConfiguration -->
+
+
+    <owl:NamedIndividual rdf:about="http://lod.ine.es/def/vocabulary/weightingConfiguration">
         <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
     </owl:NamedIndividual>
     
@@ -21376,6 +22119,11 @@
         <rdfs:label xml:lang="en">Basic farm characteristics</rdfs:label>
         <rdfs:label xml:lang="es">Características básicas de la explotación</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling">
+        <rdfs:comment xml:lang="es">Número medio de plazas por vivienda turística en el territorio. Publicado por el INE en la Medición experimental de viviendas turísticas.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bedplaces per tourist dwelling</rdfs:label>
+        <rdfs:label xml:lang="es">Plazas por vivienda turística</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/birthDeathDifferencePerThousandInhabitants">
         <rdfs:label xml:lang="en">Births minus deaths (per thousand inhabitants)</rdfs:label>
         <rdfs:label xml:lang="es">Nacimientos menos defunciones (por mil habitantes)</rdfs:label>
@@ -21506,9 +22254,16 @@
         <rdfs:label xml:lang="en">Autonomous communities and cities</rdfs:label>
         <rdfs:label xml:lang="es">CCAA</rdfs:label>
         <rdfs:label xml:lang="es">Comunidad autónoma de destino</rdfs:label>
+        <rdfs:label xml:lang="es">Comunidades</rdfs:label>
         <rdfs:label xml:lang="es">Comunidades autónomas</rdfs:label>
         <rdfs:label xml:lang="es">Comunidades y Ciudades Autónomas</rdfs:label>
         <rdfs:label xml:lang="es">Comunidades y ciudades autonomas</rdfs:label>
+        <rdfs:label xml:lang="es">Comunidades y ciudades autónomas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/censusSection">
+        <rdfs:comment xml:lang="es">Dimensión territorial al nivel de sección censal. Cada sección censal pertenece a un distrito mediante skos:broader.</rdfs:comment>
+        <rdfs:label xml:lang="en">Census section</rdfs:label>
+        <rdfs:label xml:lang="es">Sección censal</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/childbirths">
         <rdfs:label xml:lang="en">Childbirths</rdfs:label>
@@ -21675,6 +22430,10 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/constantDollars">
         <rdfs:label xml:lang="en">Constant dollars of 2015</rdfs:label>
         <rdfs:label xml:lang="es">Dolares constantes de 2015</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/consumedProduct">
+        <rdfs:label xml:lang="en">Consumed product</rdfs:label>
+        <rdfs:label xml:lang="es">Producto consumido</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/continents">
         <rdfs:label xml:lang="es">Continentes</rdfs:label>
@@ -21933,6 +22692,7 @@
         <rdfs:label xml:lang="es">OPERACIONES DE DISTRIBUCIÓN</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/districts">
+        <rdfs:comment xml:lang="es">Dimensión territorial a nivel de distrito municipal. Apunta a recursos de tipo ine:District.</rdfs:comment>
         <rdfs:label xml:lang="es">DIST</rdfs:label>
         <rdfs:label xml:lang="en">Districts</rdfs:label>
         <rdfs:label xml:lang="es">Distritos</rdfs:label>
@@ -22021,8 +22781,10 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/economicActivity">
         <rdfs:comment xml:lang="es">Se define como la generación de valor añadido mediante la producción de bienes y servicios.</rdfs:comment>
         <rdfs:label xml:lang="es">Actividad económica (CNAE-09)</rdfs:label>
+        <rdfs:label xml:lang="es">Actividad económica (CNAE-2009)</rdfs:label>
         <rdfs:label xml:lang="es">Actividad económica (CNAE-93)</rdfs:label>
         <rdfs:label xml:lang="es">Actividad principal</rdfs:label>
+        <rdfs:label xml:lang="es">Actividad principal (CNAE-2009 a 1, 2 y 3 dígitos)</rdfs:label>
         <rdfs:label xml:lang="es">Actividades económicas (Histórico Base 90)</rdfs:label>
         <rdfs:label xml:lang="en">Activity branch (main job) CNAE 2009</rdfs:label>
         <rdfs:label xml:lang="en">Activity branch - CNAE93</rdfs:label>
@@ -22173,6 +22935,10 @@
         <rdfs:label xml:lang="es">Agrupaciones EPA</rdfs:label>
         <rdfs:label xml:lang="en">EPA groupings</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/equipmentType">
+        <rdfs:label xml:lang="en">Equipment type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de equipamiento</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/errorIntervals">
         <rdfs:label xml:lang="en">Error intervals</rdfs:label>
         <rdfs:label xml:lang="es">Intervalos de error</rdfs:label>
@@ -22200,6 +22966,12 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/eurosPerCubicMetre">
         <rdfs:label xml:lang="en">Euros Per Cubic Metre</rdfs:label>
         <rdfs:label xml:lang="es">Euros por metro cúbico</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/eurosPerHousehold">
+        <rdfs:comment xml:lang="en">Average amount in euros per household.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Cantidad media en euros referida al hogar como unidad.</rdfs:comment>
+        <rdfs:label xml:lang="en">Euros per household</rdfs:label>
+        <rdfs:label xml:lang="es">Euros por hogar</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/eurosPerInhabitant">
         <rdfs:label xml:lang="en">Euros Per Inhabitant</rdfs:label>
@@ -22263,6 +23035,7 @@
         <rdfs:label xml:lang="en">Expenditure codes with physical quantity (ECOICOP/EPF)</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/expenditureGroups">
+        <rdfs:label xml:lang="es">Clase de gasto</rdfs:label>
         <rdfs:label xml:lang="en">Expenditure groups</rdfs:label>
         <rdfs:label xml:lang="es">Grupos de gasto</rdfs:label>
     </rdf:Description>
@@ -22379,6 +23152,11 @@
         <rdfs:label xml:lang="en">First name</rdfs:label>
         <rdfs:label xml:lang="es">Nombre</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/fiveYearAgeGroup">
+        <cube:concept rdf:resource="http://lod.ine.es/def/vocabulary/ageGroups"/>
+        <rdfs:label xml:lang="en">Five-year age groups</rdfs:label>
+        <rdfs:label xml:lang="es">Grupo quinquenal de edad</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations">
         <rdfs:label xml:lang="en">FIXED CAPITAL FORMATION OPERATIONS</rdfs:label>
         <rdfs:label xml:lang="es">OPERACIÓN DE BIENES Y SERVICIOS FBCF</rdfs:label>
@@ -22451,6 +23229,11 @@
         <rdfs:label xml:lang="es">Generación/Decadas/Año nacimiento</rdfs:label>
         <rdfs:label xml:lang="en">Generation/Decades/Year of birth</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/gentrificationIndex">
+        <rdfs:comment xml:lang="es">Índice compuesto que mide la intensidad del fenómeno de gentrificación en una unidad territorial, calculado como combinación lineal ponderada de indicadores elementales normalizados por percentiles. Toma valores entre 0 y 100.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gentrification index</rdfs:label>
+        <rdfs:label xml:lang="es">Índice de gentrificación</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/geographicalZonesOfSpain">
         <rdfs:label xml:lang="en">Geographical zones of Spain</rdfs:label>
         <rdfs:label xml:lang="es">Zonas geográficas de España</rdfs:label>
@@ -22462,6 +23245,12 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/gigajoulesPerCapita">
         <rdfs:label xml:lang="en">Gigajoules per capita</rdfs:label>
         <rdfs:label xml:lang="es">Gigajulios por habitante</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/giniIndex">
+        <rdfs:comment xml:lang="es">Coeficiente de Gini de la distribución territorial de la renta. Toma valores entre 0 (igualdad perfecta) y 1 (desigualdad máxima).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Gini coefficient of the territorial distribution of income. Takes values between 0 (perfect equality) and 1 (maximum inequality).</rdfs:comment>
+        <rdfs:label xml:lang="en">Gini index</rdfs:label>
+        <rdfs:label xml:lang="es">Índice de Gini</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/goldFineTroyOunces">
         <rdfs:label xml:lang="en">Gold Fine Troy Ounces (value)</rdfs:label>
@@ -22482,6 +23271,16 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/grossDomesticProduct">
         <rdfs:comment xml:lang="es">El producto interior bruto (PIB) es un indicador económico que refleja el valor monetario de todos los bienes y servicios finales producidos por un territorio en un determinado periodo de tiempo.</rdfs:comment>
         <rdfs:label xml:lang="es">Producto Interior Bruto</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/grossEurosPerHousehold">
+        <rdfs:comment xml:lang="es">Cantidad media en euros por hogar antes de impuestos y cotizaciones sociales.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gross euros per household</rdfs:label>
+        <rdfs:label xml:lang="es">Renta bruta media por hogar</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant">
+        <rdfs:comment xml:lang="es">Cantidad media en euros por habitante antes de impuestos y cotizaciones sociales.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gross euros per inhabitant</rdfs:label>
+        <rdfs:label xml:lang="es">Renta bruta media por persona</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/grossFixedCapitalFormationByActivity">
         <rdfs:label xml:lang="es">Formación Bruta de Capital Fijo de actividades</rdfs:label>
@@ -22529,6 +23328,10 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/harmonizedLeisureActivitiesList">
         <rdfs:label xml:lang="en">Harmonized leisure activities list</rdfs:label>
         <rdfs:label xml:lang="es">Lista de actividades de ocio armonizada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/hazardType">
+        <rdfs:label xml:lang="en">Hazard type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de peligrosidad</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/healthStatusAssessment">
         <rdfs:label xml:lang="en">Health status assessment</rdfs:label>
@@ -22625,6 +23428,11 @@
         <rdfs:label xml:lang="en">Housing</rdfs:label>
         <rdfs:label xml:lang="es">Vivienda</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/housingFeatures">
+        <rdfs:comment xml:lang="es">Características de la vivienda como el número de habitaciones, el número de personas por habitación, la superficie útil, etc.</rdfs:comment>
+        <rdfs:label xml:lang="es">Características de la vivienda</rdfs:label>
+        <rdfs:label xml:lang="en">Housing features</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/housingRegime">
         <rdfs:comment xml:lang="es">El régimen de la vivienda es el régimen de protección en las viviendas, es decir, si éstas son de precio libre o tienen algún régimen de protección oficial. - Vivienda de precio libre.- Si la vivienda no está sometida a ningún tipo de protección. - Vivienda sujeta a algún régimen de protección.- Si la vivienda está sometida a alguna protección oficial: VPO, Tipo VPO u Otro VPO.</rdfs:comment>
         <rdfs:label xml:lang="en">Housing regime</rdfs:label>
@@ -22678,6 +23486,11 @@
         <rdfs:label xml:lang="en">Income per consumption unit percentages</rdfs:label>
         <rdfs:label xml:lang="es">Porcentajes de renta por unidad de consumo</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20">
+        <rdfs:comment xml:lang="es">Cociente entre la renta del percentil 80 y la del percentil 20 de la distribución territorial de ingresos. Es una medida estándar de desigualdad de ingresos.</rdfs:comment>
+        <rdfs:label xml:lang="en">Income percentile ratio P80/P20</rdfs:label>
+        <rdfs:label xml:lang="es">Ratio de percentiles de renta P80/P20</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson">
         <rdfs:label xml:lang="en">Income recipients living with reference person</rdfs:label>
         <rdfs:label xml:lang="es">Perceptores de ingresos que conviven con la persona de referencia</rdfs:label>
@@ -22705,13 +23518,15 @@
         <rdfs:label xml:lang="en">Index value</rdfs:label>
         <rdfs:label xml:lang="es">Índice</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/indicator">
+        <rdfs:comment xml:lang="en">Dimension that identifies the indicator for each observation within a derived indicators cube.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Dimensión que identifica de qué indicador se trata cada observación dentro de un cubo de indicadores derivados.</rdfs:comment>
+        <rdfs:label xml:lang="es">Indicador</rdfs:label>
+        <rdfs:label xml:lang="en">Indicator</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/indicatorLatestData">
         <rdfs:label xml:lang="es">Indicador (últimos datos)</rdfs:label>
         <rdfs:label xml:lang="en">Indicator (latest data)</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/indicatorType">
-        <rdfs:label xml:lang="en">Indicator type</rdfs:label>
-        <rdfs:label xml:lang="es">Tipo de indicador</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/indicators">
         <rdfs:label xml:lang="es">Indicador</rdfs:label>
@@ -22759,6 +23574,11 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/internationalAccountsAnnotation">
         <rdfs:label xml:lang="es">Anotación de cuentas internacionales</rdfs:label>
         <rdfs:label xml:lang="en">International accounts annotation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="en">Amount invoiced for sewerage and wastewater treatment</rdfs:label>
+        <rdfs:label xml:lang="es">Importe facturado por alcantarillado y depuración</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/islands">
         <rdfs:label xml:lang="en">Islands</rdfs:label>
@@ -23068,6 +23888,21 @@
         <rdfs:label xml:lang="en">Maturity date</rdfs:label>
         <rdfs:label xml:lang="es">Vencimiento</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/meanAge">
+        <rdfs:comment xml:lang="es">Edad media de la población residente en la unidad territorial, expresada en años.</rdfs:comment>
+        <rdfs:label xml:lang="es">Edad media</rdfs:label>
+        <rdfs:label xml:lang="en">Mean age</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit">
+        <rdfs:comment xml:lang="es">Media de los ingresos del hogar divididos entre las unidades de consumo, calculadas según la escala OCDE modificada (1 para el primer adulto, 0,5 para el resto de mayores de 13 años, 0,3 para los menores de 14).</rdfs:comment>
+        <rdfs:label xml:lang="en">Mean income per consumption unit</rdfs:label>
+        <rdfs:label xml:lang="es">Media de la renta por unidad de consumo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/meanHouseholdSize">
+        <rdfs:comment xml:lang="es">Número medio de personas por hogar en el territorio.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mean household size</rdfs:label>
+        <rdfs:label xml:lang="es">Tamaño medio del hogar</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/measuresAdopted">
         <rdfs:label xml:lang="en">Measures adopted</rdfs:label>
         <rdfs:label xml:lang="es">Medidas adoptadas</rdfs:label>
@@ -23075,6 +23910,11 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/measuresForDependentFamilyCare">
         <rdfs:label xml:lang="en">Measures for dependent family care</rdfs:label>
         <rdfs:label xml:lang="es">Medidas adptadas para el cuidado de familiares dependientes</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit">
+        <rdfs:comment xml:lang="es">Mediana de los ingresos del hogar divididos entre las unidades de consumo, según la escala OCDE modificada.</rdfs:comment>
+        <rdfs:label xml:lang="en">Median income per consumption unit</rdfs:label>
+        <rdfs:label xml:lang="es">Mediana de la renta por unidad de consumo</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/megaJoulesPerCapita">
         <rdfs:label xml:lang="en">Megajoules Per Capita</rdfs:label>
@@ -23587,6 +24427,12 @@
         <rdfs:label xml:lang="en">Percentage</rdfs:label>
         <rdfs:label xml:lang="es">Porcentaje</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold">
+        <rdfs:comment xml:lang="en">Percentage of population in the territory whose net income per consumption unit is below 60% of the national median.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Porcentaje de población en el territorio cuya renta neta por unidad de consumo es inferior al 60% de la mediana nacional.</rdfs:comment>
+        <rdfs:label xml:lang="en">Percentage of population below poverty threshold</rdfs:label>
+        <rdfs:label xml:lang="es">Porcentaje de población bajo umbral de pobreza</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfCentres">
         <rdfs:label xml:lang="en">Percentage of centres</rdfs:label>
         <rdfs:label xml:lang="es">Porcentaje de centros</rdfs:label>
@@ -23594,6 +24440,11 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfDailySmokers">
         <rdfs:label xml:lang="en">Percentage of daily smokers</rdfs:label>
         <rdfs:label xml:lang="es">Porcentaje fumadores diarios</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation">
+        <rdfs:comment xml:lang="es">Porcentaje de personas de 65 años o más sobre el total de la población del territorio.</rdfs:comment>
+        <rdfs:label xml:lang="en">Percentage of elderly population (65 and over)</rdfs:label>
+        <rdfs:label xml:lang="es">Porcentaje de población de 65 y más años</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfFatalities">
         <rdfs:label xml:lang="en">Percentage of fatalities</rdfs:label>
@@ -23631,9 +24482,24 @@
         <rdfs:label xml:lang="en">Percentage of people</rdfs:label>
         <rdfs:label xml:lang="es">Porcentaje de personas</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds">
+        <rdfs:comment xml:lang="es">Porcentaje de hogares formados por una sola persona sobre el total de hogares del territorio.</rdfs:comment>
+        <rdfs:label xml:lang="en">Percentage of single-person households</rdfs:label>
+        <rdfs:label xml:lang="es">Porcentaje de hogares unipersonales</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation">
+        <rdfs:comment xml:lang="es">Porcentaje de población con nacionalidad española sobre el total de la población del territorio.</rdfs:comment>
+        <rdfs:label xml:lang="en">Percentage of Spanish population</rdfs:label>
+        <rdfs:label xml:lang="es">Porcentaje de población española</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange">
         <rdfs:label xml:lang="en">Percentage of time worked (UTAT range)</rdfs:label>
         <rdfs:label xml:lang="es">Porcentaje de tiempo trabajado (tramo UTAT)</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation">
+        <rdfs:comment xml:lang="es">Porcentaje de personas menores de 18 años sobre el total de la población del territorio.</rdfs:comment>
+        <rdfs:label xml:lang="en">Percentage of young population (under 18)</rdfs:label>
+        <rdfs:label xml:lang="es">Porcentaje de población menor de 18 años</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/percentagePoints">
         <rdfs:label xml:lang="en">Percentage Points</rdfs:label>
@@ -23836,6 +24702,11 @@
         <rdfs:label xml:lang="es">Rango [1,4]</rdfs:label>
         <rdfs:label xml:lang="es">Rango [1,6]</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/rate">
+        <rdfs:comment xml:lang="es">Relación entre dos magnitudes</rdfs:comment>
+        <rdfs:label xml:lang="en">Rates</rdfs:label>
+        <rdfs:label xml:lang="es">Tasas</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/ratePer100k">
         <rdfs:label xml:lang="en">Rate per 100,000 inhabitants</rdfs:label>
         <rdfs:label xml:lang="es">Tasa por 100.000 habitantes</rdfs:label>
@@ -24027,6 +24898,11 @@
         <rdfs:label xml:lang="es">Recursos y empleos</rdfs:label>
         <rdfs:label xml:lang="en">Resources and uses</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/reusedWaterVolume">
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="en">Total volume of reused water</rdfs:label>
+        <rdfs:label xml:lang="es">Volumen total de agua reutilizada</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/rooms">
         <rdfs:label xml:lang="es">Habitaciones</rdfs:label>
         <rdfs:label xml:lang="en">Rooms</rdfs:label>
@@ -24170,6 +25046,11 @@
         <rdfs:label xml:lang="es">Heridos graves y víctimas mortales</rdfs:label>
         <rdfs:label xml:lang="en">Seriously injured and fatalities</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/sewerageNetworkLength">
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="en">Length of the sewerage network (km)</rdfs:label>
+        <rdfs:label xml:lang="es">Longitud de la red de alcantarillado (km)</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/shiftWorkSystem">
         <rdfs:label xml:lang="en">Shift work system</rdfs:label>
         <rdfs:label xml:lang="es">Trabajo con un sistema de turnos</rdfs:label>
@@ -24185,6 +25066,11 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/sizeBrackets">
         <rdfs:label xml:lang="en">Size brackets</rdfs:label>
         <rdfs:label xml:lang="es">Tramos de extensión</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/sludgeVolume">
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="en">Volume of sludge generated during wastewater treatment</rdfs:label>
+        <rdfs:label xml:lang="es">Volumen de lodos generados en el tratamiento de aguas residuales</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/socialClassBasedOnOccupation">
         <rdfs:label xml:lang="es">Clase social basada en la ocupación</rdfs:label>
@@ -24631,6 +25517,11 @@
         <rdfs:label xml:lang="es">Total de horas extraordinarias realizadas en la semana por los asalariados</rdfs:label>
         <rdfs:label xml:lang="en">Total overtime hours worked per week by employees</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/totalPopulation">
+        <rdfs:comment xml:lang="es">Número total de personas residentes en el territorio.</rdfs:comment>
+        <rdfs:label xml:lang="es">Población total</rdfs:label>
+        <rdfs:label xml:lang="en">Total population</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/tourismConcept">
         <rdfs:label xml:lang="es">Concepto turístico</rdfs:label>
         <rdfs:label xml:lang="en">Tourism concept</rdfs:label>
@@ -24650,6 +25541,18 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/touristAttractions">
         <rdfs:label xml:lang="es">PUNTOS TURISTÍCOS</rdfs:label>
         <rdfs:label xml:lang="en">TOURIST ATTRACTIONS</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/touristDwellings">
+        <rdfs:comment xml:lang="en">Number of tourist dwellings identified according to the experimental measurement by INE based on short-term rental platforms.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Número de viviendas de uso turístico identificadas según la Medición experimental del INE basada en plataformas de alquiler turístico.</rdfs:comment>
+        <rdfs:label xml:lang="en">Tourist dwellings</rdfs:label>
+        <rdfs:label xml:lang="es">Viviendas turísticas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/touristDwellingsRatio">
+        <rdfs:comment xml:lang="es">Cociente entre el número de viviendas de uso turístico y el parque residencial total del territorio, expresado como porcentaje.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Quotient between the number of tourist dwellings and the total residential stock of the territory, expressed as a percentage.</rdfs:comment>
+        <rdfs:label xml:lang="es">Porcentaje de viviendas turísticas sobre el parque total</rdfs:label>
+        <rdfs:label xml:lang="en">Tourist dwellings ratio</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/touristType">
         <rdfs:label xml:lang="es">Tipo de visitante</rdfs:label>
@@ -24701,6 +25604,11 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/travellersKm1000">
         <rdfs:label xml:lang="en">Travellers Km1000</rdfs:label>
         <rdfs:label xml:lang="es">Viajeros-Km (1000)</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume">
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="es">Volumen de aguas residuales tratadas</rdfs:label>
+        <rdfs:label xml:lang="en">Volumes of treated wastewater</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/tripsPerThousandInhabitants">
         <rdfs:label xml:lang="en">Trips per thousand inhabitants</rdfs:label>
@@ -25096,9 +26004,18 @@
         <rdfs:label xml:lang="en">Volume (litres)</rdfs:label>
         <rdfs:label xml:lang="es">Volumen (litros)</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated">
+        <rdfs:comment>TODO</rdfs:comment>
+        <rdfs:label xml:lang="en">Volume of sludge generated during wastewater treatment (tons of dry matter/year)</rdfs:label>
+        <rdfs:label xml:lang="es">Volumen de lodos generados en el tratamiento de aguas residuales (toneladas de materia seca/año)</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/wageDecile">
         <rdfs:label xml:lang="es">Decil de salarios</rdfs:label>
         <rdfs:label xml:lang="en">Wage decile</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/wasteType">
+        <rdfs:label xml:lang="es">Clase de residuo</rdfs:label>
+        <rdfs:label xml:lang="en">Waste type</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/wattsPerCapita">
         <rdfs:label xml:lang="es">Vatios per cápita</rdfs:label>
@@ -25111,6 +26028,12 @@
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/weeksOfGestation">
         <rdfs:label xml:lang="es">Semanas de gestación</rdfs:label>
         <rdfs:label xml:lang="en">Weeks of gestation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/weightingConfiguration">
+        <rdfs:comment xml:lang="en">Dimension that identifies the weighting configuration used to calculate a composite indicator. Allows the same cube to contain the indicator calculated with various distinct configurations.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Dimensión que identifica la configuración de pesos utilizada para calcular un indicador compuesto. Permite que un mismo cubo contenga el indicador calculado con varias configuraciones distintas.</rdfs:comment>
+        <rdfs:label xml:lang="es">Configuración de pesos</rdfs:label>
+        <rdfs:label xml:lang="en">Weighting configuration</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://lod.ine.es/def/vocabulary/whoSetsWorkSchedule">
         <rdfs:label xml:lang="es">Quien fija el horario de trabajo</rdfs:label>
@@ -25253,6 +26176,7 @@
         <rdfs:label xml:lang="es">Periodo</rdfs:label>
         <rdfs:label xml:lang="en">Reference Period</rdfs:label>
         <rdfs:label xml:lang="en">TIME_PERIOD</rdfs:label>
+        <rdfs:label xml:lang="es">periodo</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/linked-data/sdmx/2009/dimension#sex">
         <cube:concept rdf:resource="http://purl.org/linked-data/sdmx/2009/concept#sex"/>
@@ -25269,6 +26193,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/linked-data/sdmx/2009/measure#obsValue">
         <rdfs:label xml:lang="en">Observation</rdfs:label>
+        <rdfs:label xml:lang="es">Total</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 

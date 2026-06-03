@@ -1,117 +1,21 @@
 <h2 id="overv" class="list">INELOD VOC: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-  <p>
-    This section provides an overview of the conceptual architecture of
-    INELOD&nbsp;VOC before going into the detail of every term in the
-    <a href="#crossref">cross-reference section</a>. The ontology does not
-    propose a new model of statistical cube: <strong>it relies entirely on
-    the abstract model of the W3C
-    <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube
-    Vocabulary (QB)</a></strong> and merely specialises the concrete
-    properties that INE needs for its statistical operations.
-  </p>
-
-  <h3 id="pattern" class="list">Modelling pattern: dimensions and measures
-  as subproperties</h3>
-
-  <p>
-    In INELOD&nbsp;VOC every property conceptually plays one of these two
-    roles:
-  </p>
-  <ol>
-    <li>
-      <strong>Dimension properties</strong>: declared as
-      <code>owl:ObjectProperty</code> with domain
-      <code>qb:Observation</code>, which identifies them as axes of
-      disaggregation of any observation in a cube. When the dimension is
-      one of the five generic SDMX dimensions (<em>refArea</em>,
-      <em>refPeriod</em>, <em>age</em>, <em>currency</em>,
-      <em>educationLev</em>), the ine property is additionally declared
-      as <code>rdfs:subPropertyOf</code> of the corresponding SDMX
-      dimension, ensuring downstream interoperability with SDMX-RDF
-      queries.
-      <br/>Example: <code>ine:cities rdfs:subPropertyOf
-      sdmx-dimension:refArea</code>;
-      <code>ine:childsAge rdfs:subPropertyOf sdmx-dimension:age</code>.
-    </li>
-    <li>
-      <strong>Measure properties</strong>: declared as
-      <code>owl:ObjectProperty</code> and, with few exceptions, as
-      <code>rdfs:subPropertyOf sdmx-measure:obsValue</code>. This allows
-      any generic QB/SDMX consumer to retrieve the observed value
-      without knowing the specific property.
-      <br/>Example: <code>ine:births</code>,
-      <code>ine:deathsPerThousandInhabitants</code>,
-      <code>ine:cubicMetres</code>.
-    </li>
-  </ol>
-
-  <p>
-    Additionally, INELOD&nbsp;VOC defines the auxiliary class
-    <code>ine:MeasureSet</code> and the property
-    <code>ine:inMeasureSet</code>, whose range is that class, in order to
-    explicitly group related measures (for example, all monetary measures
-    or all demographic measures expressed per 1,000 inhabitants). This
-    grouping complements the native QB mechanism
-    (<code>qb:MeasureProperty</code> within
-    <code>qb:DataStructureDefinition</code>) and is useful for building
-    exploration interfaces in data portals.
-  </p>
-
-  <h3 id="reused-vocabularies" class="list">Reused vocabularies</h3>
-
-  <p>
-    Following the FAIR recommendation to maximise reuse (Wilkinson et&nbsp;al.,
-    2016, <em>Scientific Data</em>), INELOD&nbsp;VOC reuses:
-  </p>
-  <ul>
-    <li>
-      <a href="https://www.w3.org/TR/vocab-data-cube/">QB (RDF Data Cube
-      Vocabulary)</a> as the abstract statistical-cube model.
-    </li>
-    <li>
-      <a href="http://purl.org/linked-data/sdmx/2009/dimension">SDMX-Dimension</a>
-      and
-      <a href="http://purl.org/linked-data/sdmx/2009/measure">SDMX-Measure</a>
-      to align with the SDMX/ISO&nbsp;17369 standard.
-    </li>
-    <li>
-      <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> as the
-      range of several dimension properties whose categories are
-      controlled lists (for example, autonomous communities, economic
-      sectors, countries).
-    </li>
-    <li>
-      <a href="http://xmlns.com/foaf/spec/">FOAF</a> for personal
-      annotations (name, surname) reused as subproperties.
-    </li>
-    <li>
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI
-      Metadata Terms</a> for ontology metadata
-      (<code>dct:title</code>, <code>dct:creator</code>,
-      <code>dct:description</code>, <code>dct:created</code>,
-      <code>dct:modified</code>).
-    </li>
-    <li>
-      <a href="http://purl.org/vocab/vann/">VANN</a> to declare the
-      preferred prefix and namespace.
-    </li>
-    <li>
-      <a href="http://qudt.org/">QUDT</a> to type the range of
-      properties whose value is a percentage
-      (<code>qudt:PERCENT</code>).
-    </li>
-    <li>
-      <a href="https://creativecommons.org/ns">Creative Commons (cc)</a>
-      to declare the licence, which is CC&nbsp;BY&nbsp;4.0.
-    </li>
-  </ul>
-
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
+   <li>
+      <a href="#CensusSection" title="http://lod.ine.es/def/vocabulary/CensusSection">Census section</a>
+   </li>
+   <li>
+      <a href="#District" title="http://lod.ine.es/def/vocabulary/District">District</a>
+   </li>
+   <li>
+      <a href="#Municipality" title="http://lod.ine.es/def/vocabulary/Municipality">
+         <span>municipality</span>
+      </a>
+   </li>
    <li>
       <a href="#ReasonType" title="http://lod.ine.es/def/vocabulary/ReasonType">Reason type</a>
    </li>
@@ -321,6 +225,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#invoiceforSewerageAndWastewaterTreatment"
+         title="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+         <span>Amount invoiced for sewerage and wastewater treatment</span>
+      </a>
+   </li>
+   <li>
       <a href="#animalSpecies" title="http://lod.ine.es/def/vocabulary/animalSpecies">
          <span>Animal species</span>
       </a>
@@ -524,6 +434,11 @@ This ontology has the following classes and properties.</span>
       <a href="#causeOfLitigation"
          title="http://lod.ine.es/def/vocabulary/causeOfLitigation">
          <span>Cause of litigation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#censusSection" title="http://lod.ine.es/def/vocabulary/censusSection">
+         <span>Census section</span>
       </a>
    </li>
    <li>
@@ -741,6 +656,12 @@ This ontology has the following classes and properties.</span>
       <a href="#constantDollars"
          title="http://lod.ine.es/def/vocabulary/constantDollars">
          <span>Constant dollars of 2015</span>
+      </a>
+   </li>
+   <li>
+      <a href="#consumedProduct"
+         title="http://lod.ine.es/def/vocabulary/consumedProduct">
+         <span>Consumed product</span>
       </a>
    </li>
    <li>
@@ -1325,6 +1246,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#equipmentType" title="http://lod.ine.es/def/vocabulary/equipmentType">
+         <span>Equipment type</span>
+      </a>
+   </li>
+   <li>
       <a href="#errorIntervals" title="http://lod.ine.es/def/vocabulary/errorIntervals">
          <span>Error intervals</span>
       </a>
@@ -1585,6 +1511,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#fiveYearAgeGroup"
+         title="http://lod.ine.es/def/vocabulary/fiveYearAgeGroup">
+         <span>Five-year age groups</span>
+      </a>
+   </li>
+   <li>
       <a href="#fixedCapitalFormationOperations"
          title="http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations">
          <span>FIXED CAPITAL FORMATION OPERATIONS</span>
@@ -1763,6 +1695,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#hazardType" title="http://lod.ine.es/def/vocabulary/hazardType">
+         <span>Hazard type</span>
+      </a>
+   </li>
+   <li>
       <a href="#healthcare" title="http://lod.ine.es/def/vocabulary/healthcare">
          <span>Healthcare</span>
       </a>
@@ -1863,6 +1800,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#housingFeatures"
+         title="http://lod.ine.es/def/vocabulary/housingFeatures">
+         <span>Housing features</span>
+      </a>
+   </li>
+   <li>
       <a href="#housingRegime" title="http://lod.ine.es/def/vocabulary/housingRegime">
          <span>Housing regime</span>
       </a>
@@ -1948,6 +1891,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#indicator" title="http://lod.ine.es/def/vocabulary/indicator">
+         <span>Indicator</span>
+      </a>
+   </li>
+   <li>
       <a href="#indicators" title="http://lod.ine.es/def/vocabulary/indicators">
          <span>Indicator</span>
       </a>
@@ -1956,11 +1904,6 @@ This ontology has the following classes and properties.</span>
       <a href="#indicatorLatestData"
          title="http://lod.ine.es/def/vocabulary/indicatorLatestData">
          <span>Indicator (latest data)</span>
-      </a>
-   </li>
-   <li>
-      <a href="#indicatorType" title="http://lod.ine.es/def/vocabulary/indicatorType">
-         <span>Indicator type</span>
       </a>
    </li>
    <li>
@@ -4209,11 +4152,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#PIBDataType" title="http://lod.ine.es/def/vocabulary/PIBDataType">
-         <span>Tipo de dato de PIB</span>
-      </a>
-   </li>
-   <li>
       <a href="#titleOfAcquisition"
          title="http://lod.ine.es/def/vocabulary/titleOfAcquisition">
          <span>Title of acquisition</span>
@@ -5006,6 +4944,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#wasteType" title="http://lod.ine.es/def/vocabulary/wasteType">
+         <span>Waste type</span>
+      </a>
+   </li>
+   <li>
       <a href="#wattsPerCapita" title="http://lod.ine.es/def/vocabulary/wattsPerCapita">
          <span>Watts Per Capita</span>
       </a>
@@ -5020,6 +4963,12 @@ This ontology has the following classes and properties.</span>
       <a href="#weeksOfGestation"
          title="http://lod.ine.es/def/vocabulary/weeksOfGestation">
          <span>Weeks of gestation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#weightingConfiguration"
+         title="http://lod.ine.es/def/vocabulary/weightingConfiguration">
+         <span>Weighting configuration</span>
       </a>
    </li>
    <li>
@@ -5180,6 +5129,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#invoiceforSewerageAndWastewaterTreatment"
+         title="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+         <span>Amount invoiced for sewerage and wastewater treatment</span>
+      </a>
+   </li>
+   <li>
       <a href="#apartments" title="http://lod.ine.es/def/vocabulary/apartments">
          <span>Apartments</span>
       </a>
@@ -5215,6 +5170,12 @@ This ontology has the following classes and properties.</span>
       <a href="#basedOnReferencePersonIncomeStatus"
          title="http://lod.ine.es/def/vocabulary/basedOnReferencePersonIncomeStatus">
          <span>Based on reference person income status</span>
+      </a>
+   </li>
+   <li>
+      <a href="#bedplacesPerTouristDwelling"
+         title="http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling">
+         <span>Bedplaces per tourist dwelling</span>
       </a>
    </li>
    <li>
@@ -5570,6 +5531,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#eurosPerHousehold"
+         title="http://lod.ine.es/def/vocabulary/eurosPerHousehold">
+         <span>Euros per household</span>
+      </a>
+   </li>
+   <li>
       <a href="#eurosPerInhabitant"
          title="http://lod.ine.es/def/vocabulary/eurosPerInhabitant">
          <span>Euros Per Inhabitant</span>
@@ -5704,9 +5671,20 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#gentrificationIndex"
+         title="http://lod.ine.es/def/vocabulary/gentrificationIndex">
+         <span>Gentrification index</span>
+      </a>
+   </li>
+   <li>
       <a href="#gigajoulesPerCapita"
          title="http://lod.ine.es/def/vocabulary/gigajoulesPerCapita">
          <span>Gigajoules per capita</span>
+      </a>
+   </li>
+   <li>
+      <a href="#giniIndex" title="http://lod.ine.es/def/vocabulary/giniIndex">
+         <span>Gini index</span>
       </a>
    </li>
    <li>
@@ -5723,6 +5701,18 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#gramos-Euros" title="http://lod.ine.es/def/vocabulary/gramos-Euros">
          <span>Gramos/euros</span>
+      </a>
+   </li>
+   <li>
+      <a href="#grossEurosPerHousehold"
+         title="http://lod.ine.es/def/vocabulary/grossEurosPerHousehold">
+         <span>Gross euros per household</span>
+      </a>
+   </li>
+   <li>
+      <a href="#grossEurosPerInhabitant"
+         title="http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant">
+         <span>Gross euros per inhabitant</span>
       </a>
    </li>
    <li>
@@ -5818,6 +5808,12 @@ This ontology has the following classes and properties.</span>
       <a href="#incomePerConsumptionUnitPercentages"
          title="http://lod.ine.es/def/vocabulary/incomePerConsumptionUnitPercentages">
          <span>Income per consumption unit percentages</span>
+      </a>
+   </li>
+   <li>
+      <a href="#incomePercentileRatioP80P20"
+         title="http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20">
+         <span>Income percentile ratio P80/P20</span>
       </a>
    </li>
    <li>
@@ -5949,6 +5945,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#sewerageNetworkLength"
+         title="http://lod.ine.es/def/vocabulary/sewerageNetworkLength">
+         <span>Length of the sewerage network (km)</span>
+      </a>
+   </li>
+   <li>
       <a href="#lengthMetreBased"
          title="http://lod.ine.es/def/vocabulary/lengthMetreBased">
          <span>Length/Distance (metre-based)</span>
@@ -6050,6 +6052,29 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#meanAge" title="http://lod.ine.es/def/vocabulary/meanAge">
+         <span>Mean age</span>
+      </a>
+   </li>
+   <li>
+      <a href="#meanHouseholdSize"
+         title="http://lod.ine.es/def/vocabulary/meanHouseholdSize">
+         <span>Mean household size</span>
+      </a>
+   </li>
+   <li>
+      <a href="#meanEurosPerConsumptionUnit"
+         title="http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit">
+         <span>Mean income per consumption unit</span>
+      </a>
+   </li>
+   <li>
+      <a href="#medianEurosPerConsumptionUnit"
+         title="http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit">
+         <span>Median income per consumption unit</span>
+      </a>
+   </li>
+   <li>
       <a href="#megaJoulesPerCapita"
          title="http://lod.ine.es/def/vocabulary/megaJoulesPerCapita">
          <span>Megajoules Per Capita</span>
@@ -6067,7 +6092,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#migrationFlows" title="http://lod.ine.es/def/vocabulary/migrationFlows">
+      <a href="#migrationFlows"
+         title="http://lod.ine.es/def/vocabulary/migrationFlows">
          <span>Migration flows</span>
       </a>
    </li>
@@ -6128,11 +6154,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#municipalities" title="http://lod.ine.es/def/vocabulary/municipalities">
-         <span>Municipalities</span>
-      </a>
-   </li>
-   <li>
       <a href="#nullities" title="http://lod.ine.es/def/vocabulary/nullities">
          <span>NullitieS</span>
       </a>
@@ -6177,7 +6198,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#numberOfPeople" title="http://lod.ine.es/def/vocabulary/numberOfPeople">
+      <a href="#numberOfPeople"
+         title="http://lod.ine.es/def/vocabulary/numberOfPeople">
          <span>Numero de personas</span>
       </a>
    </li>
@@ -6305,6 +6327,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#percentageOfElderlyPopulation"
+         title="http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation">
+         <span>Percentage of elderly population (65 and over)</span>
+      </a>
+   </li>
+   <li>
       <a href="#percentageOfFatalities"
          title="http://lod.ine.es/def/vocabulary/percentageOfFatalities">
          <span>Percentage of fatalities</span>
@@ -6335,9 +6363,33 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#percentageBelowPovertyThreshold"
+         title="http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold">
+         <span>Percentage of population below poverty threshold</span>
+      </a>
+   </li>
+   <li>
+      <a href="#percentageOfSingleHouseholds"
+         title="http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds">
+         <span>Percentage of single-person households</span>
+      </a>
+   </li>
+   <li>
+      <a href="#percentageOfSpanishPopulation"
+         title="http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation">
+         <span>Percentage of Spanish population</span>
+      </a>
+   </li>
+   <li>
       <a href="#percentageOfTimeWorkedUtatRange"
          title="http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange">
          <span>Percentage of time worked (UTAT range)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#percentageOfYoungPopulation"
+         title="http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation">
+         <span>Percentage of young population (under 18)</span>
       </a>
    </li>
    <li>
@@ -6690,6 +6742,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#PIBDataType" title="http://lod.ine.es/def/vocabulary/PIBDataType">
+         <span>Tipo de dato de PIB</span>
+      </a>
+   </li>
+   <li>
       <a href="#tonOfChlorine" title="http://lod.ine.es/def/vocabulary/tonOfChlorine">
          <span>Ton of chlorine</span>
       </a>
@@ -6852,6 +6909,30 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#totalPopulation"
+         title="http://lod.ine.es/def/vocabulary/totalPopulation">
+         <span>Total population</span>
+      </a>
+   </li>
+   <li>
+      <a href="#reusedWaterVolume"
+         title="http://lod.ine.es/def/vocabulary/reusedWaterVolume">
+         <span>Total volume of reused water</span>
+      </a>
+   </li>
+   <li>
+      <a href="#touristDwellings"
+         title="http://lod.ine.es/def/vocabulary/touristDwellings">
+         <span>Tourist dwellings</span>
+      </a>
+   </li>
+   <li>
+      <a href="#touristDwellingsRatio"
+         title="http://lod.ine.es/def/vocabulary/touristDwellingsRatio">
+         <span>Tourist dwellings ratio</span>
+      </a>
+   </li>
+   <li>
       <a href="#tourists" title="http://lod.ine.es/def/vocabulary/tourists">
          <span>Tourists</span>
       </a>
@@ -6934,6 +7015,23 @@ This ontology has the following classes and properties.</span>
       <a href="#volumeLitreBased"
          title="http://lod.ine.es/def/vocabulary/volumeLitreBased">
          <span>Volume (litres)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#sludgeVolume" title="http://lod.ine.es/def/vocabulary/sludgeVolume">
+         <span>Volume of sludge generated during wastewater treatment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#volumeOfSludgeGenerated"
+         title="http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated">
+         <span>Volume of sludge generated during wastewater treatment (tons of dry matter/year)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#treatedResidualWaterVolume"
+         title="http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume">
+         <span>Volumes of treated wastewater</span>
       </a>
    </li>
    <li>
@@ -7220,6 +7318,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#invoiceforSewerageAndWastewaterTreatment"
+         title="http://lod.ine.es/def/vocabulary/invoiceforSewerageAndWastewaterTreatment">
+         <span>Amount invoiced for sewerage and wastewater treatment</span>
+      </a>
+   </li>
+   <li>
       <a href="#animalSpecies" title="http://lod.ine.es/def/vocabulary/animalSpecies">
          <span>Animal species</span>
       </a>
@@ -7283,6 +7387,12 @@ This ontology has the following classes and properties.</span>
       <a href="#basicFarmCharacteristics"
          title="http://lod.ine.es/def/vocabulary/basicFarmCharacteristics">
          <span>Basic farm characteristics</span>
+      </a>
+   </li>
+   <li>
+      <a href="#bedplacesPerTouristDwelling"
+         title="http://lod.ine.es/def/vocabulary/bedplacesPerTouristDwelling">
+         <span>Bedplaces per tourist dwelling</span>
       </a>
    </li>
    <li>
@@ -7457,6 +7567,11 @@ This ontology has the following classes and properties.</span>
       <a href="#causeOfLitigation"
          title="http://lod.ine.es/def/vocabulary/causeOfLitigation">
          <span>Cause of litigation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#censusSection" title="http://lod.ine.es/def/vocabulary/censusSection">
+         <span>Census section</span>
       </a>
    </li>
    <li>
@@ -7691,6 +7806,12 @@ This ontology has the following classes and properties.</span>
       <a href="#constantDollars"
          title="http://lod.ine.es/def/vocabulary/constantDollars">
          <span>Constant dollars of 2015</span>
+      </a>
+   </li>
+   <li>
+      <a href="#consumedProduct"
+         title="http://lod.ine.es/def/vocabulary/consumedProduct">
+         <span>Consumed product</span>
       </a>
    </li>
    <li>
@@ -8343,6 +8464,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#equipmentType" title="http://lod.ine.es/def/vocabulary/equipmentType">
+         <span>Equipment type</span>
+      </a>
+   </li>
+   <li>
       <a href="#errorIntervals"
          title="http://lod.ine.es/def/vocabulary/errorIntervals">
          <span>Error intervals</span>
@@ -8396,6 +8522,12 @@ This ontology has the following classes and properties.</span>
       <a href="#eurosPerCubicMetre"
          title="http://lod.ine.es/def/vocabulary/eurosPerCubicMetre">
          <span>Euros Per Cubic Metre</span>
+      </a>
+   </li>
+   <li>
+      <a href="#eurosPerHousehold"
+         title="http://lod.ine.es/def/vocabulary/eurosPerHousehold">
+         <span>Euros per household</span>
       </a>
    </li>
    <li>
@@ -8652,6 +8784,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#fiveYearAgeGroup"
+         title="http://lod.ine.es/def/vocabulary/fiveYearAgeGroup">
+         <span>Five-year age groups</span>
+      </a>
+   </li>
+   <li>
       <a href="#fixedCapitalFormationOperations"
          title="http://lod.ine.es/def/vocabulary/fixedCapitalFormationOperations">
          <span>FIXED CAPITAL FORMATION OPERATIONS</span>
@@ -8761,6 +8899,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#gentrificationIndex"
+         title="http://lod.ine.es/def/vocabulary/gentrificationIndex">
+         <span>Gentrification index</span>
+      </a>
+   </li>
+   <li>
       <a href="#geographicalZonesOfSpain"
          title="http://lod.ine.es/def/vocabulary/geographicalZonesOfSpain">
          <span>Geographical zones of Spain</span>
@@ -8776,6 +8920,11 @@ This ontology has the following classes and properties.</span>
       <a href="#gigajoulesPerCapita"
          title="http://lod.ine.es/def/vocabulary/gigajoulesPerCapita">
          <span>Gigajoules per capita</span>
+      </a>
+   </li>
+   <li>
+      <a href="#giniIndex" title="http://lod.ine.es/def/vocabulary/giniIndex">
+         <span>Gini index</span>
       </a>
    </li>
    <li>
@@ -8813,6 +8962,18 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#grossEurosPerHousehold"
+         title="http://lod.ine.es/def/vocabulary/grossEurosPerHousehold">
+         <span>Gross euros per household</span>
+      </a>
+   </li>
+   <li>
+      <a href="#grossEurosPerInhabitant"
+         title="http://lod.ine.es/def/vocabulary/grossEurosPerInhabitant">
+         <span>Gross euros per inhabitant</span>
+      </a>
+   </li>
+   <li>
       <a href="#grossFixedCapitalFormationByActivity"
          title="http://lod.ine.es/def/vocabulary/grossFixedCapitalFormationByActivity">
          <span>Gross Fixed Capital Formation by activity</span>
@@ -8834,6 +8995,11 @@ This ontology has the following classes and properties.</span>
       <a href="#harmonizedLeisureActivitiesList"
          title="http://lod.ine.es/def/vocabulary/harmonizedLeisureActivitiesList">
          <span>Harmonized leisure activities list</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hazardType" title="http://lod.ine.es/def/vocabulary/hazardType">
+         <span>Hazard type</span>
       </a>
    </li>
    <li>
@@ -8960,6 +9126,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#housingFeatures"
+         title="http://lod.ine.es/def/vocabulary/housingFeatures">
+         <span>Housing features</span>
+      </a>
+   </li>
+   <li>
       <a href="#housingRegime" title="http://lod.ine.es/def/vocabulary/housingRegime">
          <span>Housing regime</span>
       </a>
@@ -9033,6 +9205,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#incomePercentileRatioP80P20"
+         title="http://lod.ine.es/def/vocabulary/incomePercentileRatioP80P20">
+         <span>Income percentile ratio P80/P20</span>
+      </a>
+   </li>
+   <li>
       <a href="#incomeRecipientsLivingWithReferencePerson"
          title="http://lod.ine.es/def/vocabulary/incomeRecipientsLivingWithReferencePerson">
          <span>Income recipients living with reference person</span>
@@ -9060,6 +9238,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#indicator" title="http://lod.ine.es/def/vocabulary/indicator">
+         <span>Indicator</span>
+      </a>
+   </li>
+   <li>
       <a href="#indicators" title="http://lod.ine.es/def/vocabulary/indicators">
          <span>Indicator</span>
       </a>
@@ -9071,9 +9254,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#indicatorType" title="http://lod.ine.es/def/vocabulary/indicatorType">
-         <span>Indicator type</span>
-      </a>
+      <a href="#indicatorType" title="http://lod.ine.es/def/vocabulary/indicatorType">Indicator type</a>
    </li>
    <li>
       <a href="#industrialCapacityUtilizationRate"
@@ -9335,6 +9516,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#sewerageNetworkLength"
+         title="http://lod.ine.es/def/vocabulary/sewerageNetworkLength">
+         <span>Length of the sewerage network (km)</span>
+      </a>
+   </li>
+   <li>
       <a href="#lengthMetreBased"
          title="http://lod.ine.es/def/vocabulary/lengthMetreBased">
          <span>Length/Distance (metre-based)</span>
@@ -9546,6 +9733,23 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#meanAge" title="http://lod.ine.es/def/vocabulary/meanAge">
+         <span>Mean age</span>
+      </a>
+   </li>
+   <li>
+      <a href="#meanHouseholdSize"
+         title="http://lod.ine.es/def/vocabulary/meanHouseholdSize">
+         <span>Mean household size</span>
+      </a>
+   </li>
+   <li>
+      <a href="#meanEurosPerConsumptionUnit"
+         title="http://lod.ine.es/def/vocabulary/meanEurosPerConsumptionUnit">
+         <span>Mean income per consumption unit</span>
+      </a>
+   </li>
+   <li>
       <a href="#measures" title="http://lod.ine.es/def/vocabulary/measures">Measures</a>
    </li>
    <li>
@@ -9558,6 +9762,12 @@ This ontology has the following classes and properties.</span>
       <a href="#measuresForDependentFamilyCare"
          title="http://lod.ine.es/def/vocabulary/measuresForDependentFamilyCare">
          <span>Measures for dependent family care</span>
+      </a>
+   </li>
+   <li>
+      <a href="#medianEurosPerConsumptionUnit"
+         title="http://lod.ine.es/def/vocabulary/medianEurosPerConsumptionUnit">
+         <span>Median income per consumption unit</span>
       </a>
    </li>
    <li>
@@ -10217,6 +10427,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#percentageOfElderlyPopulation"
+         title="http://lod.ine.es/def/vocabulary/percentageOfElderlyPopulation">
+         <span>Percentage of elderly population (65 and over)</span>
+      </a>
+   </li>
+   <li>
       <a href="#percentageOfFatalities"
          title="http://lod.ine.es/def/vocabulary/percentageOfFatalities">
          <span>Percentage of fatalities</span>
@@ -10247,9 +10463,33 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#percentageBelowPovertyThreshold"
+         title="http://lod.ine.es/def/vocabulary/percentageBelowPovertyThreshold">
+         <span>Percentage of population below poverty threshold</span>
+      </a>
+   </li>
+   <li>
+      <a href="#percentageOfSingleHouseholds"
+         title="http://lod.ine.es/def/vocabulary/percentageOfSingleHouseholds">
+         <span>Percentage of single-person households</span>
+      </a>
+   </li>
+   <li>
+      <a href="#percentageOfSpanishPopulation"
+         title="http://lod.ine.es/def/vocabulary/percentageOfSpanishPopulation">
+         <span>Percentage of Spanish population</span>
+      </a>
+   </li>
+   <li>
       <a href="#percentageOfTimeWorkedUtatRange"
          title="http://lod.ine.es/def/vocabulary/percentageOfTimeWorkedUtatRange">
          <span>Percentage of time worked (UTAT range)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#percentageOfYoungPopulation"
+         title="http://lod.ine.es/def/vocabulary/percentageOfYoungPopulation">
+         <span>Percentage of young population (under 18)</span>
       </a>
    </li>
    <li>
@@ -10578,7 +10818,9 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#rate" title="http://lod.ine.es/def/vocabulary/rate">Rates</a>
+      <a href="#rate" title="http://lod.ine.es/def/vocabulary/rate">
+         <span>Rates</span>
+      </a>
    </li>
    <li>
       <a href="#ratesForEach100kInhabitants"
@@ -11676,8 +11918,20 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#totalPopulation"
+         title="http://lod.ine.es/def/vocabulary/totalPopulation">
+         <span>Total population</span>
+      </a>
+   </li>
+   <li>
       <a href="#totalQuantityThousandsOfUnitsAverageQuantity-Units"
          title="http://lod.ine.es/def/vocabulary/totalQuantityThousandsOfUnitsAverageQuantity-Units">Total quantity: thousands of units. Average quantity: units.</a>
+   </li>
+   <li>
+      <a href="#reusedWaterVolume"
+         title="http://lod.ine.es/def/vocabulary/reusedWaterVolume">
+         <span>Total volume of reused water</span>
+      </a>
    </li>
    <li>
       <a href="#tourismConcept"
@@ -11705,6 +11959,18 @@ This ontology has the following classes and properties.</span>
       <a href="#touristAttractions"
          title="http://lod.ine.es/def/vocabulary/touristAttractions">
          <span>TOURIST ATTRACTIONS</span>
+      </a>
+   </li>
+   <li>
+      <a href="#touristDwellings"
+         title="http://lod.ine.es/def/vocabulary/touristDwellings">
+         <span>Tourist dwellings</span>
+      </a>
+   </li>
+   <li>
+      <a href="#touristDwellingsRatio"
+         title="http://lod.ine.es/def/vocabulary/touristDwellingsRatio">
+         <span>Tourist dwellings ratio</span>
       </a>
    </li>
    <li>
@@ -12338,8 +12604,30 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#sludgeVolume" title="http://lod.ine.es/def/vocabulary/sludgeVolume">
+         <span>Volume of sludge generated during wastewater treatment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#volumeOfSludgeGenerated"
+         title="http://lod.ine.es/def/vocabulary/volumeOfSludgeGenerated">
+         <span>Volume of sludge generated during wastewater treatment (tons of dry matter/year)</span>
+      </a>
+   </li>
+   <li>
+      <a href="#treatedResidualWaterVolume"
+         title="http://lod.ine.es/def/vocabulary/treatedResidualWaterVolume">
+         <span>Volumes of treated wastewater</span>
+      </a>
+   </li>
+   <li>
       <a href="#wageDecile" title="http://lod.ine.es/def/vocabulary/wageDecile">
          <span>Wage decile</span>
+      </a>
+   </li>
+   <li>
+      <a href="#wasteType" title="http://lod.ine.es/def/vocabulary/wasteType">
+         <span>Waste type</span>
       </a>
    </li>
    <li>
@@ -12358,6 +12646,12 @@ This ontology has the following classes and properties.</span>
       <a href="#weeksOfGestation"
          title="http://lod.ine.es/def/vocabulary/weeksOfGestation">
          <span>Weeks of gestation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#weightingConfiguration"
+         title="http://lod.ine.es/def/vocabulary/weightingConfiguration">
+         <span>Weighting configuration</span>
       </a>
    </li>
    <li>
@@ -12481,4 +12775,6 @@ This ontology has the following classes and properties.</span>
          <span>YES/NO</span>
       </a>
    </li>
-</ul><iframe src="webvowl/index.html"></iframe> 
+</ul><h4> Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist"/>
